@@ -1,3 +1,162 @@
 *{
-    margin: 0;   
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.containerNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vw;
+}
+
+.containerNavbar .btnBurger{
+    display: none;
+}
+
+.btnBurger:checked ~ .containerSidebar{
+    opacity: 1;
+    visibility: visible;
+}
+
+.containerNavbar .burger{
+    height: auto;
+    width: 10vw;
+    cursor: pointer;
+    margin: 2vw;
+
+}
+
+.containerNavbar .listLeft, .listRight{
+    display: none;
+}
+
+.containerNavbar .logo{
+    height: auto;
+    width: 10vw;
+}
+
+.containerNavbar .account{
+    height: auto;
+    width: 6vw;
+    margin-right: 2vw;
+}
+
+.containerSidebar{
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.1);
+    top: 0;
+    left: 0;
+    transition: all 300ms ease;
+
+}
+
+.sidebar{
+    width: 100%;
+    height: 100%;
+    max-width: 45%;
+    position: relative;
+    transition: all 300ms ease;
+
+    background-color: #c8ad8d;
+}
+
+.sidebar nav{
+    transform: translateY(10%);
+    display: flex;
+    gap: 2vw;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sidebar nav div{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2vw;
+}
+
+.sidebar nav img{
+    width: 5vw;
+}
+
+.sidebar nav div button{
+    display: block;
+    width: 30vw;
+    border-radius: 5vw;
+    background-color: white;
+    font-size: 3.5vw;
+
+}
+
+.sidebar nav div p{
+    font-size: 3vw;
+}
+
+
+.sidebar label{
+    position: absolute;
+    right: 5vw;
+    top: 5vw;
+    cursor: pointer;
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+@media (min-width: 675px) {
+
+    .containerNavbar{
+        justify-content: space-evenly;
+    }
+
+    .containerNavbar .burger{
+        display: none;
+    }
+
+    .containerNavbar .listLeft{
+        display: flex;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    .listLeft li{
+        font-size: 1.5vw;
+    }
+
+    .containerNavbar .listRight{
+        display: flex;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    .listRight li{
+        font-size: 1.5vw;
+    }
+
+.listRight li button{
+    width: 10vw;
+    height: 3vw;
+    font-size: 1.5vw;
+    border-radius: 5vw;
+    border-color: white;
+}
+
+    .containerNavbar .account{
+        display: none;
+    }
+
+    .containerSidebar{
+        display: none;
+    }
 }
