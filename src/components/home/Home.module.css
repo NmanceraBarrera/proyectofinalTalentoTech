@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.containerPrincipal {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll; 
+  display: flex;
+  flex-direction: column;
+}
+
+.containerSection_1,
+.containerSection_2,
+.containerSection_3
+ {
+  width: 100%;
+  height: 100vh; 
+  flex-shrink: 0; 
+  display: flex;
+  flex-direction: column;
+}
+
+.containerInfo_1,
+.containerInfo_2,
+.containerInfo_3,
+.containerInfo_4,
+.containerImg_1,
+.containerImg_2,
+.containerImg_3,
+.containerImg_4{
+  flex: 1;
+  overflow: hidden;
+  
+}
+
+.containerInfo_1,
+.containerInfo_2,
+.containerInfo_3,
+.containerInfo_4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+
+  padding: 5%;
+  background-color: #e4c5c4;
+}
+
+.containerImg_1 img,
+.containerImg_2 img,
+.containerImg_3 img,
+.containerImg_4 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------section_2--------- */
+.btnImg_2,
+.btnImg_3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnImg_2 a img,
+.btnImg_3 a img{
+  width: 60px;
+  height: auto;
+}
+
+/* ---------section_4--------- */
+.containerInfo_4{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.containerInfo_4 button{
+  width: 100px;
+  height: auto;
+  padding: 10px;
+  background-color: #d6984c;
+  border: #c8ad8d;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 4px 4px 5px 0px rgba(235, 59, 103, 0.3);
+  transition: 2s ease;
+  cursor: pointer;
+}
+
+.containerInfo_4 button:hover{
+  
+  scale: 1.2;
+
+}
+
+.containerImg_4{
+  overflow-y: scroll;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #ebe6ea;
+}
+
+.container_tarjeta{
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: whitesmoke;
+}
+
+.img_fundacion,
+.info_tarjeta{
+  width: 100%;
+  height: 0%;
+  flex: 1;
+}
+
+
+.img_fundacion img{
+  width: 100%;
+  height: 100%;
+  
+  object-fit: cover;
+
+  border-radius: 20px 20px 0 0 ;
+}
+
+.info_tarjeta{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2%;
+}
+
+.titulos_tarjeta{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .containerImg_4{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+
+@media (min-width: 1200px) {
+  
+  .containerSection_1,
+  .containerSection_2,
+  .containerSection_3{
+  flex-direction: row;
+  }
+
+  .containerInfo_2{
+    order: 2;
+  }
+}
