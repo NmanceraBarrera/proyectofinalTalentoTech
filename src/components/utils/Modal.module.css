@@ -1,3 +1,69 @@
+
 *{
-    margin: 0;   
+    font-family: 'lexend';
+}
+
+.modalBox{
+    font-size: 20px;
+    background-color: #273a2d;
+    color: #273a2d;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border: none;
+}
+
+
+.modalBox .headerLogo{
+    margin-top: 0;
+    width: 25%;
+}
+
+.modalBox h2{
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.modalBox .description{
+    font-size: 20px;
+}
+
+.columnContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.modalBox .columnContainer .subtitle{
+    font-family: 'lexend';
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.modalBox .containerBtn{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.modalBox .containerBtn button{
+    font-size: 16px;
+    border-radius: 50px;
+    width: 140px;
+    height: 40px;
+}
+
+
+.registroBtn{
+    background-color: #c8ad8d;
+    border: none;
+}
+
+.omitirBtn{
+    background-color: #fff !important;
+    border: 1px solid #c8ad8d;
 }
