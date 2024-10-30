@@ -1,13 +1,13 @@
-<<<<<<< Updated upstream
-export default function Home() {
-  return <div>Home</div>;
-=======
 import React from 'react'
 import styles from './home.module.css'
+import Navbar from '../navbar/Navbar'
+import ModalScreen from '../utils/Modal'
 
 export default function Home() {
   return (
     <div className={styles.containerPrincipal}>
+      <Navbar/>
+      <ModalScreen/>
       <section className={styles.containerSection_1}>
         <div className={styles.containerInfo_1}>
           <h2>¿Como funciona huellitas a casa?</h2>
@@ -104,5 +104,4 @@ export default function Home() {
       </section>
     </div>
   )
->>>>>>> Stashed changes
 }
