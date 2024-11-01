@@ -4,54 +4,62 @@
 }
 
 .modalBox{
-    font-size: 20px;
-    background-color: #273a2d;
     color: #273a2d;
-    align-items: center;
+    width: 360px;
     display: flex;
     text-align: center;
     flex-direction: column;
+    align-items: center;
     border: none;
 }
 
-
 .modalBox .headerLogo{
     margin-top: 0;
-    width: 25%;
+    width: 20%;
 }
 
 .modalBox h2{
+    font-size: 1.5rem; /*24px*/
+    font-weight: 900;
     line-height: 1;
     margin-bottom: 5px;
 }
+
+
+
 .modalBox .description{
-    font-size: 20px;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
-.columnContainer{
+
+.Container{
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-top: 20px;
-    text-align: justify;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 5px;
+    text-align: center;
 }
 
-.modalBox .columnContainer .subtitle{
-    font-family: 'lexend';
-    font-size: 20px;
+.modalBox .Container .subtitle{
+    font-size: 1rem;
+    font-weight: 900;
     margin: 10px;
     text-align: center;
+}
+.modalBox .Container .info{
+    font-size: 0.75rem; /*8px*/
 }
 
 .modalBox .containerBtn{
     display: flex;
-    flex-direction: row;
-    gap: 50px;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .modalBox .containerBtn button{
-    font-size: 16px;
+    font-size: 0.75rem; /* 12px */
     border-radius: 50px;
     width: 140px;
     height: 40px;
@@ -66,4 +74,77 @@
 .omitirBtn{
     background-color: #fff !important;
     border: 1px solid #c8ad8d;
+}
+
+@media (min-width: 800px) {
+    .modalBox{
+        font-size: 1.25rem; /* 20px */
+        color: #273a2d;
+        width: 800px;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
+    
+    .modalBox .headerLogo{
+        margin-top: 0;
+        width: 25%;
+    }
+    
+    .modalBox h2{
+        font-size: 2.5rem; /*40px*/
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    
+    .modalBox .description{
+        font-size: 1.125rem; /*18px*/
+        margin-top: 10px;
+    }
+
+    .Container{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+    .modalBox .Container .subtitle{
+        font-size: 1.25rem; /*20px*/
+        font-weight: 600;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .modalBox .Container .info{
+        font-size: 1rem; /*16px*/
+    }
+    
+    .modalBox .containerBtn{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        margin-top: 20px;
+    }
+    
+    .modalBox .containerBtn button{
+        font-size: 1rem;
+        border-radius: 50px;
+        width: 140px;
+        height: 40px;
+    }
+    
+    
+    .registroBtn{
+        background-color: #c8ad8d;
+        border: none;
+    }
+    
+    .omitirBtn{
+        background-color: #fff !important;
+        border: 1px solid #c8ad8d;
+    }
 }
