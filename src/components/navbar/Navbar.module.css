@@ -37,6 +37,10 @@
     display: none;
 }
 
+.containerNavbar ul li a{
+    color: black;
+}
+
 .containerNavbar .logo{
     height: auto;
     width: 2.5rem;

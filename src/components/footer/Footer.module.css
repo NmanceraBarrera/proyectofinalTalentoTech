@@ -1,14 +1,15 @@
 *{
-    margin: 0;   
+    margin: 0;
 }
 
 .containerFooter{
+    background-color: gray;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     gap: 1vw;
-    margin: 10px;
+    padding: 2vw;
 }
 
 .containerFooter .logo{
@@ -19,7 +20,6 @@
 .containerFooter ul{
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .containerFooter ul li{
@@ -31,22 +31,15 @@
     margin-left: 5vw;
 }
 
-
-.containerFooter ul li img{
-    width: 1rem;
-    padding: 2px;
-}
-
 .containerFooter ul li a{
     font-size: 0.6rem;
+    color: white;
 }
 
 p{
     padding: 1vw;
-    width: 100%;
     text-align: center;
-    background-color: black;
-    color: white;    
+    color: white;
     font-size: 0.5rem;
 }
 
@@ -68,7 +61,6 @@ p{
     .containerFooter ul{
         display: flex;
         flex-direction: row;
-        gap: 15px;
     }
 
     .containerFooter ul li{
