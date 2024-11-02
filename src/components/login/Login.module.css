@@ -45,7 +45,7 @@
 
 .vector {
   position: absolute;
-  top: 6rem;
+  top: 8rem;
   right: 1rem auto;
   width: 300px;
   height: auto;
@@ -73,7 +73,7 @@
 }
 
 .signinButton {
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 6.5rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -94,7 +94,7 @@
 }
 
 .signupForm input {
-  padding: 0.8rem;
+  padding: .4rem 0.8rem ;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
@@ -119,6 +119,12 @@
   .welcome {
     font-size: 4rem;
   }
+
+  .vector{
+    top: 3rem;
+    width: 250px;
+    height: auto;
+  }
 }
 
 @media (max-width: 898px) {
@@ -133,7 +139,7 @@
   }
 
   .vector {
-    top: 4rem;
+    top: 3rem;
     right: auto;
     width: 200px;
     left: auto;
@@ -154,8 +160,9 @@
 
 @media (max-width: 480px) {
   .loginContainer {
+    height: 100vh;
     flex-direction: column;
-    height: auto;
+
   }
 
   .welcome {
@@ -170,17 +177,12 @@
 
   .title {
     font-size: 1.8rem;
+    margin-top: 4rem;
   }
 
   .signupForm {
     width: 100%;
     padding: 0 1rem;
-  }
-
-  .signupButton,
-  .signinButton {
-    width: 100%;
-    padding: 0.6rem 1rem;
   }
 
   .logo {
@@ -191,7 +193,7 @@
   }
 
   .vector {
-    top: 12rem;
+    top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
@@ -202,5 +204,9 @@
     font-size: 1rem;
     bottom: 1rem;
     text-align: center;
+  }
+
+  .signupButton{
+    margin-bottom:7px;
   }
 }
