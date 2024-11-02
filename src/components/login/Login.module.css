@@ -36,18 +36,15 @@
 }
 
 .logo {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  display: flex;
   width: 150px;
-  height: auto;
 }
 
 .vector {
   position: absolute;
-  top: 8rem;
+  top: 5rem;
   right: 1rem auto;
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
@@ -57,7 +54,7 @@
 
 .signupButton {
   margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.4rem 1.5rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -73,7 +70,7 @@
 }
 
 .signinButton {
-  padding: 0.8rem 6.5rem;
+  padding: 0.4rem 6.5rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -121,10 +118,11 @@
   }
 
   .vector{
-    top: 3rem;
+    top: 2rem;
     width: 250px;
     height: auto;
   }
+  
 }
 
 @media (max-width: 898px) {
@@ -133,15 +131,13 @@
   }
 
   .logo {
-    top: 1rem;
-    right: 1rem;
-    width: 120px;
+    display: none;
   }
 
   .vector {
     top: 3rem;
     right: auto;
-    width: 200px;
+    width: 150px;
     left: auto;
   }
 
@@ -177,7 +173,6 @@
 
   .title {
     font-size: 1.8rem;
-    margin-top: 4rem;
   }
 
   .signupForm {
@@ -189,14 +184,14 @@
     top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 80px;
   }
 
   .vector {
-    top: 2rem;
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 120px;
   }
 
   .terms {
