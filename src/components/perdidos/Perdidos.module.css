@@ -153,8 +153,8 @@
 }
 
 select {
-    max-width:200px;
-    padding: 10px;
+    max-width:250px;
+    padding: 0px;
     border: 2px solid #c8ad8d;
     border-radius: 5px;
     color: #333;
@@ -171,6 +171,14 @@ select:focus {
     border-color: #c8ad8d;
 }
 
+#select:focus {
+    background-color: red;
+  }
+
+  #select:checked {
+    background-color: red;
+  }
+  
 option {
     padding: 10px;
 }
