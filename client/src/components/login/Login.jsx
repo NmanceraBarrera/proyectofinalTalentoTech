@@ -42,7 +42,7 @@ export default function Login() {
         )}
 
         <p className={styles.terms}>
-          <Link to="/miltonyalex">Omitir por ahora</Link>
+          <Link to="/home">Omitir por ahora</Link>
         </p>
       </div>
     </div>
