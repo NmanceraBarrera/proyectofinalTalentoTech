@@ -15,16 +15,16 @@ export default function Login() {
     <div className={styles.loginContainer}>
       <div className={styles.loginSection}>
         <img src={vector} alt="vector" className={styles.vector} />
-        <h2 className={styles.welcome}>Bienvenido!</h2>
+        <h1 className={styles.welcome}>Bienvenido!</h1>
         <button className={styles.signinButton} onClick={toggleForm}>
           {isLogin ? "Registrarse" : "Iniciar Sesión"}
         </button>
       </div>
       <div className={styles.signupSection}>
         <img src={logo} alt="Logo" className={styles.logo} />
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           {isLogin ? "Iniciar Sesión" : "Crea tu cuenta"}
-        </h2>
+        </h1>
 
         {isLogin ? (
           <form className={styles.signupForm}>

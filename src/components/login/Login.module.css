@@ -1,6 +1,5 @@
 .welcome {
-  margin-top: 6rem;
-  font-size: 6rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
@@ -20,7 +19,6 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  position: relative;
 }
 
 .loginSection {
@@ -41,10 +39,7 @@
 }
 
 .vector {
-  position: absolute;
-  top: 5rem;
-  right: 1rem auto;
-  width: 250px;
+  width: 230px;
   height: auto;
 }
 
@@ -70,7 +65,7 @@
 }
 
 .signinButton {
-  padding: 0.4rem 6.5rem;
+  padding: 0.4rem 4.8rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -78,7 +73,8 @@
   font-weight: bold;
   background-color: transparent;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
+  white-space: nowrap;
 }
 
 .signupForm {
@@ -108,21 +104,8 @@
 .terms a {
   color: #333;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: .8rem;
   opacity: 0.8;
-}
-
-@media (max-width: 1041px) {
-  .welcome {
-    font-size: 4rem;
-  }
-
-  .vector{
-    top: 2rem;
-    width: 250px;
-    height: auto;
-  }
-  
 }
 
 @media (max-width: 898px) {
@@ -131,7 +114,9 @@
   }
 
   .logo {
-    display: none;
+    display: flex;
+    width: 100px;
+    margin-bottom: 10px;
   }
 
   .vector {
@@ -151,57 +136,18 @@
     bottom: 1rem;
     left: auto;
     right: auto;
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .loginContainer {
-    height: 100vh;
-    flex-direction: column;
-
+  .terms{
+    margin-bottom: 5px;
   }
+}
 
-  .welcome {
-    margin-top: 2rem;
-    font-size: 3rem;
-  }
-
-  .loginSection,
-  .signupSection {
-    padding: 1rem;
-  }
-
-  .title {
-    font-size: 1.8rem;
-  }
-
-  .signupForm {
-    width: 100%;
-    padding: 0 1rem;
-  }
-
+@media (max-width: 400px) {
   .logo {
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-  }
-
-  .vector {
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-  }
-
-  .terms {
-    width: 90%;
-    font-size: 1rem;
-    bottom: 1rem;
-    text-align: center;
-  }
-
-  .signupButton{
-    margin-bottom:7px;
+    display: none;
   }
 }
