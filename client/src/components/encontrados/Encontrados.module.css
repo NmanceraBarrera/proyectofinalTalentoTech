@@ -1,3 +1,74 @@
 *{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'lexend';
 }
+
+.titulo{
+    text-align: center;
+    padding: 20px;
+}
+
+.section1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.section1 .contenedorInfo1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.section1 .contenedorInfo1 .parrafo1,
+.section1 .contenedorInfo1 .image,
+.section1 .contenedorInfo1 .parrafo2{
+    flex: 1;
+}
+
+.section1 .contenedorInfo1 .parrafo1, 
+.section1 .contenedorInfo1 .parrafo2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section1 .contenedorInfo1 .parrafo1 button, 
+.section1 .contenedorInfo1 .parrafo2 button{
+    padding: 5px 10px;
+    border: 2px solid #c8ad8d;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.section1 .contenedorInfo1 .parrafo1 button:hover, 
+.section1 .contenedorInfo1 .parrafo2 button:hover{
+    background: linear-gradient(0deg, #eb901a 0%, transparent 100%);
+    background-position: 0 100%;
+    background-color: orange;
+}
+
+.section1 .contenedorInfo1 .image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.section1 .contenedorInfo1 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* .section1 .contenedorInfo1 .parrafo2{
+    order: 2;
+} */
+
+

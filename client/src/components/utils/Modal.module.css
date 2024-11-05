@@ -90,7 +90,7 @@
     
     .modalBox .headerLogo{
         margin-top: 0;
-        width: 25%;
+        width: 20%;
     }
     
     .modalBox h2{
@@ -146,5 +146,20 @@
     .omitirBtn{
         background-color: #fff !important;
         border: 1px solid #c8ad8d;
+    }
+}
+
+@media (min-width: 1024px){
+    .Container{
+        gap: 0px;
+        margin-top: 0px;
+        text-align: justify;
+    }
+
+    .modalBox .Container .subtitle{
+        font-size: 1.25rem; /*20px*/
+        font-weight: 600;
+        margin: 0px;
+        text-align: center;
     }
 }

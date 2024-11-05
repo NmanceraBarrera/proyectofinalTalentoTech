@@ -7,6 +7,7 @@ import advertencia from "../../assets/perdidos.png";
 import lupa from "../../assets/encontrados.png";
 import informacion from "../../assets/info.png";
 import refugio from "../../assets/refugio.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -17,25 +18,26 @@ export default function Navbar() {
       </label>
       <ul className={styles.listLeft}>
         <li>
-          <a href="#">Perdidos</a>
+          <Link to="/perdidos"><a href="#">Perdidos</a></Link>
         </li>
         <li>
-          <a href="#">Encontrados</a>
+        <Link to="/encontrados"><a href="#">Encontrados</a></Link>
         </li>
         <li>
-          <a href="#">Fundaciones</a>
+        <Link to="/fundaciones"><a href="#">Fundaciones</a></Link>
         </li>
       </ul>
-      <img src={logo} alt="Logo" className={styles.logo} />
+      <Link to="/home">
+      <img src={logo} alt="Logo" className={styles.logo} /></Link>
       <ul className={styles.listRight}>
         <li>
-          <a href="#">Informacion</a>
+        <Link to="/informacion"><a href="#">Informacion</a></Link>
         </li>
         <li>
-          <button>Registrarse</button>
+        <Link to="/"><button>Registrarse</button></Link>
         </li>
         <li>
-          <button>Iniciar sesion</button>
+        <Link to="/"><button>Iniciar sesion</button></Link>
         </li>
       </ul>
       <img src={account} alt="Account" className={styles.account} />
