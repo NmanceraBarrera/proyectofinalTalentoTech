@@ -4,248 +4,272 @@
     box-sizing: border-box;
 }
 
-.section_1 .titulos_1,
-.section_2 .titulo_2{
+.titulos_1{
     width: 100%;
-    height: 100%;
     text-align: center;
-    line-height: 2rem;
-    padding: 5%;
-    background-color: #ebe6ea ;
+    padding: 20px 0;
 }
-.container_info{
-    width: 100%;
+.section_1,
+.section_2{
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background-color: #ebe6ea;
 }
 
-.section_1 .caja_info{
-    background-color: #c8ad8d;
+.section_2{
+    background-color: #ebe6ea;
 }
-.section_1{
-    background-color: #e4c5c4;
+
+.informacion_1,
+.imagen_1,
+.informacion_2,
+.imagen_2{
+    flex: 1;
     
 }
 
-.section_1 .caja_info,
-.section_1 .caja_info_2{
-    width: 100%;
-    height: 10vh;
-    flex:1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;   
-}
-
-.section_1 .caja_info .informacion,
-.section_1 .caja_info .imagen,
-.section_1 .caja_info_2 .informacion,
-.section_1 .caja_info_2 .imagen{
-    flex: 1;
-}
-
-
-.section_1 .caja_info .imagen,
-.section_1 .caja_info_2 .imagen{
+.section_1 .informacion_1,
+.section_2 .informacion_2{
     width: 100%;
     height: 100%;
-    overflow: hidden;
-}
-
-.section_1 .caja_info .imagen img,
-.section_1 .caja_info_2 .imagen img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.section_1 .caja_info_2 .informacion{
-    order: 2;
-}
-
-.section_1 .contenido_informacion{
-    padding: 10%;
+    padding: 5% 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-
-.section_1 .contenedor_boton{
-    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.section_1 .contenedor_boton button{
-    width: 150px;
-    height: auto;
-    padding: 5px;;
-    background-color: #e5e1db;
+.section_1 .informacion_1 p,
+.section_2 .informacion_2 p{
+    padding: 20px;
+    font-size: 1rem;
+}
 
+.section_1 .informacion_1 button,
+.section_2 .informacion_2 button{
+    padding: 5px 30px;
+    border: 2px solid #c8ad8d;
     border-radius: 20px;
-    border-top: 1px solid black;    
-    border-left: 1px solid black; 
-    border-right: none;             
-    border-bottom: none;
+    background-color: white;
     cursor: pointer;
     transition: 2s ease;
+    font-size: .8rem;
 }
 
-.section_1 .contenedor_boton button:hover{
-    
-    border-top: none;    
-    border-left: none; 
-    border-right: 1px solid black;             
-    border-bottom: 1px solid black;
+.section_1 .informacion_1 button:hover,
+.section_2 .informacion_2 button:hover{
+    background: linear-gradient(0deg, #c8ad8d 50%, transparent 100%);
+    background-color: #c8ad8d;
+    background-position: 0 100%;
 }
-
-/* ---------------------sectiion_2------------ */
-.section_2 .bar_busqueda{
+.section_1 .imagen_1,
+.section_2 .imagen_2{
     width: 100%;
     height: 100%;
-    padding: 10%; 
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.busqueda{
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    position: relative;
-    
-    display: flex;
-    justify-content: center;
+
+.section_1 .imagen_1 h3,
+.section_2 .imagen_2 h3{
+    padding: 20px 0;
+    font-size: 1rem;
 }
 
-.busqueda input{
+.section_1 .imagen_1 img,
+.section_2 .imagen_2 img{
     width: 100%;
     height: 100%;
-    padding: 5px;
-    padding-left: 40px;
-    border-radius: 10px;
+    object-fit: cover;
+    
+}
+
+.section_5 h3{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.section_5 .barra_busqueda{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.section_5 .container_busqueda{
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.section_5 .container_busqueda input{
+    width: 300px;
+    padding: 5px 0 ;
+    padding-left: 30px;
+    border-radius: 15px;
     border: 2px solid #c8ad8d;
     outline: none;
+    font-size: 1rem;
 }
 
-.busqueda svg{
-    position: absolute;
-    left: 2%;
-    top: 52%;
-    transform: translateY(-50%);
-
-    width: 5%;
+.section_5  .container_busqueda svg{
+    width: 20px;
     height: auto;
-
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translate(-50%, -50%);
 }
 
-.section_2 select{
-    padding: 2% 5%;
+
+.section_5 .desplegables{
+    padding-bottom: 130px ;
 }
 
-.section_2 .tipo{
+.section_5 .desplegables .tipo{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 20%;
-}
 
-select {
-    max-width:250px;
-    padding: 0px;
+} 
+
+
+.section_5 .desplegables .tipo select{
+    min-width: 50px;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 10px;
+    font-size: 1rem;
     border: 2px solid #c8ad8d;
-    border-radius: 5px;
-    color: #333;
-    appearance: none; 
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23c07f2f" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 5.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-12a.5.5 0 0 1-.5-.5v-8zM3 5v8h10V5H3z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 15px;
-    transition: border-color 0.3s ease;
+    border-radius: 10px;
 }
 
-select:focus {
-    outline: none;
-    border-color: #c8ad8d;
+.section_5 .desplegables option{
+    font-size: 1rem;
 }
 
-#select:focus {
-    background-color: red;
-  }
+@media (min-width: 768px){
+    .titulos_1 h2{
+        font-size: 2rem;
+    }
 
-  #select:checked {
-    background-color: red;
-  }
-  
-option {
-    padding: 10px;
-}
+    .titulos_1 h3{
+        font-size: 1.5rem;
+        padding-top: 10px;
+    }
 
-.contenedor_tarjetas{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #e5e1db;
-    gap: 20px;
-}
-
-.container_tarjeta{
-    width: 200px;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-  
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: whitesmoke;
-
-  }
-  
-  .img_fundacion,
-  .info_tarjeta{
-    width: 100%;
-    height: 0%;
-    flex: 1;
-  }
-  
-  
-  .img_fundacion img{
-    width: 100%;
-    height: 100%;
     
-    object-fit: cover;
-  
-    border-radius: 20px 20px 0 0 ;
-  }
-  
-  .caja{
-    display: flex;
+    .section_1 .informacion_1 p,
+    .section_2 .informacion_2 p{
+        font-size: 1.5rem;
+    }
+    
+    .section_1 .informacion_1 button,
+    .section_2 .informacion_2 button{
+        font-size: 1.2rem;
+    }
+    
+    .section_1 .imagen_1 h3,
+    .section_2 .imagen_2 h3{
+        font-size: 1.5rem;
+    }
+    .section_5 h3{
+        font-size: 2rem;
+    }
+
+    .section_5 .container_busqueda{
+        min-width:300px;
+        max-width: 500px;
+        width: 100%;
+    }
+    .section_5 .container_busqueda input{
+        min-width: 300px;
+        max-width: 500px;
+        width: 100%;
+        padding-left: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .section_5  .container_busqueda svg{
+        left: 5%;
+    }
+    
+    .section_5 .desplegables .tipo{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+
+    .section_5 .desplegables .tipo select{
+        padding: 5px 0px;
+    }
+
+    .section_5 .desplegables option{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px){
+.section_1,
+.section_2{
     flex-direction: row;
-    justify-content: center;
-    gap: 5px;
-    padding: 2%;
-  }
-  
-  .titulos_tarjeta{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
+}
 
-  @media (min-width: 600px) {
-    
-    .section_2 select{
-        padding: 1% 5%;
+.section_2 .informacion_2{
+    order: 2;
+}
+}
+
+@media (min-width: 1400px){
+
+    .titulos_1 h2{
+        font-size: 3rem;
     }
-    
-    .contenedor_tarjetas{
-        flex-direction: row;
+
+    .titulos_1 h3{
+        font-size: 2rem;
+        padding-top: 10px;
+    } 
+.section_1 .informacion_1 p,
+.section_2 .informacion_2 p{
+    padding: 20px;
+    font-size: 2rem;
+}
+
+.section_1 .informacion_1 button,
+    .section_2 .informacion_2 button{
+        font-size: 1.5rem;
     }
-  }
+
+    .section_5 h3{
+        font-size: 2.5rem;
+        padding: 50px 0;
+    }
+
+    .section_5 .container_busqueda input{
+        font-size: 1.5rem;
+    }
+
+    .section_5 .desplegables .tipo select{
+        font-size: 1.5rem;
+        
+    }
+
+    .section_5 .desplegables .tipo option{
+        font-size: 1.5rem;
+        
+    }
+}
