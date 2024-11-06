@@ -8,13 +8,29 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    gap: 1vw;
-    padding: 2vw;
+    gap: 0.5rem;
+    padding: 0rem 1rem;
+    box-shadow: 0px 10px 10px rgb(201, 201, 201) inset;
+}
+
+.gap{    display: flex;
+    width: 30%;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.line{
+    height: 50px;
+    width: 2px;
+    background-color: white;
 }
 
 .containerFooter .logo{
-    width: 10vw;
-    margin: 1vw;
+    width: 3rem;
+    padding-top: 10px;
 }
 
 .containerFooter ul{
@@ -26,9 +42,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 3vw;
-    height: 2.5vw;
-    margin-left: 5vw;
 }
 
 .containerFooter ul li a{
@@ -46,24 +59,15 @@
 @media (min-width: 675px) {
 
     .containerFooter{
-        margin: 0vw 2vw;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
     }
+    
 
-    .containerFooter .logo{
-        margin: 0;
-        align-items: center;
-        width: 3vw;
-    }
     .containerFooter ul{
         display: flex;
-        flex-direction: row;
-    }
-
-    .containerFooter ul li{
-        margin: 0;
+        flex-direction: column;
     }
 }

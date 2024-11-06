@@ -16,37 +16,44 @@ export default function Navbar() {
       <label htmlFor="logo">
         <img src={burger} alt="Burger" className={styles.burger} />
       </label>
-      <ul className={styles.listLeft}>
-        <li>
-          <Link to="/perdidos"><a href="#">Perdidos</a></Link>
-        </li>
-        <li>
-        <Link to="/encontrados"><a href="#">Encontrados</a></Link>
-        </li>
-        <li>
-        <Link to="/fundaciones"><a href="#">Fundaciones</a></Link>
-        </li>
-      </ul>
-      <Link to="/home">
-      <img src={logo} alt="Logo" className={styles.logo} /></Link>
-      <ul className={styles.listRight}>
-        <li>
-        <Link to="/informacion"><a href="#">Informacion</a></Link>
-        </li>
-        <li>
-        <Link to="/"><button>Registrarse</button></Link>
-        </li>
-        <li>
-        <Link to="/"><button>Iniciar sesion</button></Link>
-        </li>
-      </ul>
-      <img src={account} alt="Account" className={styles.account} />
+      
+      <div className={styles.gap}>
+        <ul className={styles.listLeft}>
+          <li>
+            <Link to="/perdidos"><a href="#">Perdidos</a></Link>
+          </li>
+          <li>
+            <Link to="/encontrados"><a href="#">Encontrados</a></Link>
+          </li>
+          <li>
+            <Link to="/fundaciones"><a href="#">Fundaciones</a></Link>
+          </li>
+        </ul>
+      </div>
+      <div className={styles.gap1}>
+        <Link to="/home"><img src={logo} alt="Logo" className={styles.logo}/></Link>
+      </div>
+      <div className={styles.gap}>
+        <ul className={styles.listRight}>
+          <li>
+            <Link to="/informacion"><a href="#">Informacion</a></Link>
+          </li>
+          <li>
+            <Link to="/"><button>Registrarse</button></Link>
+          </li>
+          <li>
+            <Link to="/"><button>Iniciar sesion</button></Link>
+          </li>
+        </ul>
+      </div>
+      <Link to="/"><img src={account} alt="Account" className={styles.account} /></Link>
+      
       <div className={styles.containerSidebar}>
         <div className={styles.sidebar}>
           <nav>
             <div>
               <img src={advertencia} alt="Icono de advertencia" />
-              <button>Perdidos</button>
+              <Link to="/perdidos"><button>Perdidos</button></Link>
               <p>
                 En esta sección encontrarás todos las mascotas reportados como
                 perdidos
@@ -54,7 +61,7 @@ export default function Navbar() {
             </div>
             <div>
               <img src={lupa} alt="Icono de lupa" />
-              <button>Encontrados</button>
+              <Link to="/encontrados"><button>Encontrados</button></Link>
               <p>
                 En esta sección encontrarás todas las mascotas reportadas como
                 encontradas
@@ -62,7 +69,7 @@ export default function Navbar() {
             </div>
             <div>
               <img src={refugio} alt="icono de refugio" />
-              <button>Fundaciones</button>
+              <Link to="/fundaciones"><button>Fundaciones</button></Link>
               <p>
                 En esta sección encontrarás fundaciones que podras filtrar por
                 zonas
@@ -70,7 +77,7 @@ export default function Navbar() {
             </div>
             <div>
               <img src={informacion} alt="icono de informacion" />
-              <button>Información</button>
+              <Link to="/informacion"><button>Información</button></Link>
               <p>
                 En esta sección encontrarás toda la información necesaria para
                 utilizar esta pagina y mas

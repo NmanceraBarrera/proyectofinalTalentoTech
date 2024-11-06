@@ -1,31 +1,40 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import advertencia from "../../assets/perdidos.png";
-import lupa from "../../assets/encontrados.png";
-import informacion from "../../assets/info.png";
-import refugio from "../../assets/refugio.png";
-import logo from "../../assets/logoHAC7.png";
+import logo from "../../assets/logoHAC8.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <div>
       <div className={styles.containerFooter}>
-        <ul>
-          <li>
-            <a href="">Perdidos</a>
-          </li>
-          <li>
-            <a href="">Encontrados</a>
-          </li>
-          <li>
-            <a href="">Fundaciones</a>
-          </li>
-          <li>
-            <a href="">Informacion</a>
-          </li>
-        </ul>
-        <img src={logo} alt="logo de huellitas a casa" className={styles.logo}/>
-        <p>Derechos de la pagina reservados</p>
+        <div className={styles.gap}>
+          <ul>
+            <li>
+              <Link to="/perdidos"><a href="#">Perdidos</a></Link>
+            </li>
+            <li>
+              <Link to="/encontrados"><a href="#">Encontrados</a></Link>
+            </li>
+            <li>
+              <Link to="/fundaciones"><a href="#">Fundaciones</a></Link>
+            </li>
+            <li>
+              <Link to="/informacion"><a href="#">Informacion</a></Link>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.line}>
+
+        </div>
+        <div className={styles.gap}>
+          <Link to="/home"><img src={logo} alt="Logo" className={styles.logo}/></Link>
+        </div>
+        <div className={styles.line}>
+
+        </div>
+        <div className={styles.gap}>
+          <p>© Derechos de la pagina reservados</p>
+        </div>
       </div>
     </div>
   )
