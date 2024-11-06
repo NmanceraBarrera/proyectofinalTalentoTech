@@ -4,106 +4,122 @@
     box-sizing: border-box;
 }
 
-.titulos_1{
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-}
 .section_1,
 .section_2{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;   
+    padding: 0 20px;
+}
+
+.section_1 .banner{
     display: flex;
     flex-direction: column;
-    background-color: #ebe6ea;
+    gap: 20px;
 }
 
-.section_2{
-    background-color: #ebe6ea;
-}
-
-.informacion_1,
-.imagen_1,
-.informacion_2,
-.imagen_2{
-    flex: 1;
-    
-}
-
-.section_1 .informacion_1,
-.section_2 .informacion_2{
+.section_1 .informacion_1{
     width: 100%;
     height: 100%;
-    padding: 5% 0;
+    padding: 20px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
-
-.section_1 .informacion_1 p,
-.section_2 .informacion_2 p{
-    padding: 20px;
-    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border-radius: 10px;
+ 
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+    
 }
 
 .section_1 .informacion_1 button,
-.section_2 .informacion_2 button{
-    padding: 5px 30px;
-    border: 2px solid #c8ad8d;
-    border-radius: 20px;
-    background-color: white;
-    cursor: pointer;
-    transition: 2s ease;
-    font-size: .8rem;
+.container_tarjetas .tarjeta button{
+    width: 70%;
+    border-radius: 10px;
+    padding: 2px;
 }
 
-.section_1 .informacion_1 button:hover,
-.section_2 .informacion_2 button:hover{
-    background: linear-gradient(0deg, #c8ad8d 50%, transparent 100%);
-    background-color: #c8ad8d;
-    background-position: 0 100%;
+.section_1 .img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
 }
-.section_1 .imagen_1,
-.section_2 .imagen_2{
+
+.section_1 .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 20px;  
+}
+
+.container_tarjetas{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
-.section_1 .imagen_1 h3,
-.section_2 .imagen_2 h3{
-    padding: 20px 0;
-    font-size: 1rem;
-}
-
-.section_1 .imagen_1 img,
-.section_2 .imagen_2 img{
+.container_tarjetas .tarjeta{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    
+    padding: 20px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border-radius: 20px;
+
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+
 }
 
-.section_5 h3{
+/* -------------------section2--------- */
+.section_2 h3{
     text-align: center;
     font-size: 1rem;
+    padding: 20px ; 
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(24px);
+    z-index: -1;
 }
 
-.section_5 .barra_busqueda{
+.section_2 .barra_busqueda{
     width: 100%;
     height: 100%;
-    position: relative;
+    padding: 30px 0;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
+    
+    border-radius: 20px;
+
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
 }
 
-.section_5 .container_busqueda{
+.section_2 .container_busqueda{
     width: 300px;
     position: relative;
     display: flex;
@@ -112,7 +128,7 @@
     align-items: center;
 
 }
-.section_5 .container_busqueda input{
+.section_2 .container_busqueda input{
     width: 300px;
     padding: 5px 0 ;
     padding-left: 30px;
@@ -122,7 +138,7 @@
     font-size: 1rem;
 }
 
-.section_5  .container_busqueda svg{
+.section_2  .container_busqueda svg{
     width: 20px;
     height: auto;
     position: absolute;
@@ -131,20 +147,23 @@
     transform: translate(-50%, -50%);
 }
 
-
-.section_5 .desplegables{
-    padding-bottom: 130px ;
+.section_2 .desplegables{
+    padding-bottom: 70px ;
 }
 
-.section_5 .desplegables .tipo{
+.section_2 .desplegables .tipo{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 20px 0;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
 
 } 
 
-
-.section_5 .desplegables .tipo select{
+.section_2 .desplegables .tipo select{
     min-width: 50px;
     max-width: 300px;
     width: 100%;
@@ -154,122 +173,41 @@
     border-radius: 10px;
 }
 
-.section_5 .desplegables option{
+.section_2 .desplegables option{
     font-size: 1rem;
 }
 
 @media (min-width: 768px){
-    .titulos_1 h2{
-        font-size: 2rem;
-    }
-
-    .titulos_1 h3{
-        font-size: 1.5rem;
-        padding-top: 10px;
-    }
-
-    
-    .section_1 .informacion_1 p,
-    .section_2 .informacion_2 p{
-        font-size: 1.5rem;
-    }
-    
-    .section_1 .informacion_1 button,
-    .section_2 .informacion_2 button{
-        font-size: 1.2rem;
-    }
-    
-    .section_1 .imagen_1 h3,
-    .section_2 .imagen_2 h3{
-        font-size: 1.5rem;
-    }
-    .section_5 h3{
-        font-size: 2rem;
-    }
-
-    .section_5 .container_busqueda{
-        min-width:300px;
-        max-width: 500px;
-        width: 100%;
-    }
-    .section_5 .container_busqueda input{
-        min-width: 300px;
-        max-width: 500px;
-        width: 100%;
-        padding-left: 40px;
-        font-size: 1.5rem;
-    }
-    
-    .section_5  .container_busqueda svg{
-        left: 5%;
-    }
-    
-    .section_5 .desplegables .tipo{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        
-    }
-
-    .section_5 .desplegables .tipo select{
-        padding: 5px 0px;
-    }
-
-    .section_5 .desplegables option{
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 992px){
-.section_1,
-.section_2{
-    flex-direction: row;
-}
-
-.section_2 .informacion_2{
-    order: 2;
-}
-}
-
-@media (min-width: 1400px){
-
-    .titulos_1 h2{
-        font-size: 3rem;
-    }
-
-    .titulos_1 h3{
-        font-size: 2rem;
-        padding-top: 10px;
-    } 
-.section_1 .informacion_1 p,
-.section_2 .informacion_2 p{
-    padding: 20px;
-    font-size: 2rem;
+    .section_1,
+    .section_2{   
+    padding: 0 80px;
 }
 
 .section_1 .informacion_1 button,
-    .section_2 .informacion_2 button{
-        font-size: 1.5rem;
+.container_tarjetas .tarjeta button{
+    width: 40%;
+}
+}
+
+@media (min-width: 992px){
+
+    .section_1{
+        height: 100vh;
+    }
+    .section_1 .banner{
+        flex-direction: row;
+        overflow: hidden;
     }
 
-    .section_5 h3{
-        font-size: 2.5rem;
-        padding: 50px 0;
+    .section_1 .informacion_1,
+    .section_1 .img{
+        flex: 1;
     }
 
-    .section_5 .container_busqueda input{
-        font-size: 1.5rem;
-    }
-
-    .section_5 .desplegables .tipo select{
-        font-size: 1.5rem;
-        
-    }
-
-    .section_5 .desplegables .tipo option{
-        font-size: 1.5rem;
-        
+    .container_tarjetas{
+        flex-direction: row;
+        padding: 80px 0;
+        margin-bottom: 0px;
     }
 }
+
