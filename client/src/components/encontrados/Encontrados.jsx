@@ -12,16 +12,17 @@ export default function Encontrados() {
       {/* Banner */}
       <div className={styles.banner}>
         <div className={styles.info}>
-          <h1><span>¿Perdiste tu mascota?</span> resportala en la seccion perdidos</h1>
+          <h1><span>¿Perdiste tu mascota?</span> resportala en la sección perdidos</h1>
+          <p>Accede a la Sección de "Perdidos": Aquí puedes ver una lista de animales que han sido reportados por otros usuarios como perdidos en tu zona.</p>
           <button>Perdidos</button>
         </div>
         <div className={styles.img1}>
-          <img src="https://images.pexels.com/photos/3780890/pexels-photo-3780890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cat" />
+          <img src="https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cat" />
         </div>
       </div>
 
       {/* Tarjetas*/}
-      <div className={styles.conteiner}>
+      <div className={styles.container}>
         {/* Card1 */}
         <div className={styles.cards}>
           <p>Si nunca has cuidado una mascota antes o si sientes que necesitas un poco de orientación, ¡no te preocupes!</p>
@@ -74,6 +75,17 @@ export default function Encontrados() {
             <option value="opcion2">Bogotá</option>
             <option value="opcion3">Medellin</option>
           </select>
+        </div>
+      </section>
+      {/* Section 3 */}
+      <section className={styles.section_3}>
+        <div className={styles.tarjetas_animales}>
+          {/* aqui van las tarjetas */}
+          {/* <Cards/> */}
+        </div>
+        
+        <div className={styles.btn_ver}>
+          <button>Ver Todos</button>
         </div>
       </section>
     </div>

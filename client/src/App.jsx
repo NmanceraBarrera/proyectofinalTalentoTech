@@ -6,6 +6,7 @@ import Informacion from "./components/informacion/Informacion";
 import Fundaciones from "./components/fundaciones/Fundaciones";
 import Encontrados from "./components/encontrados/Encontrados";
 import Perdidos from "./components/perdidos/Perdidos";
+import EncontradosForm from "./components/utils/EncontradosForm";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/fundaciones" element={<Fundaciones />} />
         <Route path="/encontrados" element={<Encontrados />} />
         <Route path="/perdidos" element={<Perdidos />} />
+        <Route path="/reporteencontrados" element={<EncontradosForm />} />
       </Routes>
     </Router>
   );
