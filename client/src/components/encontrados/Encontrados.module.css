@@ -1,6 +1,6 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'lexend';
 }
@@ -14,42 +14,45 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
-
     padding: 0 20px;
 }
 
-.banner{
+.section1 .banner{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 
-.banner .info{
+.section1 .banner .info{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
     gap: 10px;
-    padding: 20px;
-
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
+    z-index: -1;
 }
 
-.banner .info button{
+.section1 .banner .info button{
     width: 70%;
     border-radius: 10px;
     padding: 2px;
 }
 
-.banner .img1{
+.section1 .banner .img1{
     width: 100%;
     height: 100%;
+    margin-bottom: 20px;
 }
 
-.banner .img1 img{
+.section1 .banner .img1 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -57,7 +60,7 @@ body{
     margin-bottom: 20px;
 }
 
-.conteiner{
+.container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -67,11 +70,12 @@ body{
     gap: 20px;
 }
 
-.conteiner .cards{
+.container .cards{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
     gap: 10px;
@@ -80,17 +84,20 @@ body{
 
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    border-radius: 10px;
+    border-radius: 20px;
+    z-index: -1;
 }
 
-.conteiner .cards button{
+.container .cards button{
     width: 70%;
     border-radius: 10px;
     padding: 2px;
 }
 
+/* Busqueda */
+
 .section2{
-    width: 100%;
+    width: 100vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -104,10 +111,10 @@ body{
     text-align: center;
     padding: 20px;
     margin-bottom: 20px;
-
+    font-size: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .section2 .barrabusqueda{
@@ -117,11 +124,12 @@ body{
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    border-radius: 10px;
+    z-index: -1;
 }
 
 .section2 .barrabusqueda .contenedorbarrabusqueda{
@@ -153,7 +161,6 @@ body{
 
 .section2 .selectores{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     padding: 20px 0;
@@ -178,20 +185,86 @@ body{
     font-size: 1rem;
 }
 
+.section_3{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.section_3 .tarjetas_animales{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-radius: 20px 20px 0 0 ;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+
+}
+
+.section_3 .btn_ver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 0 0 20px 20px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+
+}
+
+.section_3 .btn_ver button{
+    width: 70%;
+    border-radius: 10px;
+    padding: 2px;
+}
+
 @media (min-width: 768px){
-    .section1, .section2{
+    .section1, .section2, .section_3{
         padding: 0 80px;
     }
 
-    .banner .info button, .conteiner .cards button{
+    .banner .info button, .container .cards button, .section_3 .btn_ver button{
         width: 40%;
+    }
+
+    .section_3 .tarjetas_animales{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 40px 20px 0  20px;
     }
 }
 
 @media (min-width: 992px){
-    .banner{
-        display: flex;
+    .section1{
+        height: 100vh;
+    }
+
+    .section1 .banner{
         flex-direction: row;
+        overflow: hidden;
+    }
+
+    .section1 .info, 
+    .section1 .img1{
+        flex: 1;
+    }
+
+    .container{
+        flex-direction: row;
+        padding: 80px 0;
+        margin-bottom: 0px;
     }
 }
 
