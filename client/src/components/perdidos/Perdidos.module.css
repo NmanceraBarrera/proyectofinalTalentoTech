@@ -5,7 +5,8 @@
 }
 
 .section_1,
-.section_2{
+.section_2,
+.section_3{
     width: 100vw;
     height: 100%;
     display: flex;
@@ -39,7 +40,8 @@
 }
 
 .section_1 .informacion_1 button,
-.container_tarjetas .tarjeta button{
+.container_tarjetas .tarjeta button,
+.section_3 .btn_ver button {
     width: 70%;
     border-radius: 10px;
     padding: 2px;
@@ -176,16 +178,65 @@
 .section_2 .desplegables option{
     font-size: 1rem;
 }
+/* -------------------section3------------------- */
+.section_3 .tarjetas_animales{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-radius: 20px 20px 0 0 ;
 
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+
+}
+
+.section_3 .btn_ver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 0 0 20px 20px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+
+}
 @media (min-width: 768px){
     .section_1,
-    .section_2{   
+    .section_2,
+    .section_3{   
     padding: 0 80px;
 }
 
 .section_1 .informacion_1 button,
-.container_tarjetas .tarjeta button{
+.container_tarjetas .tarjeta button,
+.section_3 .btn_ver button{
     width: 40%;
+}
+
+.section_3 .tarjetas_animales{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px 0  20px;
+    border-radius: 20px 20px 0 0 ;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: -1;
+
 }
 }
 
