@@ -8,100 +8,64 @@ export default function Home() {
     <div className={styles.containerPrincipal}>
       <Navbar/>
       <ModalScreen/>
-      <section className={styles.containerSection_1}>
-        <div className={styles.containerInfo_1}>
-          <h2>¿Como funciona huellitas a casa?</h2>
-          <p>Nuestra misión es ayudarte a encontrar a tu amigo perdido o a reunir animales encontrados con sus familias. Nuestra plataforma está diseñada para facilitar la búsqueda, el reporte y la recolección de animales extraviados en tu comunidad.</p>
+      <section className={styles.section_1}>
+        <div className={styles.informacion_1}>
+          <div className={styles.titulo}>
+            <h1>huellitas</h1>
+            <h1>a casa</h1>
+          </div>
+          <div className={styles.parrafo_1}>
+            <h3>¿Como funciona huellitas a casa?</h3>
+            <p>Nuestra misión es ayudarte a encontrar a tu amigo perdido o a reunir animales encontrados con sus familias. Nuestra plataforma está diseñada para facilitar la búsqueda, el reporte y la recolección de animales extraviados en tu comunidad.</p>
+          </div>
         </div>
-        <div className={styles.containerImg_1}>
-          <img src="https://i.pinimg.com/236x/3b/0b/cb/3b0bcb6f89f34a6b4a7a4ff1eb1b6140.jpg" alt="img dog and cat" />
+
+        <div className={styles.contenedor_imagen_1}>
+          <div className={styles.caja_1}></div>
+          <div className={styles.foto}>
+            <img src="https://i.ibb.co/mTrv7jL/perros-y-gatos.png" alt="dog y cat" />
+          </div>    
         </div>
       </section>
 
-      <section className={styles.containerSection_2}>
-      
-      <div className={styles.containerInfo_2}>
-        <h2>¿Has perdido a tu mascota? </h2>
-        <p>Publica un anuncio con los detalles y recibe alertas cuando haya avistamientos cerca.</p>
-        <div className={styles.btnImg_2}>
-        <a href="#"><img src="https://i.ibb.co/zbqpPB5/btnhuella.png" alt="img huella" /></a>
-        <h4>Ir</h4>
+      <section className={styles.section_2}>
+
+        <div className={styles.container_1}>
+          <div className={styles.informacion_2}>
+            <h3>¿Has perdido a tu mascota? </h3>
+            <p>Publica un anuncio con los detalles y recibe alertas cuando haya avistamientos cerca.</p>
+            <button>Perdidos</button>
+            <div className={styles.sobreponer}></div>
+          </div>
         </div>
-      </div>
-      <div className={styles.containerImg_2}>
-        <img src="https://i.pinimg.com/564x/de/52/73/de527305f0061d16036608af42698d60.jpg" alt="img-animales" />
-      </div>
+
+        <div className={styles.container_2}>
+          <div className={styles.imagen_2}>
+            <img src="https://i.ibb.co/nfzmzXh/elperroyelgato-removebg-preview.png" alt="img dog and cat" />
+          </div>
+        </div>
+
+        <div className={styles.container_1}>
+          <div className={styles.informacion_2}>
+            <h3>¿Has encontrado un animal?</h3>
+            <p> Ayúdanos a difundir la información para que su dueño lo pueda encontrar rápidamente.</p>
+            <button>Encontrados</button>
+            <div className={styles.sobreponer}></div>
+          </div>
+        </div>
+
       </section>
 
-      <section className={styles.containerSection_3}>
-      
-      <div className={styles.containerInfo_3}>
-        <h2>¿Has encontrado un animal?</h2>
-        <p>Ayúdanos a difundir la información para que su dueño lo pueda encontrar rápidamente.
-        </p>
-        <div className={styles.btnImg_3}>
-        <a href="#"><img src="https://i.ibb.co/zbqpPB5/btnhuella.png" alt="img huella" /></a>
-        <h4>Ir</h4>
+      <section className={styles.section_3}>
+      ||<div className={styles.btn_ver}>
+          <h2>¿Buscas fundaciones de animales en tu zona?</h2>
+          <button>Buscar ahora</button>
         </div>
-      </div>
-      <div className={styles.containerImg_3}>
-        <img src="https://i.pinimg.com/236x/18/cb/fe/18cbfe9cfbb627f83e79e5cc5d7541d8.jpg" alt="" />
-      </div>
+        <div className={styles.tarjetas_animales}>
+          {/* aqui van las tarjetas */}
+        </div>
       </section>
 
-      <section className={styles.containerSection_4}>
-      
-      <div className={styles.containerInfo_4}>
-        <h2>¿Buscas fundaciones de animales en tu zona?</h2>
-        <button>Fundaciones</button>
-      </div>
-
-      <div className={styles.containerImg_4}>
-        <div className={styles.container_tarjeta}>
-          <div className={styles.img_fundacion}>
-            <img src="https://i.pinimg.com/564x/a8/9d/00/a89d00aeb784f5b59b7e8564014c055c.jpg" alt="img-fundacion" />
-          </div>
-          <div className={styles.info_tarjeta} >
-            <div className={styles.titulos_tarjeta}>
-            <h3>Nombre fundación</h3>
-            <h4>Datos de la fundación</h4>
-          </div>
-            <p>Ciudad</p>
-            <p>Direccion</p>
-          </div>
-        </div>
-
-        <div className={styles.container_tarjeta}>
-          <div className={styles.img_fundacion}>
-            <img src="https://i.pinimg.com/564x/a8/9d/00/a89d00aeb784f5b59b7e8564014c055c.jpg" alt="img-fundacion" />
-          </div>
-          <div className={styles.info_tarjeta} >
-            <div className={styles.titulos_tarjeta}>
-            <h3>Nombre fundación</h3>
-            <h4>Datos de la fundación</h4>
-          </div>
-            <p>Ciudad</p>
-            <p>Direccion</p>
-          </div>
-        </div>
-
-        <div className={styles.container_tarjeta}>
-          <div className={styles.img_fundacion}>
-            <img src="https://i.pinimg.com/564x/a8/9d/00/a89d00aeb784f5b59b7e8564014c055c.jpg" alt="img-fundacion" />
-          </div>
-          <div className={styles.info_tarjeta} >
-            <div className={styles.titulos_tarjeta}>
-            <h3>Nombre fundación</h3>
-            <h4>Datos de la fundación</h4>
-          </div>
-            <p>Ciudad</p>
-            <p>Direccion</p>
-          </div>
-        </div>
-
-        
-      </div>
-      </section>
     </div>
   )
 }

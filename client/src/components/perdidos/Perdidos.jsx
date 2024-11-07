@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./perdidos.module.css";
 import Navbar from "../navbar/Navbar";
-import ModalScreen from "../utils/Modal";
+import ModalScreen from "../utils/Modal"; 
 
 export default function Perdidos() {
   return (
