@@ -83,6 +83,16 @@ export default function Perdidos() {
         </div>
       </section>
 
+      <section className={styles.section_3}>
+        <div className={styles.tarjetas_animales}>
+          {/* aqui van las tarjetas */}
+        </div>
+        
+        <div className={styles.btn_ver}>
+          <button>Ver Todos</button>
+        </div>
+      </section>
+
     </div>
   );
 }
