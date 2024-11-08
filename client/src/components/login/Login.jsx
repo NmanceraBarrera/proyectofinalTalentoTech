@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import styles from "./Login.module.css";
-import logo from "../../assets/icono1.svg";
+import logo from "../../assets/icono1.png";
 import vector from "../../assets/vector.png";
 import { Link, useNavigate } from "react-router-dom"; // Importamos useNavigate
 import Swal from "sweetalert2";
