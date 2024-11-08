@@ -5,8 +5,10 @@ import logo from "../../assets/icono1.png";
 import vector from "../../assets/vector.png";
 import { Link, useNavigate } from "react-router-dom"; // Importamos useNavigate
 import Swal from "sweetalert2";
+import { useAuth } from "../../context/authContext";
 
 export default function Login() {
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true); // Determina si es login o registro
   const [formData, setFormData] = useState({
     name: "",
@@ -50,8 +52,8 @@ export default function Login() {
             icon: "success",
           });
 
-          // Redirigir a otra página, como el home, luego de un login exitoso
-          navigate("/home"); // Usamos navigate en lugar de history.push
+          login(); // Establece el estado de autenticación global en true
+          navigate("/home");
         }
       } catch (error) {
         console.error("Error:", error);

@@ -7,6 +7,7 @@ import Fundaciones from "./components/fundaciones/Fundaciones";
 import Encontrados from "./components/encontrados/Encontrados";
 import Perdidos from "./components/perdidos/Perdidos";
 import EncontradosForm from "./components/utils/EncontradosForm";
+<<<<<<< Updated upstream
 import FoundationsForm from "./components/utils/FoundationsForm";
 
 function App() {
@@ -23,6 +24,27 @@ function App() {
         <Route path="/foundationsForm" element={<FoundationsForm />} />
       </Routes>
     </Router>
+=======
+import { AuthProvider } from "./context/authContext";
+// import FoundationsForm from "./components/utils/FoundationsForm";
+
+function App() {
+  return (
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/informacion" element={<Informacion />} />
+          <Route path="/fundaciones" element={<Fundaciones />} />
+          <Route path="/encontrados" element={<Encontrados />} />
+          <Route path="/perdidos" element={<Perdidos />} />
+          <Route path="/reporteencontrados" element={<EncontradosForm />} />
+          {/* <Route path="/foundationsForm" element={<FoundationsForm />} /> */}
+        </Routes>
+      </Router>
+    </AuthProvider>
+>>>>>>> Stashed changes
   );
 }
 
