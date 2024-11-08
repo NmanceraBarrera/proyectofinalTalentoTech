@@ -6,11 +6,8 @@ import Informacion from "./components/informacion/Informacion";
 import Fundaciones from "./components/fundaciones/Fundaciones";
 import Encontrados from "./components/encontrados/Encontrados";
 import Perdidos from "./components/perdidos/Perdidos";
-<<<<<<< Updated upstream
 import EncontradosForm from "./components/utils/EncontradosForm";
-=======
-import FoundationsForm from "./components/utils/FoundationsForm";
->>>>>>> Stashed changes
+// import FoundationsForm from "./components/utils/FoundationsForm";
 
 function App() {
   return (
@@ -22,11 +19,8 @@ function App() {
         <Route path="/fundaciones" element={<Fundaciones />} />
         <Route path="/encontrados" element={<Encontrados />} />
         <Route path="/perdidos" element={<Perdidos />} />
-<<<<<<< Updated upstream
         <Route path="/reporteencontrados" element={<EncontradosForm />} />
-=======
-        <Route path="/foundationsForm" element={<FoundationsForm />} />
->>>>>>> Stashed changes
+        {/* <Route path="/foundationsForm" element={<FoundationsForm />} /> */}
       </Routes>
     </Router>
   );
