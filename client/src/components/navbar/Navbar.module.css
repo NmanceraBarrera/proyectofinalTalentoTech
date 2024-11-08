@@ -160,7 +160,8 @@
   }
 
   .containerNavbar .logo {
-    width: 2.5rem;
+    width: 8vw;
+    max-width: 100px;
     height: auto;
     padding: 0.5vw;
   }
