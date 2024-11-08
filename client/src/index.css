@@ -1,0 +1,6 @@
+body {
+    background-image: url(./assets/pattern1.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}

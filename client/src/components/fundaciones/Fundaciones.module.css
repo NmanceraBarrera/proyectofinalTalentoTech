@@ -22,7 +22,9 @@
 .containerMain2{
     display: flex;
     flex-direction: column;
-    background-color: #c8ad8d;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
 }
 
 .containerMain2 img{
@@ -38,18 +40,15 @@
 }
 
 .containerMain2 div h1{
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 1vw 0vw;
-    color: white;
 }
 
 .containerMain2 div p{
-    font-size: 0.5rem;
+    font-size: 1rem;
     text-align: left;
     padding: 0;
 
-    color: white;
-    background-color: #c8ad8d;
 }
 
 .containerMain3{
