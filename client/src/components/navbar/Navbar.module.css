@@ -14,6 +14,8 @@
   height: 5rem;
   margin-bottom: 0.5rem;
   box-shadow: 10px 0px 15px rgb(201, 201, 201);
+
+  background-color: rgba(235, 230, 234, 0.9);
 }
 
 .containerNavbar .btnBurger {
@@ -72,7 +74,9 @@
   position: relative;
   transition: all 300ms ease;
 
-  background-color: #c8ad8d;
+  background-color: rgba(235, 230, 234, 0.8);
+  backdrop-filter: blur(16px);
+  z-index: 1;
 }
 
 .sidebar nav {
@@ -106,7 +110,6 @@
 }
 
 .sidebar nav div p {
-  background-color: #c8ad8d;
   font-size: 1rem;
 }
 

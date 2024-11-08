@@ -3,7 +3,10 @@
 }
 
 .containerFooter{
-    background-color: gray;
+    background-color: rgba(226, 226, 226, 0.8);
+    backdrop-filter: blur(16px);
+
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -46,13 +49,13 @@
 
 .containerFooter ul li a{
     font-size: 0.6rem;
-    color: white;
+    color: black;
 }
 
 .containerFooter p{
     padding: 1vw;
     text-align: center;
-    color: white;
+    color: black;
     font-size: 0.5rem;
 }
 

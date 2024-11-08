@@ -20,20 +20,21 @@
     align-items: center;
     padding: 1rem 0rem;
 
-    background-color: #c8ad8d;
+    background-color: none;
 }
 
 .containerIndex{
     padding: 30px;
-    border-radius: 5vw;
-    width: 80vw;
+    border-radius: 20px;
+    width: 90vw;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(24px);
 }
 
 .containerIndex h1{
@@ -46,10 +47,8 @@
 }
 
 .containerIndex p{
-    font-size: 1rem;
+    font-size: 0.875rem;
     text-align: left;
-    background-color: white;
-    color: black;
 }
 
 .containerIndex ol, ul{
@@ -63,6 +62,7 @@
 }
 
 .containerIndex ol li {
+    font-size: 0.875rem;
     margin: 10px;
     counter-increment: item;
     padding-left: 1.2em;
@@ -83,42 +83,59 @@
     padding-left: 2.4em;
 }
 
-.containerMain section{
-    border-radius: 5vw;
-    width: 80vw;
-    margin-top: 1rem;
-    height: auto;
+@keyframes highlight {
+    0% { background-color: yellow; }
+    100% { background-color: rgba(255, 255, 255, 0.7);}
+}
+
+.highlighted:target {
+    animation: highlight 3s ease;
+}
+
+
+.containerSections{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+}
+
+.containerSections section{ 
     display: flex;
     flex-direction: column;
-    text-align: left;
     gap: 10px;
-    padding: 30px;
-
-    background-color: white;
+    width: 42vw;
+    max-width: 200px;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
 }
 
-.containerMain section h2{
-    font-size: 1.5rem;
+.containerSections section h3{
+    font-size: clamp(25px, 2vw, 30px);}
+
+.containerSections section p{
+    font-size: 0.875rem;
 }
 
-.containerMain section p{
-    text-align: left;
-    font-size: 1rem;
-    background-color: white;
-    color: black;
+.containerSections section button{
+        width: 100%;
+        background: none;
+        padding: 3px;
+        border: none;
+        border-bottom: 2px solid #c8ad8d;
+        font-size: 0.75rem;
+        border-radius: 0px 0px 10px 0px;
+        transition: 0.4s ease-in-out;
 }
-
-@media (min-width: 675px) {
-
-    .containerMain{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: stretch;
-    }
-
-    .containerMain section{
-        margin: 3vw;
-        width: 27vw;
-        height: auto;
-    }
+    
+.containerSections section button:hover{
+        transition: 0.4s ease-in-out;    
+        border-radius: 10px 2px 10px 2px;
+        border-top: 2px solid #c8ad8d;
 }
