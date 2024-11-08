@@ -43,6 +43,7 @@
   backdrop-filter: blur(16px);
   z-index: -1;
   border-radius: 20px 20px 0 0  ;
+  margin-top: 20px;
 }
 
 .section_1 .informacion_1 .titulo h1{
@@ -201,7 +202,6 @@
   border-radius: 10px;
   padding: 2px;
 }
-
 
 @media (min-width: 768px){
   .section_1,

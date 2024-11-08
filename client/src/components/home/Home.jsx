@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './home.module.css'
 import Navbar from '../navbar/Navbar'
 import ModalScreen from '../utils/Modal'
+import Footer from '../footer/Footer'
 
 export default function Home() {
   return (
@@ -61,6 +62,7 @@ export default function Home() {
           {/* aqui van las tarjetas */}
         </div>
       </section>
+      <Footer/>
     </div>
   )
 }
