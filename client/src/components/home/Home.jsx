@@ -11,8 +11,7 @@ export default function Home() {
       <section className={styles.section_1}>
         <div className={styles.informacion_1}>
           <div className={styles.titulo}>
-            <h1>huellitas</h1>
-            <h1>a casa</h1>
+            <h1>Huellitas a casa</h1>
           </div>
           <div className={styles.parrafo_1}>
             <h3>¿Como funciona huellitas a casa?</h3>
@@ -21,7 +20,6 @@ export default function Home() {
         </div>
 
         <div className={styles.contenedor_imagen_1}>
-          <div className={styles.caja_1}></div>
           <div className={styles.foto}>
             <img src="https://i.ibb.co/mTrv7jL/perros-y-gatos.png" alt="dog y cat" />
           </div>    

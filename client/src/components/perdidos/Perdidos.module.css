@@ -39,6 +39,18 @@
     
 }
 
+.section_1 .informacion_1 h1{
+    font-size: 2rem;
+}
+
+.section_1 .informacion_1 h3{
+    font-size: 1.5rem;
+}
+
+.section_1 .informacion_1 p{
+    font-size: 1rem;
+}
+
 .section_1 .informacion_1 button,
 .container_tarjetas .tarjeta button,
 .section_3 .btn_ver button {
@@ -91,6 +103,14 @@
 
 }
 
+.container_tarjetas .tarjeta p{
+    font-size: 1rem;
+}
+
+.container_tarjetas .tarjeta button{
+    font-size: 1rem;
+}
+
 /* -------------------section2--------- */
 .section_2 h3{
     text-align: center;
@@ -102,6 +122,10 @@
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(24px);
     z-index: -1;
+}
+
+.section_2 h3{
+    font-size: 1.5rem;
 }
 
 .section_2 .barra_busqueda{
@@ -137,6 +161,9 @@
     border-radius: 15px;
     border: 2px solid #c8ad8d;
     outline: none;
+}
+
+.section_2 .container_busqueda input{
     font-size: 1rem;
 }
 
@@ -174,10 +201,12 @@ border-radius: 20px;
     font-size: 1rem;
     border: 2px solid #c8ad8d;
     border-radius: 10px;
+    padding: 10px 0;
 }
 
 .section_2 .desplegables option{
     font-size: 1rem;
+    padding: 10px 0;
 }
 /* -------------------section3------------------- */
 .section_3 .tarjetas_animales{
@@ -250,6 +279,28 @@ border-radius: 20px;
         flex-direction: row;
         padding: 80px 0;
         margin-bottom: 0px;
+    }
+
+    .section_1 .informacion_1 h1{
+        font-size: 2.5rem;
+    }
+    
+    .section_1 .informacion_1 h3{
+        font-size: 1.75rem;
+    }
+    
+    .container_tarjetas .tarjeta button{
+        font-size: 1.25rem;
+    }
+    
+    .section_2 h3{
+        font-size: 1.75rem;
+    }
+    .container_tarjetas .tarjeta button{
+        font-size: 1.25;
+    }
+    .container_tarjetas .tarjeta button{
+        font-size: 1.25rem;
     }
 }
 
