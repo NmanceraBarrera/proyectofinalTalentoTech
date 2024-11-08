@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./perdidos.module.css";
 import Navbar from "../navbar/Navbar";
 import ModalScreen from "../utils/Modal"; 
+import Footer from '../footer/Footer'
+
 
 export default function Perdidos() {
   return (
@@ -92,7 +94,7 @@ export default function Perdidos() {
           <button>Ver Todos</button>
         </div>
       </section>
-
+      <Footer/>
     </div>
   );
 }
