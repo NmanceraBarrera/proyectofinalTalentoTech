@@ -33,7 +33,6 @@ export default function Home() {
             <h3>¿Has perdido a tu mascota? </h3>
             <p>Publica un anuncio con los detalles y recibe alertas cuando haya avistamientos cerca.</p>
             <button>Perdidos</button>
-            <div className={styles.sobreponer}></div>
           </div>
         </div>
 
@@ -48,7 +47,6 @@ export default function Home() {
             <h3>¿Has encontrado un animal?</h3>
             <p> Ayúdanos a difundir la información para que su dueño lo pueda encontrar rápidamente.</p>
             <button>Encontrados</button>
-            <div className={styles.sobreponer}></div>
           </div>
         </div>
 
@@ -63,7 +61,6 @@ export default function Home() {
           {/* aqui van las tarjetas */}
         </div>
       </section>
-
     </div>
   )
 }

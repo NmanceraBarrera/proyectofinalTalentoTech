@@ -41,6 +41,7 @@
 
 .section_1 .informacion_1 h1{
     font-size: 2rem;
+    white-space: nowrap;
 }
 
 .section_1 .informacion_1 h3{
@@ -57,6 +58,7 @@
     width: 70%;
     border-radius: 10px;
     padding: 2px;
+    white-space: nowrap;
 }
 
 .section_1 .img{
@@ -291,17 +293,14 @@ border-radius: 20px;
     }
     
     .container_tarjetas .tarjeta button{
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
     
     .section_2 h3{
         font-size: 1.75rem;
     }
     .container_tarjetas .tarjeta button{
-        font-size: 1.25;
-    }
-    .container_tarjetas .tarjeta button{
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
 
