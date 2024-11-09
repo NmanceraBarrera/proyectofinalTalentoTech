@@ -23,6 +23,7 @@ function App() {
           <Route path="/perdidos" element={<Perdidos />} />
           <Route path="/reporteencontrados" element={<EncontradosForm />} />
           <Route path="/foundationsForm" element={<FoundationsForm />} />
+          <Route path="/formperdidos" element={<EncontradosForm />} />
         </Routes>
       </Router>
     </AuthProvider>
