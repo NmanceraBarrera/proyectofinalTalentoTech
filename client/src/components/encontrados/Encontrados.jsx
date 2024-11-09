@@ -3,6 +3,7 @@ import styles from "./Encontrados.module.css";
 import Navbar from "../navbar/Navbar";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
+import Footer from "../footer/Footer";
 
 export default function Encontrados() {
   const { isAuthenticated } = useAuth();
@@ -147,6 +148,7 @@ export default function Encontrados() {
           <button>Ver Todos</button>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

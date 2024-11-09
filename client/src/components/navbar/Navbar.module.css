@@ -129,6 +129,21 @@
   font-weight: bold;
 }
 
+.listLeft li:hover {
+  text-decoration: underline;
+  text-decoration-color: #c8ad8d;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
+}
+
+.listRight li:hover {
+  text-decoration: underline;
+  text-decoration-color: #c8ad8d;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
+}
+
+
 @media (min-width: 675px) {
   .containerNavbar {
     height: 5rem;
@@ -211,3 +226,24 @@
     display: none;
   }
 }
+
+@media (min-width: 962px) {
+
+  .listRight li button {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+  }
+
+  .listLeft li {
+    font-size: 1.1rem;
+  }
+
+  .listRight li {
+    font-size: 1.1rem;
+  }
+
+
+}
+ 
+
+  

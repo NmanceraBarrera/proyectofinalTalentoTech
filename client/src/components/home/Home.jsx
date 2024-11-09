@@ -3,7 +3,7 @@ import styles from "./home.module.css";
 import Navbar from "../navbar/Navbar";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
-
+import Footer from "../footer/Footer";
 export default function Home() {
   const { isAuthenticated } = useAuth();
 
