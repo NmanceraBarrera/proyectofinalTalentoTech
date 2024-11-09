@@ -4,6 +4,7 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
+import { Link } from "react-router-dom";
 
 export default function Perdidos() {
   const { isAuthenticated } = useAuth();
@@ -21,7 +22,8 @@ export default function Perdidos() {
               lista de animales que han sido reportados por otros usuarios como
               encontrados en tu zona.
             </p>
-            <button>Encontrados</button>
+            <Link to='/encontrados'><button className={styles.botones}>Encontrados</button></Link>
+
           </div>
 
           <div className={styles.img}>
@@ -39,15 +41,17 @@ export default function Perdidos() {
               sobre control de emociones en situaciones similares te dejamos una
               guia rapida justo aqui abajo
             </p>
-            <button>¿Qué hacer?</button>
+            <Link to='/informacion'><button className={styles.botones}>¿Qué hacer?</button></Link>
+
           </div>
 
           <div className={styles.tarjeta}>
             <p>
               Si no encuentras a tu mascota perdida en la sección de
-              "Encontrados", es horapublicar un anuncio se busca
+              "Encontrados", es hora de publicar un anuncio.
             </p>
-            <button>Publicar</button>
+            <Link to='/formperdidos'><button className={styles.botones}>Publicar</button></Link>
+
           </div>
 
           <div className={styles.tarjeta}>
@@ -56,7 +60,8 @@ export default function Perdidos() {
               Si no puedes cuidar de este(a), puedes comunicarte con alguna de
               las fundaciones inscritas ¡a un solo click!
             </p>
-            <button>Comunicate</button>
+            <Link to='/fundaciones'><button className={styles.botones}>comunícate</button></Link>
+
           </div>
         </div>
       </section>
@@ -136,7 +141,8 @@ export default function Perdidos() {
         </div>
 
         <div className={styles.btn_ver}>
-          <button>Ver Todos</button>
+        <Link to='/fundaciones'><button className={styles.botones}>Ver todos</button></Link>
+
         </div>
       </section>
       <Footer />
