@@ -45,7 +45,7 @@ export default function Home() {
               Publica un anuncio con los detalles y recibe alertas cuando haya
               avistamientos cerca.
             </p>
-            <button>Perdidos</button>
+            <button className={styles.botones}>Perdidos</button>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ export default function Home() {
               Ayúdanos a difundir la información para que su dueño lo pueda
               encontrar rápidamente.
             </p>
-            <button>Encontrados</button>
+            <button className={styles.botones}>Encontrados</button>
           </div>
         </div>
       </section>
@@ -73,11 +73,9 @@ export default function Home() {
       <section className={styles.section_3}>
         <div className={styles.btn_ver}>
           <h2>¿Buscas fundaciones de animales en tu zona?</h2>
-          <button>Buscar ahora</button>
+          <button className={styles.botones}>Buscar ahora</button>
         </div>
-        <div className={styles.tarjetas_animales}>
-          {/* aqui van las tarjetas */}
-        </div>
+       
       </section>
       <Footer />
     </div>
