@@ -5,7 +5,8 @@
 }
 
 .botones{
-  padding: 15px 25px;
+  width: 100%;
+  padding: 2px 25px;
   border: unset;
   border-radius: 15px;
   color: #212121;
@@ -228,14 +229,14 @@
   font-size: 1.75rem;
 }
 
-.section_3 .btn_ver button,
-.section_2 .informacion_2 button {
+
+
+.section_3 .btn_ver Link,
+.section_2 .informacion_2 Link {
   width: 80%;
   border-radius: 10px;
-  padding: 2px;
   cursor: pointer;
 }
-
 @media (min-width: 380px){
   .section_1 .contenedor_imagen_1{
     max-width: 400px;
@@ -345,9 +346,9 @@
 }
 
 
-.section_3 .btn_ver button,
-.section_2 .informacion_2 button{
-  width: 50%;
+.section_3 .btn_ver Link,
+.section_2 .informacion_2 Link{
+  width: 70%;
 }
   
 }
