@@ -35,7 +35,7 @@
  
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
     
 }
 
@@ -58,7 +58,9 @@
     border-radius: 10px;
     padding: 2px;
     white-space: nowrap;
+    cursor:pointer;
 }
+
 
 .section_1 .img{
     width: 100%;
@@ -102,7 +104,7 @@
 
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
 
 }
 
@@ -112,6 +114,7 @@
 
 .container_tarjetas .tarjeta button{
     font-size: 1rem;
+    cursor: pointer;
 }
 
 /* -------------------section2--------- */
@@ -145,7 +148,8 @@
 
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
+    cursor: pointer;
 }
 
 .section_2 .container_busqueda{
@@ -189,10 +193,10 @@
     align-items: center;
     padding: 20px 0;
 
-border-radius: 20px;
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
 
 } 
 
@@ -205,11 +209,13 @@ border-radius: 20px;
     border: 2px solid #c8ad8d;
     border-radius: 10px;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .section_2 .desplegables option{
     font-size: 1rem;
     padding: 10px 0;
+    cursor: pointer;
 }
 /* -------------------section3------------------- */
 .section_3{
@@ -241,7 +247,7 @@ border-radius: 20px;
 
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
 
 }
 @media (min-width: 768px){
@@ -298,7 +304,6 @@ border-radius: 20px;
      
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(16px);
-        z-index: -1;
         
     }
 
