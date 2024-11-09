@@ -1,66 +1,189 @@
 import React, { useState } from 'react';
 import styles from './EncontradosForm.module.css';
-import Navbar from '../navbar/Navbar';
-import ModalScreen from '../utils/Modal';
+import Footer from '../footer/Footer'; 
+
 
 export default function EncontradosForm() {
-    const [nombre, setNombre] = useState('');
-    const update_name = (e) => {
-        setNombre(e.target.value);
-    } 
+    const [formData, setFormData] = useState({
+        name: '',
+        date:'',
+        city: '',
+        address: '',
+        color1: '',
+        color2: '',
+        photo: null, 
+        phone: '',
+        description: '',
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const [breedSelect, setBreedSelect] = useState('perro');
+    const [genreSelect, setGenreSelect] = useState('macho');
+  
+    const handleBreedSelect = (event) => {
+      setBreedSelect(event.target.value);
+    };
+  
+    const handleGenreSelect = (event) => {
+      setGenreSelect(event.target.value);
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData({
+                    ...formData,
+                    photo: reader.result,
+                });
+            };
+            reader.readAsDataURL(file); 
+        }
+    };
   return (
-    <div>
-        <Navbar/>
-        <div className={styles.container}>
-        <div className={styles.formulario}>
-            <h2>Formulario de Mascota Encontrada</h2>
-            <p>Completa los campos con la información del peludito que encontraste:</p>
+    <div className={styles.containerEcontradosForm}>
+        <main className={styles.containerMain}>
+        <section className={styles.containerForm}>
             <form>
-                <label htmlFor="nombre">Nombre: </label>
-                <input type="text" id='nombre' name='nombre' required onChange={update_name}/>
+                <h2>Registra el peludo que encontraste:</h2>
+  
+                <label htmlFor="name">Nombre: </label>
+                <input 
+                    type="text" 
+                    id='name' 
+                    name='name' 
+                    value={formData.name} 
+                    onChange={handleInputChange}
+                    required/>
 
-                <label htmlFor="fecha">Fecha: </label>
-                <input type="date" id='fecha' name='fecha' required/>
+                <label htmlFor="date">Fecha: </label>
+                <input 
+                    type="date" 
+                    id='date' 
+                    name='date'
+                    value={formData.date} 
+                    onChange={handleInputChange} 
+                    required/>
 
-                <label htmlFor="ciudad">Ciudad: </label>
-                <input type="text" id='ciudad' name='ciudad' required/>
+                <label htmlFor="city">Ciudad: </label>
+                <input 
+                    type="text" 
+                    id='city' 
+                    name='city' 
+                    value={formData.city} 
+                    onChange={handleInputChange}
+                    required/>
 
-                <label htmlFor="ubicacion">Ubicación: </label>
-                <input type="text" id='ubicacion' name='ubicacion' required/>
+                <label htmlFor="address">Ubicación: </label>
+                <input 
+                    type="text" 
+                    id='address' 
+                    name='address'
+                    value={formData.address} 
+                    onChange={handleInputChange}
+                    required/>
 
                 <label htmlFor="color1">Color 1: </label>
-                <input type="text" id='color1' name='color1' required/>
+                    <input 
+                    type="text" 
+                    id='color1' 
+                    name='color1' 
+                    value={formData.color1} 
+                    onChange={handleInputChange}
+                    required/>
 
                 <label htmlFor="color2">Color 2: </label>
-                <input type="text" id='color2' name='color2' required/>
+                <input 
+                type="text" 
+                id='color2' 
+                name='color2' 
+                value={formData.color2} 
+                onChange={handleInputChange}
+                required/>
 
-                <label htmlFor="raza">Raza: </label>
-                <select name="raza" id="raza">
+                <label htmlFor="breed">Raza: </label>
+                <select 
+                    id="breed" 
+                    name="breed"                 
+                    value={breedSelect} 
+                    onChange={handleBreedSelect}>
                     <option value="perro">Perro</option>
                     <option value="gato">Gato</option>
                 </select>
 
-                <label htmlFor="genero">Género: </label>
-                <select name="genero" id="genero">
+                <label htmlFor="genre">Género: </label>
+                <select 
+                    id="genre"
+                    name="genre" 
+                    value={genreSelect} 
+                    onChange={handleGenreSelect}>
                     <option value="macho">Macho</option>
                     <option value="hembra">Hembra</option>
                 </select>
 
-                <label htmlFor="foto">Foto: </label>
-                <input type="file" id='foto' name='foto' accept='image/*' required/>
+                <label htmlFor="photo">Foto: </label>
+                    <input
+                        type="file"
+                        id="photo"
+                        name="photo"
+                        onChange={handleImageChange} imágenes
+                        accept="image/*" />
 
-                <label htmlFor="telefono">Teléfono de contacto: </label>
-                <input type="tel" id='telefono' name='telefono' required/>
+                <label htmlFor="phone">Teléfono de contacto: </label>
+                <input 
+                    type="tel" 
+                    id='phone' 
+                    name='phone'
+                    value={formData.phone} 
+                    onChange={handleInputChange}
+                    required/>
 
-                <label htmlFor="descripcion">Descripción: </label>
-                <textarea name="descripcion" id="descripcion" rows={4} cols={50} required></textarea>
+                <label htmlFor="description">Descripción: </label>
+                <textarea 
+                    name="description" 
+                    id="description" 
+                    rows={4} 
+                    cols={50}
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    required>
+                </textarea>
+
+                <button type="submit" className={styles.submitButton}>Enviar</button>
             </form>
-        </div>
-        <div className={styles.preview}>
-            <h2>Información</h2>
-            <h1>{nombre}</h1>
-        </div>
-        </div>
+        </section>
+
+        <section className={styles.containerPreview}>
+            <div className={styles.containerPhoto}>
+                <h2>Visualización:</h2>
+                {formData.photo && (
+                    <div className={styles.photoPreview}>
+                        <img src={formData.photo} alt="Foto: " />
+                    </div>
+                )}
+            </div>
+            <div>
+                <p><strong>Nombre:</strong> {formData.name}</p>
+                <p><strong>Fecha:</strong> {formData.date}</p>
+                <p><strong>Ciudad:</strong> {formData.city}</p>
+                <p><strong>Dirección:</strong> {formData.address}</p>
+                <p><strong>Color1:</strong> {formData.color1}</p>
+                <p><strong>Color2:</strong> {formData.color2}</p>
+                <p><strong>Raza:</strong> {breedSelect}</p>
+                <p><strong>Genero:</strong> {genreSelect}</p>
+                <p><strong>Descripción:</strong> {formData.description}</p>
+            </div>
+        </section>
+        </main>
+        <Footer />
     </div>
   )
 }
