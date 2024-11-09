@@ -1,14 +1,9 @@
 import React from "react";
 import styles from "./perdidos.module.css";
 import Navbar from "../navbar/Navbar";
-<<<<<<< Updated upstream
-import ModalScreen from "../utils/Modal"; 
-import Footer from '../footer/Footer'
-
-=======
+import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
->>>>>>> Stashed changes
 
 export default function Perdidos() {
   const { isAuthenticated } = useAuth();
@@ -144,10 +139,7 @@ export default function Perdidos() {
           <button>Ver Todos</button>
         </div>
       </section>
-<<<<<<< Updated upstream
-      <Footer/>
-=======
->>>>>>> Stashed changes
+      <Footer />
     </div>
   );
 }
