@@ -9,6 +9,7 @@ import Perdidos from "./components/perdidos/Perdidos";
 import EncontradosForm from "./components/utils/EncontradosForm";
 import { AuthProvider } from "./context/authContext";
 import FoundationsForm from "./components/utils/FoundationsForm";
+import FormPerdidos from "./components/utils/FormPerdidos";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/perdidos" element={<Perdidos />} />
           <Route path="/reporteencontrados" element={<EncontradosForm />} />
           <Route path="/foundationsForm" element={<FoundationsForm />} />
-          <Route path="/formperdidos" element={<EncontradosForm />} />
+          <Route path="/formperdidos" element={<FormPerdidos />} />
         </Routes>
       </Router>
     </AuthProvider>
