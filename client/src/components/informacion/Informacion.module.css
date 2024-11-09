@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.containerInfo{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.containerMain{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0rem;
+
+    background-color: none;
+}
+
+.containerIndex{
+    padding: 30px;
+    border-radius: 20px;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(24px);
+}
+
+.containerIndex h1{
+    font-size: 2rem;
+}
+
+.containerIndex img{
+    width: 30%;
+    height: auto;
+}
+
+.containerIndex p{
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+.containerIndex ol, ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.containerIndex ol{
+    counter-reset: item;
+}
+
+.containerIndex ol li {
+    font-size: 0.875rem;
+    margin: 10px;
+    counter-increment: item;
+    padding-left: 1.2em;
+    text-indent: -0.8em;
+}
+
+.containerIndex ol li:before {
+    content: counters(item, ".") " ";
+    font-weight: bold;
+    margin-right: 0.2em;
+}
+
+.containerIndex ol ol li {
+    padding-left: 1.8em;
+}
+
+.containerIndex ol ol ol li {
+    padding-left: 2.4em;
+}
+
+@keyframes highlight {
+    0% { background-color: yellow; }
+    100% { background-color: rgba(255, 255, 255, 0.5);}
+}
+
+.highlighted:target {
+    animation: highlight 3s ease;
+}
+
+
+.containerSections{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+}
+
+.containerSections section{ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 42vw;
+    max-width: 200px;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    min-height: 300px;
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+}
+
+.containerSections section h3{
+    font-size: clamp(1rem, 2vw, 2rem);}
+
+.containerSections section p{
+    font-size: 0.875rem;
+}
+
+.containerSections section button{
+        width: 100%;
+        background: none;
+        padding: 3px;
+        border: none;
+        border-bottom: 2px solid #c8ad8d;
+        font-size: 0.75rem;
+        border-radius: 0px 0px 10px 0px;
+        transition: 0.4s ease-in-out;
+}
+    
+.containerSections section button:hover{
+        transition: 0.4s ease-in-out;    
+        border-radius: 10px 2px 10px 2px;
+        border-top: 2px solid #c8ad8d;
+}

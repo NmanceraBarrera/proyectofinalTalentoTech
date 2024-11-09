@@ -1,0 +1,7 @@
+body {
+    background-image: url(./assets/pattern5.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}

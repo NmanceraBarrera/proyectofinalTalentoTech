@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section_1{
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.informacion_1,
+.contenedor_imagen_1{
+  flex: 1;
+}
+
+.section_1 .informacion_1{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  
+}
+
+.section_1 .informacion_1 .titulo{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  z-index: -1;
+  border-radius: 20px 20px 0 0  ;
+}
+
+.section_1 .informacion_1 .titulo h1{
+  font-size: 2rem;
+  /* white-space: nowrap; */
+}
+
+.section_1 .parrafo_1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  z-index: -1;
+
+  border-radius: 0 0 20px  20px;
+}
+
+.section_1 .parrafo_1 h3{
+  font-size: 1.5rem;
+}
+.section_1 .parrafo_1 p{
+  font-size: 1rem;
+}
+
+.section_1 .contenedor_imagen_1{
+  max-width: 300px;
+  width: 100%;
+  height: 80%;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+
+
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  z-index: -1;
+}
+
+.section_1 .contenedor_imagen_1 .foto{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.section_1 .contenedor_imagen_1 .foto img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* -----------------------section 2------------- */
+.section_2,
+.section_3{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.section_2 .container_1{
+  width: 100%;
+}
+
+.section_2{
+  margin-bottom: 20px;
+}
+
+.section_2 .container_1 .informacion_2{
+  position: relative;
+}
+
+.section_2 .container_1 .informacion_2 h3{
+  font-size: 1.75rem;
+}
+
+.section_2 .container_1 .informacion_2,
+.section_2 .container_2 .imagen_2{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  /* z-index: -1; */
+}
+
+.section_2 .container_2 .imagen_2{
+  border-radius: 50%;
+}
+.section_2 .container_2 .imagen_2 img{
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  
+}
+
+/* ------------------section 3----------- */
+
+.section_3 .tarjetas_animales{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+  border-radius: 20px  ;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  z-index: -1;
+
+}
+
+.section_3 .btn_ver{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-radius: 20px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  /* z-index: -1; */
+
+
+}
+
+.section_3 .btn_ver h2{
+  font-size: 1.75rem;
+}
+
+.section_3 .btn_ver button,
+.section_2 .informacion_2 button {
+  width: 70%;
+  border-radius: 10px;
+  padding: 2px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+@media (min-width: 380px){
+  .section_1 .contenedor_imagen_1{
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 768px){
+  .section_1,
+  .section_2,
+  .section_3{
+    padding: 0 60px;
+  }
+
+  .section_1 .contenedor_imagen_1{
+    transform: scale(0.8);
+    
+  }
+}
+
+@media (min-width: 992px){
+
+  .section_1 .informacion_1 .titulo h1{
+    font-size: 2.5rem;
+  }
+  
+  .section_1 .parrafo_1 h3{
+    font-size: 1.75rem;
+  }
+  
+  .section_3 .btn_ver h2{
+    font-size: 2rem;
+  }
+
+  .section_1{
+  width: 100%;
+  height: 70vh;
+  flex-direction: row;
+}
+
+.section_1 .informacion_1{
+  height: 50vh;
+  overflow: hidden;  
+  padding: 0px;
+}
+
+.section_1 .informacion_1 .titulo,
+.section_1 .informacion_1 .parrafo_1{
+  flex: 1;
+  border-radius: 20px;
+}
+
+.section_1 .informacion_1 .titulo{
+  border-radius: 20px 20px 0 0
+}
+
+.section_1 .informacion_1 .parrafo_1{
+  border-radius: 0 0 20px 20px;
+}
+
+.section_1 .titulo{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+}
+
+.section_1 .parrafo_1 {
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.section_1 .contenedor_imagen_1{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
+  
+}
+
+.section_1 .contenedor_imagen_1 .foto{
+  width: 100%;
+  height: 100%;
+}
+
+.section_1 .contenedor_imagen_1 .foto img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.section_2{
+  flex-direction: row;
+}
+
+.section_2 .container_1 .informacion_2{
+  width: 100%;
+  min-height: 250px;
+  max-height: 400px;
+  height: 100%;
+}
+
+
+.section_3 .btn_ver button,
+.section_2 .informacion_2 button{
+  width: 30%;
+}
+  
+}
+
+@media (min-width: 1200px) {
+  
+  .section_1{
+    width: 100%;
+    height: 80vh;
+    flex-direction: row;
+  }
+
+  
+  
+}
+
+
+

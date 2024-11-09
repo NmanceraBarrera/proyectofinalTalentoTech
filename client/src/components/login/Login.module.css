@@ -1,0 +1,153 @@
+.welcome {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.loginContainer {
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff;
+  flex-direction: row;
+}
+
+.loginSection,
+.signupSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loginSection {
+  background-color: #c8ad8d;
+  color: white;
+  text-align: center;
+}
+
+.signupSection {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  width: 150px;
+}
+
+.vector {
+  width: 230px;
+  height: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.signupButton {
+  margin-top: 1rem;
+  padding: 0.4rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #c8ad8d;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.signupButton:hover {
+  transform: scale(1.05);
+}
+
+.signinButton {
+  padding: 0.4rem 4.8rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  white-space: nowrap;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 80%;
+  max-width: 300px;
+  margin-top: 1rem;
+}
+
+.signupForm input {
+  padding: .4rem 0.8rem ;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.terms {
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+  width: 300px;
+  height: auto;
+}
+
+.terms a {
+  color: #333;
+  text-decoration: none;
+  font-size: .8rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 898px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .vector {
+    top: 3rem;
+    right: auto;
+    width: 150px;
+    left: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .terms {
+    width: 80%;
+    text-align: center;
+    bottom: 1rem;
+    left: auto;
+    right: auto;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms{
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    display: none;
+  }
+}
