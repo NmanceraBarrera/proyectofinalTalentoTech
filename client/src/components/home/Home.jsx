@@ -62,7 +62,6 @@ export default function Home() {
           <div className={styles.informacion_2}>
             <h3>¿Has encontrado un animal?</h3>
             <p>
-              {" "}
               Ayúdanos a difundir la información para que su dueño lo pueda
               encontrar rápidamente.
             </p>
@@ -72,7 +71,6 @@ export default function Home() {
       </section>
 
       <section className={styles.section_3}>
-        ||
         <div className={styles.btn_ver}>
           <h2>¿Buscas fundaciones de animales en tu zona?</h2>
           <button>Buscar ahora</button>
