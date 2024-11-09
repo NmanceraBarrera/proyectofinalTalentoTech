@@ -6,7 +6,7 @@
 }
 
 .section1{
-    width: 100vw;
+    width: 98vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -93,7 +93,7 @@
 /* Busqueda */
 
 .section2{
-    width: 100vw;
+    width: 98vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -182,7 +182,7 @@
 }
 
 .section_3{
-    width: 100vw;
+    width: 98vw;
     height: 100%;
     display: flex;
     flex-direction: column;
