@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
@@ -23,17 +22,15 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    text-align: center;
     
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
 }
 
-.containerMain2 img{
-    
-}
-
 .containerMain2 div{
     display: flex;
+    gap: 30px;
     padding: 2vw 5vw;
     flex-direction: column;
     width: 100vw;
@@ -48,8 +45,48 @@
     font-size: 1rem;
     text-align: left;
     padding: 0;
-
 }
+
+.containerMain2 div button{
+    width: auto;
+    padding: 2px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 1rem;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+
+.containerMain2 div button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+
+.containerMain2 div button:hover {
+    color: #e8e8e8;
+}
+
+.containerMain2 div button:hover::before {
+    width: 100%;
+    }
 
 .containerMain3{
     background-color: white;
@@ -184,7 +221,47 @@ border-radius: 20px;
     z-index: -1;
 }
 
-@media (min-width: 1126px) {
+.section_3 .btn_ver button{
+    width: 200px;
+    padding: 2px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 1rem;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.section_3 .btn_ver button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+    }
+
+    .section_3 .btn_ver button:hover {
+    color: #e8e8e8;
+    }
+
+    .section_3 .btn_ver button:hover::before {
+        width: 200px;
+    }
+
+@media (min-width: 920px) {
     .containerMain2{
         flex-direction: row;
         align-items: center;

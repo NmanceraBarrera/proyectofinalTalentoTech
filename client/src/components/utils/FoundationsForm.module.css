@@ -17,7 +17,7 @@
     flex-grow: 1; 
 }
 
-.containerForm form{
+.containerForm form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -37,7 +37,9 @@
     margin-bottom: 5px;
 }
 
-.containerForm input, textarea {
+.containerForm input,
+.containerForm textarea,
+.containerForm select { /* Selecciona input, textarea y select */
     width: 80%;
     margin-bottom: 10px;
     padding: 10px;
@@ -75,18 +77,18 @@
 }
 
 @media (min-width: 675px) {
-    .containerMain{
+    .containerMain {
         flex-direction: row;
         align-items: start;
         justify-content: center;
     }
 
-    .containerForm form{
+    .containerForm form {
         width: 45vw;
         margin: 20px;
     }
 
-    .containerPreview{
+    .containerPreview {
         width: 45vw;
         margin: 20px;
     }

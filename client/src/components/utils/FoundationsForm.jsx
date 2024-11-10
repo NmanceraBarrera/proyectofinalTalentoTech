@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import styles from './FoundationsForm.module.css';
 import Footer from '../footer/Footer'; 
 
@@ -34,6 +34,20 @@ export default function FoundationsForm() {
         }
     };
 
+    const cities = [
+        { nombre: "" },
+        { nombre: "Barranquilla" },
+        { nombre: "Bogotá" },
+        { nombre: "Bucaramanga" },
+        { nombre: "Cali" },
+        { nombre: "Cartagena" },
+        { nombre: "Cúcuta" },
+        { nombre: "Manizales" },
+        { nombre: "Medellín" },
+        { nombre: "Pereira" },
+        { nombre: "Santa Marta" }
+    ];
+
     return (
         <div className={styles.containerFoundationsForm}>
             <main className={styles.containerMain}>
@@ -51,14 +65,19 @@ export default function FoundationsForm() {
                         />
 
                         <label htmlFor="city">Ciudad</label>
-                        <input
-                            type="text"
+                        <select
                             id="city"
                             name="city"
                             value={formData.city}
                             onChange={handleInputChange}
                             required
-                        />
+                        >
+                            {cities.map((city, index) => (
+                                <option key={index} value={city.nombre}>
+                                    {city.nombre || "Selecciona una ciudad"}
+                                </option>
+                            ))}
+                        </select>
 
                         <label htmlFor="address">Dirección</label>
                         <input
@@ -75,7 +94,7 @@ export default function FoundationsForm() {
                             type="file"
                             id="photo"
                             name="photo"
-                            onChange={handleImageChange} imágenes
+                            onChange={handleImageChange}
                             accept="image/*" 
                         />
 
