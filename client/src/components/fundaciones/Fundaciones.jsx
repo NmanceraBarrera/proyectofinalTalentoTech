@@ -4,6 +4,7 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
+import { Link } from "react-router-dom";
 
 export default function Fundaciones() {
   const { isAuthenticated } = useAuth();
@@ -23,18 +24,15 @@ export default function Fundaciones() {
               o apoyarla
             </h1>
             <p>
-              Aqui encontraras los enlaces a las fundaciones que ayudan a
-              nuestros peluditos, clickea en la que más te interese y podrás
-              concretar con ellos
+              Aca encontraras todos las mascotas que se han agregado como encontradas, recuerda que: puedes filtrar de acuerdo a tu zona de interes
             </p>
+            <p>
+              Recuerda que tambien puedes agregar en esta seccion tu organizacion
+            </p>
+            <Link to="/foundationsForm"><button>Registra aqui!</button></Link>
           </div>
         </section>
         <section className={styles.section_2}>
-          <h3>
-            Aca encontraras todos las mascotas que se han agregado como
-            encontradas, recuerda que: puedes filtrar de acuerdo a ciertas
-            caracteristicas
-          </h3>
           <div className={styles.barra_busqueda}>
             <div className={styles.container_busqueda}>
               <input
@@ -78,7 +76,14 @@ export default function Fundaciones() {
                   Ciudad
                 </option>
                 <option value="opcion2">Bogotá</option>
-                <option value="opcion3">Medellín</option>
+                <option value="opcion4">Medellín</option>
+                <option value="opcion5">Medellín</option>
+                <option value="opcion6">Medellín</option>
+                <option value="opcion7">Medellín</option>
+                <option value="opcion8">Medellín</option>
+                <option value="opcion9">Medellín</option>
+                <option value="opcion10">Medellín</option>
+                <option value="opcion11">Medellín</option>
               </select>
             </div>
           </div>

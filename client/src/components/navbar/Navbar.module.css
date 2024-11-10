@@ -54,6 +54,7 @@
   width: 1.2rem;
   margin-right: 2vw;
 }
+
 .containerNavbar .account1 {
   background-color: rgb(200, 186, 158);
   border-radius: 50%;
@@ -110,10 +111,43 @@
 
 .sidebar nav div button {
   display: block;
-  width: 30vw;
-  border-radius: 5vw;
-  background-color: white;
+  width: 100%;
+  padding: 2px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
   font-size: 1rem;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+.sidebar nav div button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+  }
+
+.sidebar nav div button:hover {
+  color: #e8e8e8;
+}
+
+.sidebar nav div button:hover::before {
+  width: 100%;
 }
 
 .sidebar nav div p {
@@ -230,20 +264,17 @@
 @media (min-width: 962px) {
 
   .listRight li button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 5px 10px;
   }
 
   .listLeft li {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .listRight li {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
 
 }
- 
-
-  

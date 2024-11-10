@@ -33,7 +33,7 @@
     align-items: center;
     gap: 10px;
 
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(24px);
 }
 
@@ -84,7 +84,7 @@
 }
 
 @keyframes highlight {
-    0% { background-color: yellow; }
+    0% { background-color: rgb(248, 248, 80); }
     100% { background-color: rgba(255, 255, 255, 0.5);}
 }
 
@@ -95,11 +95,11 @@
 
 .containerSections{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: start;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 15px;
+    padding: 10px;
 }
 
 .containerSections section{ 
@@ -112,31 +112,64 @@
     padding: 10px;
     border-radius: 20px;
     min-height: 300px;
+    align-items: center;
     
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
 }
 
 .containerSections section h3{
-    font-size: clamp(1rem, 2vw, 2rem);}
+    font-size: clamp(1rem, 2vw, 1rem);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    white-space: normal;}
 
 .containerSections section p{
     font-size: 0.875rem;
 }
 
+
 .containerSections section button{
         width: 100%;
-        background: none;
-        padding: 3px;
-        border: none;
-        border-bottom: 2px solid #c8ad8d;
-        font-size: 0.75rem;
-        border-radius: 0px 0px 10px 0px;
-        transition: 0.4s ease-in-out;
+        padding: 2px 15px;
+        border: unset;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #e8e8e8;
+        position: relative;
+        font-weight: 1000;
+        font-size: 1rem;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        transition: all 250ms;
+        overflow: hidden;
+
 }
-    
+
+.containerSections section button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+    }
+
+    .containerSections section button:hover {
+        color: #e8e8e8;
+    }       
+        
 .containerSections section button:hover{
-        transition: 0.4s ease-in-out;    
-        border-radius: 10px 2px 10px 2px;
-        border-top: 2px solid #c8ad8d;
+    width: 100%;
+
 }
+    .containerSections section button:hover::before {
+        width: 100%;
+    }
