@@ -73,7 +73,7 @@ export default function EncontradosForm() {
             <main className={styles.containerMain}>
             <section className={styles.containerForm}>
                 <form>
-                    <h2>Registra el peludo que perdiste:</h2>
+                    <h2>Registra el peludo que has encontrado:</h2>
       
                     <label htmlFor="name">Nombre: </label>
                     <input 
