@@ -4,6 +4,7 @@ import Navbar from "../navbar/Navbar";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import Footer from "../footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function Encontrados() {
   const { isAuthenticated } = useAuth();
@@ -16,15 +17,15 @@ export default function Encontrados() {
         <div className={styles.banner}>
           <div className={styles.info}>
             <h1>
-              <span>¿Perdiste tu mascota?</span> resportala en la sección
-              perdidos
+              <span>¿Perdiste tu mascota?</span> <h3>¿Qué hacer?</h3>
             </h1>
             <p>
               Accede a la Sección de "Perdidos": Aquí puedes ver una lista de
               animales que han sido reportados por otros usuarios como perdidos
               en tu zona.
             </p>
-            <button>Perdidos</button>
+            <Link to='/perdidos'><button className={styles.botones}>Perdidos</button></Link>
+            
           </div>
           <div className={styles.img1}>
             <img
@@ -39,26 +40,26 @@ export default function Encontrados() {
           {/* Card1 */}
           <div className={styles.cards}>
             <p>
-              Si nunca has cuidado una mascota antes o si sientes que necesitas
-              un poco de orientación, ¡no te preocupes!
+            Mantener la calma y tomar medidas inmediatas, si deseas saber más
+            sobre control de emociones en situaciones similares te dejamos una
+            guía rápida justo aquí abajo
             </p>
-            <button>¿Qué hacer?</button>
+            <Link to='/informacion'><button className={styles.botones}>¿Qué hacer?</button></Link>
           </div>
           {/* Card2 */}
           <div className={styles.cards}>
             <p>
-              Si no encuentras a la mascota en esta sección, es hora de
-              registrar el caso en la seccion "Perdidos"
+              Si has encontrado a una mascota, registra el caso ingresando información al formulario de "encontrados"
             </p>
-            <button>Perdidos</button>
+            <Link to='/formencontrados'><button className={styles.botones}>Publicar</button></Link>
           </div>
           {/* Card3 */}
           <div className={styles.cards}>
             <p>
               Si no puedes cuidar de tu peludo, puedes comunicarte con alguna de
-              las fundaciones inscritas ¡a un solo click!
+              las fundaciones inscritas, ¡a un solo click!
             </p>
-            <button>Fundaciones</button>
+            <Link to='/fundaciones'><button className={styles.botones}>Comunícate</button></Link>
           </div>
         </div>
         {/* Fin de las tajetas */}
@@ -67,9 +68,9 @@ export default function Encontrados() {
       <section className={styles.section2}>
         <div className={styles.title2}>
           <h2>
-            Aca encontraras todos las mascotas que se han agregado como
-            encontradas, recuerda que: puedes filtrar de acuerdo a ciertas
-            caracteristicas
+            Acá encontrarás todas las mascotas que se han agregado como
+            encontradas, recuerda que puedes filtrar de acuerdo a ciertas
+            características:
           </h2>
         </div>
 
@@ -116,16 +117,16 @@ export default function Encontrados() {
             <option value="" disabled select>
               Genero
             </option>
-            <option value="opcion2">macho</option>
-            <option value="opcion3">hembra</option>
+            <option value="opcion2">Macho</option>
+            <option value="opcion3">Hembra</option>
           </select>
 
           <select name="especie" id="especie">
             <option value="" disabled select>
               Especie
             </option>
-            <option value="opcion2">perro</option>
-            <option value="opcion3">gato</option>
+            <option value="opcion2">Perro</option>
+            <option value="opcion3">Gato</option>
           </select>
 
           <select name="ciudad" id="ciudad">
@@ -145,7 +146,7 @@ export default function Encontrados() {
         </div>
 
         <div className={styles.btn_ver}>
-          <button>Ver Todos</button>
+        <Link to='/fundaciones'><button className={styles.botones}>Ver todos</button></Link>
         </div>
       </section>
       <Footer/>

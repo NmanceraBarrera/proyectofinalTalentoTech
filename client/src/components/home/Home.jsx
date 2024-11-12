@@ -4,6 +4,7 @@ import Navbar from "../navbar/Navbar";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import Footer from "../footer/Footer";
+import { Link } from "react-router-dom";
 export default function Home() {
   const { isAuthenticated } = useAuth();
 
@@ -14,15 +15,12 @@ export default function Home() {
       <section className={styles.section_1}>
         <div className={styles.informacion_1}>
           <div className={styles.titulo}>
-            <h1>Huellitas a casa</h1>
+            <h1>Huélligas a casa</h1>
           </div>
           <div className={styles.parrafo_1}>
             <h3>¿Como funciona huellitas a casa?</h3>
             <p>
-              Nuestra misión es ayudarte a encontrar a tu amigo perdido o a
-              reunir animales encontrados con sus familias. Nuestra plataforma
-              está diseñada para facilitar la búsqueda, el reporte y la
-              recolección de animales extraviados en tu comunidad.
+            Nuestra misión es ayudarte a encontrar a tu amigo perdido o a reunir animales encontrados con sus familias. Nuestra plataforma está diseñada para facilitar la búsqueda, el reporte y la recolección de animales extraviados en tu comunidad. 
             </p>
           </div>
         </div>
@@ -45,7 +43,8 @@ export default function Home() {
               Publica un anuncio con los detalles y recibe alertas cuando haya
               avistamientos cerca.
             </p>
-            <button>Perdidos</button>
+            <Link to='/perdidos'><button className={styles.botones}>Perdidos</button></Link>
+
           </div>
         </div>
 
@@ -65,7 +64,7 @@ export default function Home() {
               Ayúdanos a difundir la información para que su dueño lo pueda
               encontrar rápidamente.
             </p>
-            <button>Encontrados</button>
+            <Link to='/encontrados'><button className={styles.botones}>Encontrados</button></Link>
           </div>
         </div>
       </section>
@@ -73,11 +72,10 @@ export default function Home() {
       <section className={styles.section_3}>
         <div className={styles.btn_ver}>
           <h2>¿Buscas fundaciones de animales en tu zona?</h2>
-          <button>Buscar ahora</button>
+          <Link to='/fundaciones'><button className={styles.botones}>Buscar ahora</button></Link>
+
         </div>
-        <div className={styles.tarjetas_animales}>
-          {/* aqui van las tarjetas */}
-        </div>
+       
       </section>
       <Footer />
     </div>

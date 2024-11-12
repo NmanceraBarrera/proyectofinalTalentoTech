@@ -2,10 +2,49 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'lexend';
 }
 
-.section1{
+.botones{
+    width: 100%;
+    padding: 2px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 1rem;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.botones::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+
+.botones:hover {
+    color: #e8e8e8;
+}
+
+.botones:hover::before {
+    width: 100%;
+}
+
+.section1, .section2, .section3{
     width: 98vw;
     height: 100%;
     display: flex;
@@ -33,13 +72,29 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
 }
 
-.section1 .banner .info button{
+.section1 .info h1{
+    font-size: 2rem;
+}
+
+.section1 .info h3{
+    font-size: 1.5rem;
+}
+
+.section1 .info p{
+    font-size: 1rem;
+}
+
+.section1 .info Link,
+.container .cards Link,
+.section3 .btn_ver Link {
     width: 70%;
     border-radius: 10px;
     padding: 2px;
+    white-space: nowrap;
+    cursor:pointer;
 }
 
 .section1 .banner .img1{
@@ -52,8 +107,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 20px;
 }
 
 .container{
@@ -68,6 +122,8 @@
 
 .container .cards{
     width: 100%;
+    min-height: 150px;
+    max-height: 250px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -81,36 +137,28 @@
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
     border-radius: 20px;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
-.container .cards button{
-    width: 70%;
-    border-radius: 10px;
-    padding: 2px;
+.container .cards p{
+    font-size: 1rem;
+}
+
+.container .cards Link{
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 /* Busqueda */
 
-.section2{
-    width: 98vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
-}
-
 .section2 .title2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+    font-size: 1.5rem;
     padding: 20px;
     margin-bottom: 20px;
-    font-size: 1rem;
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    border-radius: 20px;
 }
 
 .section2 .barrabusqueda{
@@ -125,7 +173,8 @@
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
+    cursor: pointer;
 }
 
 .section2 .barrabusqueda .contenedorbarrabusqueda{
@@ -144,6 +193,7 @@
     border-radius: 15px;
     border: 2px solid #c8ad8d;
     outline: none;
+    font-size: 1rem;
 }
 
 .section2 .barrabusqueda .contenedorbarrabusqueda svg{
@@ -173,20 +223,21 @@
     max-width: 300px;
     width: 100%;
     margin: 0 10px;
+    font-size: 1rem;
     border: 2px solid #c8ad8d;
     border-radius: 10px;
+    padding: 5px 0;
+    cursor: pointer;
 }
 
 .section2 .selectores option{
     font-size: 1rem;
+    padding: 10px 0;
+    cursor: pointer;
 }
 
 .section_3{
-    width: 98vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
+    margin-bottom: 40px;
 }
 
 .section_3 .tarjetas_animales{
@@ -215,14 +266,8 @@
 
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(16px);
-    z-index: -1;
+    /* z-index: -1; */
 
-}
-
-.section_3 .btn_ver button{
-    width: 70%;
-    border-radius: 10px;
-    padding: 2px;
 }
 
 @media (min-width: 768px){
@@ -230,9 +275,16 @@
         padding: 0 80px;
     }
 
-    .banner .info button, .container .cards button, .section_3 .btn_ver button{
-        width: 40%;
+    .section1 .info h1{
+        white-space: nowrap;
     }
+
+    .section1 .info Link,
+    .container .cards Link,
+    .section_3 .btn_ver Link{
+        width: 40%; 
+    }
+
 
     .section_3 .tarjetas_animales{
         flex-direction: row;
@@ -245,11 +297,29 @@
 @media (min-width: 992px){
     .section1{
         height: 100vh;
+        padding-top: 20px;
     }
 
     .section1 .banner{
+        width: 100%;
+        height: 100%;
         flex-direction: row;
         overflow: hidden;
+    }
+
+    .section1 .info{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(16px);
     }
 
     .section1 .info, 
@@ -259,8 +329,26 @@
 
     .container{
         flex-direction: row;
-        padding: 80px 0;
         margin-bottom: 0px;
+    }
+
+    .section1 .info h1{
+        font-size: 2.5rem;
+    }
+    
+    .section1 .info h3{
+        font-size: 1.75rem;
+    }
+    
+    .container .cards Link{
+        font-size: 1rem;
+    }
+    
+    .section2 h3{
+        font-size: 1.75rem;
+    }
+    .container .cards Link{
+        font-size: 1rem;
     }
 }
 
