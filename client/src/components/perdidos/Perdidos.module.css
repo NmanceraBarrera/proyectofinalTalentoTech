@@ -9,6 +9,7 @@
 /* Contenedor de los selectores */
 .desplegables {
   display: flex;
+  flex-direction: column;
   gap: 20px; /* Espacio entre los selectores */
   align-items: center; /* Alinear verticalmente */
 }
@@ -452,5 +453,9 @@
   }
   .container_tarjetas .tarjeta Link {
     font-size: 1rem;
+  }
+
+  .desplegables{
+    flex-direction: row;
   }
 }

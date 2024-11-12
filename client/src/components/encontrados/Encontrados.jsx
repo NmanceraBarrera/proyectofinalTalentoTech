@@ -94,6 +94,34 @@ export default function Encontrados() {
             />
           </div>
         </div>
+                {/* Tarjetas*/}
+                <div className={styles.container}>
+          {/* Card1 */}
+          <div className={styles.cards}>
+            <p>
+            Mantener la calma y tomar medidas inmediatas, si deseas saber más
+            sobre control de emociones en situaciones similares te dejamos una
+            guía rápida justo aquí abajo
+            </p>
+            <Link to='/informacion'><button className={styles.botones}>¿Qué hacer?</button></Link>
+          </div>
+          {/* Card2 */}
+          <div className={styles.cards}>
+            <p>
+              Si has encontrado a una mascota, registra el caso ingresando información al formulario de "encontrados"
+            </p>
+            <Link to='/formencontrados'><button className={styles.botones}>Publicar</button></Link>
+          </div>
+          {/* Card3 */}
+          <div className={styles.cards}>
+            <p>
+              Si no puedes cuidar de tu peludo, puedes comunicarte con alguna de
+              las fundaciones inscritas, ¡a un solo click!
+            </p>
+            <Link to='/fundaciones'><button className={styles.botones}>Comunícate</button></Link>
+          </div>
+        </div>
+
       </section>
 
       {/* Sección 2: Buscador */}
@@ -169,6 +197,7 @@ export default function Encontrados() {
 
       {/* Sección 3: Tarjetas de los encontrados */}
       <section className={styles.section_3}>
+      <div className={styles.tarjetas_animales}>
         <Cards data={currentItems} />
 
         {/* Paginado */}
@@ -187,10 +216,8 @@ export default function Encontrados() {
             Siguiente
           </button>
         </div>
+        </div>
       </section>
-
-      {/* Ver todos los encontrados */}
-
       <Footer />
     </div>
   );
