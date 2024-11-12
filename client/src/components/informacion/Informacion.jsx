@@ -5,10 +5,17 @@ import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import { Link } from "react-router-dom";
-
+import Swal from "sweetalert2"
 
 export default function Informacion() {
   const { isAuthenticated } = useAuth();
+  const openModal = () => {
+    Swal.fire({
+      title:"Alerta", 
+      text: "Debes registrarte e iniciar sesion para poder publicar",
+      icon: "info"
+    })
+}
   return (
     <div className={styles.containerInfo}>
       <Navbar />
@@ -107,7 +114,7 @@ export default function Informacion() {
               Puedes acceder al formulario en el siguiente boton, llenarlo con
               los datos solicitados y serás notificado de quien este buscandolo
             </p>
-            <Link to="/foundationsForm"><button>Registrar encontrado</button></Link>
+            {!isAuthenticated ? <button onClick={openModal}>Registrar</button> : <Link to="/formencontrados"><button>Registrar</button></Link>}
           </section>
           <section id="tip2_1" className={styles.highlighted}>
             <h3>¿Como buscarlo correctamente?</h3>
@@ -125,7 +132,7 @@ export default function Informacion() {
               llenalo con los datos solicitados y se te notificara si alguien
               tiene alguna información relevante
             </p>
-            <Link to="/formperdidos"><button>Registrar perdido</button></Link>
+            {!isAuthenticated ? <button onClick={openModal}>Registrar</button> : <Link to="/formperdidos"><button>Registrar</button></Link>}
           </section>
           <section id="tip3_1" className={styles.highlighted}>
             <h3>¿Como filtrar fundaciones en mi zona?</h3>
@@ -140,9 +147,9 @@ export default function Informacion() {
             <h3>¿Como registrar una fundacion en Huellitas A Casa?</h3>
             <p>
               Puedes acceder a la seccion de fundaciones y llenar los datos
-              solicitados en el formulario de registro de fundaciones
+              solicitados en el formulario de registro de fundaciones justo aqui abajo ↓
             </p>
-            <Link to="/foundationsForm"><button>Registrar una fundacion</button></Link>
+            {!isAuthenticated ? <button onClick={openModal}>Registrar</button> : <Link to="/foundationsForm"><button>Registrar</button></Link>}
           </section>
           <section id="tip4_1" className={styles.highlighted}>
             <h3>¿Qué otras herramientas puedo usar para difundir?</h3>

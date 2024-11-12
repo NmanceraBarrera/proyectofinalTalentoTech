@@ -5,9 +5,17 @@ import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 export default function Fundaciones() {
   const { isAuthenticated } = useAuth();
+  const openModal = () => {
+      Swal.fire({
+        title:"Alerta", 
+        text: "Debes registrarte e iniciar sesion para poder publicar",
+        icon: "info"
+      })
+  }
   return (
     <div className={styles.containerFundaciones}>
       <Navbar />
@@ -29,7 +37,7 @@ export default function Fundaciones() {
             <p>
               Recuerda que tambien puedes agregar en esta seccion tu organizacion
             </p>
-            <Link to="/foundationsForm"><button>Registra aqui!</button></Link>
+            {!isAuthenticated ? <button onClick={openModal}>Registrar</button> : <Link to="/foundationsForm"><button>Registrar</button></Link>}
           </div>
         </section>
         <section className={styles.section_2}>
@@ -92,10 +100,6 @@ export default function Fundaciones() {
         <section className={styles.section_3}>
           <div className={styles.tarjetas_animales}>
             {/* aqui van las tarjetas */}
-          </div>
-
-          <div className={styles.btn_ver}>
-            <button>Ver Todos</button>
           </div>
         </section>
       </main>

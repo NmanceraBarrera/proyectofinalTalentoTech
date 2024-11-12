@@ -1,6 +1,8 @@
 import React, { useState } from 'react'; 
 import styles from './FoundationsForm.module.css';
 import Footer from '../footer/Footer'; 
+import { Link } from "react-router-dom";
+
 
 export default function FoundationsForm() {
     const [formData, setFormData] = useState({
@@ -114,6 +116,8 @@ export default function FoundationsForm() {
                             value={formData.description}
                             onChange={handleInputChange}
                         />
+                        <button className={styles.boton} type="submit">Enviar</button>
+                        <Link to="/fundaciones" ><button className={styles.boton}>Ir a fundaciones</button></Link>
                     </form>
                 </section>
 
