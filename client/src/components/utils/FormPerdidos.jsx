@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useAuth } from "../../context/authContext"; // Usamos el contexto de autenticación
 import axios from "axios";
 import styles from "./FormPerdidos.module.css";
+import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 export default function FormPerdidos() {
   const CLOUD_NAME = "huellitas1246";
@@ -262,10 +264,8 @@ export default function FormPerdidos() {
               onChange={handleInputChange}
               required
             ></textarea>
-
-            <button type="submit" className={styles.submitButton}>
-              Enviar
-            </button>
+            <button className={styles.boton} type="submit">Enviar</button>
+            <Link to="/perdidos" ><button className={styles.boton}>Ir a perdidos</button></Link>
           </form>
         </section>
 
@@ -309,6 +309,7 @@ export default function FormPerdidos() {
           </div>
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }

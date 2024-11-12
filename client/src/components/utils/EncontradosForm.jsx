@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useAuth } from "../../context/authContext"; // Usamos el contexto de autenticación
 import axios from "axios";
 import styles from "./EncontradosForm.module.css";
+import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 export default function EncontradosForm() {
   const CLOUD_NAME = "huellitas1246";
@@ -263,9 +265,8 @@ export default function EncontradosForm() {
               required
             ></textarea>
 
-            <button type="submit" className={styles.submitButton}>
-              Enviar
-            </button>
+            <button className={styles.boton} type="submit">Enviar</button>
+            <Link to="/encontrados" ><button className={styles.boton}>Ir a encontrados</button></Link>
           </form>
         </section>
 
@@ -309,6 +310,7 @@ export default function EncontradosForm() {
           </div>
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }
