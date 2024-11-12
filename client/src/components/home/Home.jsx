@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./home.module.css";
 import Navbar from "../navbar/Navbar";
 import ModalScreen from "../utils/Modal";
@@ -6,7 +6,11 @@ import { useAuth } from "../../context/authContext";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 export default function Home() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
+
+  useEffect(() => {
+    const usuarioRegistrado = user.email + user.id;
+  }, []);
 
   return (
     <div className={styles.containerPrincipal}>
@@ -43,8 +47,9 @@ export default function Home() {
               Publica un anuncio con los detalles y recibe alertas cuando haya
               avistamientos cerca.
             </p>
-            <Link to='/perdidos'><button className={styles.botones}>Perdidos</button></Link>
-
+            <Link to="/perdidos">
+              <button className={styles.botones}>Perdidos</button>
+            </Link>
           </div>
         </div>
 
@@ -64,7 +69,9 @@ export default function Home() {
               Ayúdanos a difundir la información para que su dueño lo pueda
               encontrar rápidamente.
             </p>
-            <Link to='/encontrados'><button className={styles.botones}>Encontrados</button></Link>
+            <Link to="/encontrados">
+              <button className={styles.botones}>Encontrados</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -72,10 +79,10 @@ export default function Home() {
       <section className={styles.section_3}>
         <div className={styles.btn_ver}>
           <h2>¿Buscas fundaciones de animales en tu zona?</h2>
-          <Link to='/fundaciones'><button className={styles.botones}>Buscar ahora</button></Link>
-
+          <Link to="/fundaciones">
+            <button className={styles.botones}>Buscar ahora</button>
+          </Link>
         </div>
-       
       </section>
       <Footer />
     </div>

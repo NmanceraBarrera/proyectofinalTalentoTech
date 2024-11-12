@@ -1,4 +1,4 @@
-//routes
+// routes.js
 const express = require("express");
 const responses = require("../../red/responses");
 const controlador = require("./controlador");
@@ -23,6 +23,7 @@ async function getOnlyOne(req, res) {
     responses.error(req, res, error, 500);
   }
 }
+
 async function deleteOnlyOne(req, res) {
   try {
     const id = req.params.id;
