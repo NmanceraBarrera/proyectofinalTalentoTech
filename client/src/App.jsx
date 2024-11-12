@@ -22,7 +22,7 @@ function App() {
           <Route path="/fundaciones" element={<Fundaciones />} />
           <Route path="/encontrados" element={<Encontrados />} />
           <Route path="/perdidos" element={<Perdidos />} />
-          <Route path="/reporteencontrados" element={<EncontradosForm />} />
+          <Route path="/formencontrados" element={<EncontradosForm />} />
           <Route path="/foundationsForm" element={<FoundationsForm />} />
           <Route path="/formperdidos" element={<FormPerdidos />} />
         </Routes>

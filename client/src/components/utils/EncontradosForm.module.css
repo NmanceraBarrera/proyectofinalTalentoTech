@@ -7,7 +7,7 @@
 .containerFoundationsForm {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .containerMain {
@@ -26,16 +26,24 @@
 .containerForm form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 80vw;
-    padding: 30px;
+    gap: 5px;
+    width: 90vw;
     margin: 20px;
     border-radius: 15px;
     text-align: center;
     align-items: center;
+    padding: 50px 20px;
     
     background-color: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(24px);
+}
+
+.containerForm select{
+    width: 80%;
+    height: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
 }
 
 .containerForm label {
@@ -46,7 +54,7 @@
 .containerForm input, textarea {
     width: 80%;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 5px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
