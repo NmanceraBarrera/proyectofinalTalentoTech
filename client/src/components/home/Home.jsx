@@ -5,17 +5,26 @@ import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
+
 export default function Home() {
   const { isAuthenticated, user } = useAuth();
 
+  // Esta parte se asegura de que `user` no sea null antes de acceder a sus propiedades.
   useEffect(() => {
-    const usuarioRegistrado = user.email + user.id;
-  }, []);
+    if (user && user.email && user.id) {
+      // Solo hacer algo si `user` no es null y tiene las propiedades necesarias
+      const usuarioRegistrado = user.email + user.id;
+      console.log("Usuario registrado:", usuarioRegistrado); // Esto es solo un ejemplo de uso.
+    }
+  }, [user]); // Este efecto se ejecutará solo cuando `user` cambie
 
   return (
     <div className={styles.containerPrincipal}>
       <Navbar />
+
+      {/* Mostrar el modal si no está autenticado */}
       {!isAuthenticated && <ModalScreen />}
+
       <section className={styles.section_1}>
         <div className={styles.informacion_1}>
           <div className={styles.titulo}>
@@ -24,7 +33,10 @@ export default function Home() {
           <div className={styles.parrafo_1}>
             <h3>¿Como funciona huellitas a casa?</h3>
             <p>
-            Nuestra misión es ayudarte a encontrar a tu amigo perdido o a reunir animales encontrados con sus familias. Nuestra plataforma está diseñada para facilitar la búsqueda, el reporte y la recolección de animales extraviados en tu comunidad. 
+              Nuestra misión es ayudarte a encontrar a tu amigo perdido o a
+              reunir animales encontrados con sus familias. Nuestra plataforma
+              está diseñada para facilitar la búsqueda, el reporte y la
+              recolección de animales extraviados en tu comunidad.
             </p>
           </div>
         </div>
@@ -84,6 +96,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
       <Footer />
     </div>
   );

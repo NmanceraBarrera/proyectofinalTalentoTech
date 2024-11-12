@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import { useAuth } from "../../context/authContext"; // Importamos el hook
 
 export default function Login() {
-  const { login } = useAuth(); // Usamos el contexto de autenticación
+  const { login, logout } = useAuth(); // Usamos el contexto de autenticación
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
@@ -117,6 +117,18 @@ export default function Login() {
     setError("");
   };
 
+  const handleOmitir = () => {
+    // Limpiar los datos de autenticación en localStorage
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // Llamar a la función de logout desde el contexto para limpiar el estado global
+    logout();
+
+    // Redirigir al usuario a la página de inicio (puedes cambiar '/home' por cualquier ruta)
+    navigate("/home");
+  };
+
   return (
     <div className={styles.loginContainer}>
       <div className={styles.loginSection}>
@@ -184,7 +196,7 @@ export default function Login() {
         )}
 
         <p className={styles.terms}>
-          <Link to="/home">Omitir por ahora</Link>
+          <button onClick={handleOmitir}>Omitir por ahora</button>
         </p>
       </div>
     </div>
