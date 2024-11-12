@@ -16,7 +16,7 @@ export default function Perdidos() {
         <div className={styles.banner}>
           <div className={styles.informacion_1}>
             <h1>¿Perdiste a tu mascota?</h1>
-            <h3>¿Que hacer</h3>
+            <h3>¿Qué hacer?</h3>
             <p>
               Accede a la Sección de "Mascotas Encontradas": Aquí puedes ver una
               lista de animales que han sido reportados por otros usuarios como
@@ -37,9 +37,7 @@ export default function Perdidos() {
         <div className={styles.container_tarjetas}>
           <div className={styles.tarjeta}>
             <p>
-              Mantener la calma y tomar medidas inmediatas, si deseas saber mas
-              sobre control de emociones en situaciones similares te dejamos una
-              guia rapida justo aqui abajo
+            Mantener la calma y tomar medidas inmediatas, si deseas saber más sobre control de emociones en situaciones similares te dejamos una, guía rápida justo aquí abajo.
             </p>
             <Link to='/informacion'><button className={styles.botones}>¿Qué hacer?</button></Link>
 
@@ -58,7 +56,7 @@ export default function Perdidos() {
             <p>
               {" "}
               Si no puedes cuidar de este(a), puedes comunicarte con alguna de
-              las fundaciones inscritas ¡a un solo click!
+              las fundaciones inscritas ¡a un solo click!.
             </p>
             <Link to='/fundaciones'><button className={styles.botones}>comunícate</button></Link>
 
@@ -68,9 +66,7 @@ export default function Perdidos() {
 
       <section className={styles.section_2}>
         <h3>
-          Aca encontraras todos las mascotas que se han agregado como
-          encontradas, recuerda que: puedes filtrar de acuerdo a ciertas
-          caracteristicas
+          Acá encontrarás todas las mascotas que se han agregado como encontradas, recuerda que: puedes filtrar de acuerdo a ciertas características.
         </h3>
         <div className={styles.barra_busqueda}>
           <div className={styles.container_busqueda}>
@@ -112,7 +108,7 @@ export default function Perdidos() {
           <div className={styles.tipo}>
             <select id="genero" name="genero">
               <option value="" disabled selected>
-                Genero
+                Género
               </option>
               <option value="opcion2">Macho</option>
               <option value="opcion3">Hembra</option>
