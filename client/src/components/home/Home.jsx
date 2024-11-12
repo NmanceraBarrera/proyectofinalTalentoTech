@@ -15,15 +15,12 @@ export default function Home() {
       <section className={styles.section_1}>
         <div className={styles.informacion_1}>
           <div className={styles.titulo}>
-            <h1>Huellitas a casa</h1>
+            <h1>Huélligas a casa</h1>
           </div>
           <div className={styles.parrafo_1}>
             <h3>¿Como funciona huellitas a casa?</h3>
             <p>
-              Nuestra misión es ayudarte a encontrar a tu amigo perdido o a
-              reunir animales encontrados con sus familias. Nuestra plataforma
-              está diseñada para facilitar la búsqueda, el reporte y la
-              recolección de animales extraviados en tu comunidad.
+            Nuestra misión es ayudarte a encontrar a tu amigo perdido o a reunir animales encontrados con sus familias. Nuestra plataforma está diseñada para facilitar la búsqueda, el reporte y la recolección de animales extraviados en tu comunidad. 
             </p>
           </div>
         </div>
