@@ -23,6 +23,7 @@ export default function FormPerdidos() {
 
   const [breedSelect, setBreedSelect] = useState("perro");
   const [genreSelect, setGenreSelect] = useState("macho");
+
   const [formData, setFormData] = useState({
     name: "",
     loss_date: "",
@@ -124,12 +125,12 @@ export default function FormPerdidos() {
         name: "",
         loss_date: "",
         breed: breedSelect,
-        city: "", // Usamos `city` directamente aquí, no necesitamos `citySelect`
+        city: "",
         place: "",
         color_1: "",
         color_2: "",
         gender: genreSelect,
-        photo: "", // Foto inicial vacía
+        photo: "",
         contact_phone: "",
         description: "",
       });
