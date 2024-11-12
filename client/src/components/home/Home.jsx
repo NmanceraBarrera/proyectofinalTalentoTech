@@ -15,7 +15,7 @@ export default function Home() {
       <section className={styles.section_1}>
         <div className={styles.informacion_1}>
           <div className={styles.titulo}>
-            <h1>Huélligas a casa</h1>
+            <h1>Huéllitas a casa</h1>
           </div>
           <div className={styles.parrafo_1}>
             <h3>¿Como funciona huellitas a casa?</h3>
