@@ -1,74 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios"; // Importar axios para hacer la consulta HTTP
+import React from "react";
 import styles from "./Fundaciones.module.css";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import { Link } from "react-router-dom";
-import Cards from "../utils/Cards"; // Importamos el componente Cards que muestra las tarjetas
-import Swal from "sweetalert2";
 
 export default function Fundaciones() {
   const { isAuthenticated } = useAuth();
-  const [fundaciones, setFundaciones] = useState([]); // Datos de las fundaciones
-  const [breed, setBreed] = useState(""); // Estado para la raza
-  const [city, setCity] = useState(""); // Estado para la ciudad
-  const [currentPage, setCurrentPage] = useState(1); // Estado para la página actual
-  const [itemsPerPage] = useState(4); // Número de items por página
-  const [availableBreeds, setAvailableBreeds] = useState([]); // Razas disponibles
-  const [availableCities, setAvailableCities] = useState([]); // Ciudades disponibles
-
-  // Realizar la consulta a la API al montar el componente
-  useEffect(() => {
-    const fetchFundaciones = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:4000/api/fundaciones"
-        ); // URL de tu API de fundaciones
-        const data = response.data.body;
-        setFundaciones(data);
-
-        // Extraer las razas y ciudades disponibles
-        const breeds = [...new Set(data.map((item) => item.breed))];
-        const cities = [...new Set(data.map((item) => item.city))];
-        setAvailableBreeds(breeds);
-        setAvailableCities(cities);
-      } catch (error) {
-        console.error("Error al obtener las fundaciones:", error);
-      }
-    };
-
-    fetchFundaciones();
-  }, []);
-
-  // Filtrar los datos según los filtros seleccionados
-  const filteredFundaciones = fundaciones.filter((item) => {
-    return (
-      (breed ? item.breed === breed : true) &&
-      (city ? item.city === city : true)
-    );
-  });
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredFundaciones.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
-
-  // Cambiar la página actual
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  // Función para abrir el modal de alerta cuando no hay sesión iniciada
-  const openModal = () => {
-    Swal.fire({
-      title: "Alerta",
-      text: "Debes registrarte e iniciar sesión para poder publicar",
-      icon: "info",
-    });
-  };
-
   return (
     <div className={styles.containerFundaciones}>
       <Navbar />
@@ -77,7 +16,7 @@ export default function Fundaciones() {
         <section className={styles.containerMain2}>
           <img
             src="https://is2.sosvox.net/petitions/b/5b/5b154b71539a0590357ced776270e07b.jpg"
-            alt="Fundaciones"
+            alt=""
           />
           <div>
             <h1>
@@ -85,28 +24,17 @@ export default function Fundaciones() {
               o apoyarla
             </h1>
             <p>
-              Acá encontrarás todas las fundaciones que han sido agregadas,
-              recuerda que puedes filtrar de acuerdo a tu zona de interés.
+              Aca encontraras todos las mascotas que se han agregado como encontradas, recuerda que: puedes filtrar de acuerdo a tu zona de interes
             </p>
-            <p>También puedes agregar tu organización en esta sección.</p>
-            {!isAuthenticated ? (
-              <button onClick={openModal}>Registrar</button>
-            ) : (
-              <Link to="/foundationsForm">
-                <button>Registrar</button>
-              </Link>
-            )}
+            <p>
+              Recuerda que tambien puedes agregar en esta seccion tu organizacion
+            </p>
+            <Link to="/foundationsForm"><button>Registra aqui!</button></Link>
           </div>
         </section>
-
         <section className={styles.section_2}>
-         <h2 className={styles.title}>Acá encontrarás todas las fundaciones que se han agregado, puedes filtrar por ciudades y nombre:</h2>
-        </section>
-
-        <section className={styles.section_3}>
-        <div className={styles.tarjetas_animales}>
-        <div className={styles.barrabusqueda}>
-            <div className={styles.contenedorbarrabusqueda}>
+          <div className={styles.barra_busqueda}>
+            <div className={styles.container_busqueda}>
               <input
                 type="text"
                 name="busqueda"
@@ -141,45 +69,36 @@ export default function Fundaciones() {
               </svg>
             </div>
           </div>
-          
-            <div className={styles.desplegables}>
-              <div className={styles.tipo}>
-                <select onChange={(e) => setCity(e.target.value)} value={city}>
-                  <option value="">Ciudad</option>
-                  {availableCities.map((city) => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-            </div>
-            {/* Mostrar las tarjetas filtradas y paginadas */}
-            <Cards data={currentItems} />
-
-            {/* Paginación */}
-            <div className={styles.pagination}>
-              <button
-                onClick={() => paginate(currentPage - 1)}
-                disabled={currentPage === 1}
-              >
-                Anterior
-              </button>
-              <span>{currentPage}</span>
-              <button
-                onClick={() => paginate(currentPage + 1)}
-                disabled={
-                  currentPage * itemsPerPage >= filteredFundaciones.length
-                }
-              >
-                Siguiente
-              </button>
+          <div className={styles.desplegables}>
+            <div className={styles.tipo}>
+              <select id="ciudad" name="ciudad">
+                <option value="" disabled selected>
+                  Ciudad
+                </option>
+                <option value="opcion2">Bogotá</option>
+                <option value="opcion4">Medellín</option>
+                <option value="opcion5">Medellín</option>
+                <option value="opcion6">Medellín</option>
+                <option value="opcion7">Medellín</option>
+                <option value="opcion8">Medellín</option>
+                <option value="opcion9">Medellín</option>
+                <option value="opcion10">Medellín</option>
+                <option value="opcion11">Medellín</option>
+              </select>
             </div>
           </div>
         </section>
-      </main>
 
+        <section className={styles.section_3}>
+          <div className={styles.tarjetas_animales}>
+            {/* aqui van las tarjetas */}
+          </div>
+
+          <div className={styles.btn_ver}>
+            <button>Ver Todos</button>
+          </div>
+        </section>
+      </main>
       <Footer />
     </div>
   );
