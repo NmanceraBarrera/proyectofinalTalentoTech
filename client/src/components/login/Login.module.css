@@ -87,7 +87,7 @@
 }
 
 .signupForm input {
-  padding: .4rem 0.8rem ;
+  padding: 0.4rem 0.8rem;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
@@ -99,12 +99,13 @@
   right: 1rem;
   width: 300px;
   height: auto;
+  cursor: pointer;
 }
 
 .terms a {
   color: #333;
   text-decoration: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   opacity: 0.8;
 }
 
@@ -141,7 +142,7 @@
 }
 
 @media (max-width: 480px) {
-  .terms{
+  .terms {
     margin-bottom: 5px;
   }
 }
