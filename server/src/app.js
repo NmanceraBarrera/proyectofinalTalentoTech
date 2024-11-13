@@ -7,6 +7,7 @@ const config = require("./config");
 const perdidos = require("./modulos/Perdidos/routes");
 const encontrados = require("./modulos/Encontrados/routes");
 const users = require("./modulos/Users/routes");
+const fundaciones = require("./modulos/Fundaciones/routes");
 
 const app = express();
 
@@ -25,6 +26,7 @@ cloudinary.config({
 });
 
 //rutas
+app.use("/api/fundaciones", fundaciones);
 app.use("/api/perdidos", perdidos);
 app.use("/api/encontrados", encontrados);
 app.use("/api/users", users);
