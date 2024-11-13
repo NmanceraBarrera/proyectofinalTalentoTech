@@ -18,13 +18,30 @@
   background-color: rgba(235, 230, 234, 0.9);
 }
 
+.profileDropdown {
+  position: absolute;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding-top: 15px;
+  background-color: #fff8ef9d;
+  backdrop-filter: blur(16px);
+  border: 1px solid #000000;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  line-height: 20px;
+}
+
 .btnBurger,
 .gap1,
-.listRight{
+.listRight {
   flex: 1;
 }
- 
-.gap1{
+
+.gap1 {
   display: flex;
   justify-content: center;
 }
@@ -132,8 +149,8 @@
   position: relative;
   font-weight: 1000;
   font-size: 1rem;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   transition: all 250ms;
   overflow: hidden;
 }
@@ -148,10 +165,10 @@
   border-radius: 15px;
   background-color: #212121;
   z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-  transition: all 250ms
-  }
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
 
 .sidebar nav div button:hover {
   color: #e8e8e8;
@@ -187,7 +204,6 @@
   text-underline-offset: 5px;
   text-decoration-thickness: 3px;
 }
-
 
 @media (min-width: 675px) {
   .containerNavbar {
@@ -273,7 +289,6 @@
 }
 
 @media (min-width: 962px) {
-
   .listRight li button {
     font-size: 1rem;
     padding: 5px 10px;
@@ -286,6 +301,4 @@
   .listRight li {
     font-size: 1rem;
   }
-
-
 }
