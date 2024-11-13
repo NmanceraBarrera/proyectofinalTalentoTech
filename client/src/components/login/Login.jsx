@@ -102,16 +102,7 @@ export default function Login() {
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
-    setError("");
-  };
-
-  const handleOmitir = () => {
-    // Limpiar los datos de autenticación en localStorage
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-
-    // Redirigir al usuario a la página de inicio (puedes cambiar '/home' por cualquier ruta)
-    navigate("/home");
+    setError(""); // Limpiar el error cuando cambiamos de formulario
   };
 
   return (
@@ -181,9 +172,8 @@ export default function Login() {
           </form>
         )}
 
-<p className={styles.terms} onClick={handleOmitir}>
-          Omitir por ahora
-        </p>
+        <p className={styles.terms}>
+          <Link to="/home">Omitir por ahora</Link>
         </p>
       </div>
     </div>
