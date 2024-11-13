@@ -4,6 +4,7 @@ import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../context/authContext";
+import Swal from "sweetalert2"; // Importamos SweetAlert2
 
 export default function FoundationsForm() {
   const CLOUD_NAME = "huellitas1246"; // Cloudinary name
@@ -48,7 +49,11 @@ export default function FoundationsForm() {
     if (file) {
       // Validación del tipo de archivo
       if (!file.type.startsWith("image/")) {
-        alert("Por favor, selecciona un archivo de imagen");
+        Swal.fire(
+          "Error",
+          "Por favor, selecciona un archivo de imagen",
+          "error"
+        );
         return;
       }
 
@@ -73,7 +78,7 @@ export default function FoundationsForm() {
           "Error al subir la imagen a Cloudinary:",
           error.response?.data || error.message
         );
-        alert("Error al subir la imagen.");
+        Swal.fire("Error", "Error al subir la imagen.", "error");
       }
     }
   };
@@ -82,7 +87,11 @@ export default function FoundationsForm() {
     e.preventDefault();
 
     if (!user) {
-      alert("Debes estar logueado para registrar el reporte.");
+      Swal.fire(
+        "¡Error!",
+        "Debes estar logueado para registrar el reporte.",
+        "warning"
+      );
       return;
     }
 
@@ -105,7 +114,7 @@ export default function FoundationsForm() {
         }
       );
       console.log("Datos guardados:", response.data);
-      alert("Formulario enviado correctamente.");
+      Swal.fire("¡Éxito!", "Formulario enviado correctamente.", "success");
 
       // Limpiar el formulario
       setFormData({
@@ -118,7 +127,7 @@ export default function FoundationsForm() {
       });
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
-      alert("Hubo un error al enviar el formulario.");
+      Swal.fire("¡Error!", "Hubo un error al enviar el formulario.", "error");
     }
   };
 

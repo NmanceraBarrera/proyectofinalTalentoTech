@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
+import Swal from "sweetalert2"; // Asegúrate de importar Swal
 
 const AuthContext = createContext();
 
@@ -25,10 +26,29 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
-    setUser(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Si cierras sesion debes voler a loguearte para crear un anuncio",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setIsAuthenticated(false);
+        setUser(null);
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
+        Swal.fire({
+          title: "Cerrado sesión!",
+          text: "Has cerrado sesión con éxito.",
+          icon: "success",
+        });
+      }
+    });
   };
 
   return (

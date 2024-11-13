@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useAuth } from "../../context/authContext"; // Usamos el contexto de autenticación
+import { useAuth } from "../../context/authContext";
 import axios from "axios";
 import styles from "./EncontradosForm.module.css";
 import { Link } from "react-router-dom";
 import Footer from "../footer/Footer";
+import Swal from "sweetalert2";
 
 export default function EncontradosForm() {
   const CLOUD_NAME = "huellitas1246";
@@ -21,14 +22,14 @@ export default function EncontradosForm() {
     { nombre: "Santa Marta" },
   ];
 
-  const { user } = useAuth(); // Usamos el contexto para obtener el usuario autenticado
+  const { user } = useAuth();
 
   const [breedSelect, setBreedSelect] = useState("perro");
   const [genreSelect, setGenreSelect] = useState("macho");
 
   const [formData, setFormData] = useState({
     name: "",
-    found_date: "", // Cambio de 'date' a 'found_date'
+    found_date: "",
     breed: breedSelect,
     city: "",
     place: "",
@@ -65,9 +66,12 @@ export default function EncontradosForm() {
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validación del tipo de archivo
       if (!file.type.startsWith("image/")) {
-        alert("Por favor, selecciona un archivo de imagen");
+        Swal.fire(
+          "Error",
+          "Por favor, selecciona un archivo de imagen",
+          "error"
+        );
         return;
       }
 
@@ -81,18 +85,13 @@ export default function EncontradosForm() {
           `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
           formDataImage
         );
-        console.log("Imagen subida correctamente:", response.data);
         const imageUrl = response.data.secure_url;
         setFormData({
           ...formData,
           photo: imageUrl,
         });
       } catch (error) {
-        console.error(
-          "Error al subir la imagen a Cloudinary:",
-          error.response?.data || error.message
-        );
-        alert("Error al subir la imagen.");
+        Swal.fire("Error", "Error al subir la imagen.", "error");
       }
     }
   };
@@ -101,13 +100,17 @@ export default function EncontradosForm() {
     e.preventDefault();
 
     if (!user) {
-      alert("Debes estar logueado para registrar el reporte.");
+      Swal.fire(
+        "¡Error!",
+        "Debes estar logueado para registrar el reporte.",
+        "warning"
+      );
       return;
     }
 
     const payload = {
       ...formData,
-      userId: user.id, // Incluimos el id_user del usuario autenticado
+      userId: user.id,
     };
 
     try {
@@ -120,12 +123,11 @@ export default function EncontradosForm() {
           },
         }
       );
-      console.log("Datos guardados:", response.data);
-      alert("Formulario enviado correctamente.");
+      Swal.fire("¡Éxito!", "Formulario enviado correctamente.", "success");
 
       setFormData({
         name: "",
-        found_date: "", // Reiniciar 'found_date'
+        found_date: "",
         breed: "perro",
         city: "",
         place: "",
@@ -137,8 +139,7 @@ export default function EncontradosForm() {
         description: "",
       });
     } catch (error) {
-      console.error("Error al enviar el formulario:", error);
-      alert("Hubo un error al enviar el formulario.");
+      Swal.fire("¡Error!", "Hubo un error al enviar el formulario.", "error");
     }
   };
 
@@ -265,8 +266,12 @@ export default function EncontradosForm() {
               required
             ></textarea>
 
-            <button className={styles.boton} type="submit">Enviar</button>
-            <Link to="/encontrados" ><button className={styles.boton}>Ir a encontrados</button></Link>
+            <button className={styles.boton} type="submit">
+              Enviar
+            </button>
+            <Link to="/encontrados">
+              <button className={styles.boton}>Ir a encontrados</button>
+            </Link>
           </form>
         </section>
 
@@ -313,7 +318,7 @@ export default function EncontradosForm() {
           </div>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

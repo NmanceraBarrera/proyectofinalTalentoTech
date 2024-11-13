@@ -4,6 +4,7 @@ import axios from "axios";
 import styles from "./FormPerdidos.module.css";
 import { Link } from "react-router-dom";
 import Footer from "../footer/Footer";
+import Swal from "sweetalert2"; // Importamos SweetAlert2
 
 export default function FormPerdidos() {
   const CLOUD_NAME = "huellitas1246";
@@ -67,7 +68,11 @@ export default function FormPerdidos() {
     if (file) {
       // Validación del tipo de archivo
       if (!file.type.startsWith("image/")) {
-        alert("Por favor, selecciona un archivo de imagen");
+        Swal.fire(
+          "Error",
+          "Por favor, selecciona un archivo de imagen",
+          "error"
+        );
         return;
       }
 
@@ -92,7 +97,7 @@ export default function FormPerdidos() {
           "Error al subir la imagen a Cloudinary:",
           error.response?.data || error.message
         );
-        alert("Error al subir la imagen.");
+        Swal.fire("Error", "Error al subir la imagen.", "error");
       }
     }
   };
@@ -101,7 +106,11 @@ export default function FormPerdidos() {
     e.preventDefault();
 
     if (!user) {
-      alert("Debes estar logueado para registrar el reporte.");
+      Swal.fire(
+        "¡Error!",
+        "Debes estar logueado para registrar el reporte.",
+        "warning"
+      );
       return;
     }
 
@@ -121,7 +130,7 @@ export default function FormPerdidos() {
         }
       );
       console.log("Datos guardados:", response.data);
-      alert("Formulario enviado correctamente.");
+      Swal.fire("¡Éxito!", "Formulario enviado correctamente.", "success");
 
       setFormData({
         name: "",
@@ -138,7 +147,7 @@ export default function FormPerdidos() {
       });
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
-      alert("Hubo un error al enviar el formulario.");
+      Swal.fire("¡Error!", "Hubo un error al enviar el formulario.", "error");
     }
   };
 
@@ -264,8 +273,12 @@ export default function FormPerdidos() {
               onChange={handleInputChange}
               required
             ></textarea>
-            <button className={styles.boton} type="submit">Enviar</button>
-            <Link to="/perdidos" ><button className={styles.boton}>Ir a perdidos</button></Link>
+            <button className={styles.boton} type="submit">
+              Enviar
+            </button>
+            <Link to="/perdidos">
+              <button className={styles.boton}>Ir a perdidos</button>
+            </Link>
           </form>
         </section>
 
@@ -312,7 +325,7 @@ export default function FormPerdidos() {
           </div>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

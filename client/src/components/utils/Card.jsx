@@ -15,7 +15,6 @@ export default function Card(props) {
         />
       </div>
       <div className={styles.info}>
-        {/* Ciudad en la esquina superior derecha */}
         {city && (
           <div className={styles.cityTag}>
             <h5>{city}</h5>

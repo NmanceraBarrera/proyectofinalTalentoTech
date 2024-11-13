@@ -11,7 +11,7 @@ export default function Cards({ data }) {
         data.map((item, index) => (
           <Card
             key={index}
-            image={item.photo} // Asegúrate de que la propiedad correcta esté aquí
+            image={item.photo}
             name={item.name}
             city={item.city}
             breed={item.breed}
@@ -19,7 +19,7 @@ export default function Cards({ data }) {
           />
         ))
       ) : (
-        <p>No hay mascotas perdidas disponibles.</p> // Mensaje si no hay datos
+        <p>No hay valores para mostrar.</p> // Mensaje si no hay datos
       )}
     </div>
   );
