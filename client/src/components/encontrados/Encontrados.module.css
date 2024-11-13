@@ -4,95 +4,88 @@
   box-sizing: border-box;
 }
 
-/* -------------------Estilos para hacer responsive--------- */
-
-/* Contenedor de los selectores */
 .desplegables {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espacio entre los selectores */
-  align-items: center; /* Alinear verticalmente */
+  gap: 20px; 
+  align-items: center; 
 }
 
-/* Estilo de los selectores */
 .desplegables select {
-  padding: 12px 16px; /* Espaciado dentro del selector */
-  font-size: 1rem; /* Tamaño de la fuente */
-  border-radius: 8px; /* Bordes redondeados */
-  border: 2px solid #f0a500; /* Borde de color suave */
-  background-color: #fff0e1; /* Fondo suave */
-  color: #8b774b; /* Color de texto suave */
-  cursor: pointer; /* Puntero al pasar el ratón */
-  transition: all 0.3s ease; /* Transición suave para cambios */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  width: 200px; /* Ancho fijo para que no se distorsione */
+  padding: 12px 16px; 
+  font-size: 1rem; 
+  border-radius: 8px; 
+  border: 2px solid #f0a500;
+  background-color: #fff0e1; 
+  color: #8b774b; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 200px; 
 }
 
 .desplegables select:focus {
-  outline: none; /* Quitar el borde de enfoque por defecto */
-  border-color: #000000; /* Borde color rosa cuando está en foco */
-  background-color: #c8ad8d; /* Fondo ligeramente rosado cuando está en foco */
+  outline: none; 
+  border-color: #000000; 
+  background-color: #c8ad8d; 
   color: #212121;
 }
 
 .desplegables select:hover {
-  border-color: #fbbf24; /* Color del borde al pasar el ratón */
-  background-color: #fff4e5; /* Fondo claro al pasar el ratón */
+  border-color: #fbbf24; 
+  background-color: #fff4e5; 
 }
 
 .desplegables option {
-  padding: 10px; /* Espaciado dentro de las opciones */
-  background-color: #fff0e1; /* Fondo de las opciones */
-  color: #5f4b8b; /* Color de las opciones */
+  padding: 10px; 
+  background-color: #fff0e1; 
+  color: #5f4b8b; 
 }
 
 .desplegables option:hover {
-  background-color: #fbbf24; /* Fondo al pasar el ratón sobre las opciones */
-  color: white; /* Color del texto cuando pasa el ratón */
+  background-color: #fbbf24; 
+  color: white; 
 }
 
-/* Contenedor de la paginación */
 .pagination {
   display: flex;
-  justify-content: center; /* Centra los botones de paginación */
+  justify-content: center; 
   align-items: center;
-  gap: 20px; /* Espacio entre los botones */
+  gap: 20px; 
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* Estilos para los botones de paginación */
+
 .pagination button {
-  padding: 12px 20px; /* Espaciado dentro del botón */
-  font-size: 1rem; /* Tamaño de la fuente */
-  background-color: #c8ad8d; /* Fondo azul suave */
-  color: white; /* Color del texto */
-  border: 2px solid #000000; /* Borde del mismo color que el fondo */
-  border-radius: 8px; /* Bordes redondeados */
-  cursor: pointer; /* Puntero al pasar el ratón */
-  transition: all 0.3s ease; /* Transición suave */
-  font-weight: 600; /* Peso de fuente para hacerla más prominente */
+  padding: 12px 20px; 
+  font-size: 1rem; 
+  background-color: #c8ad8d; 
+  color: white; 
+  border: 2px solid #000000; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  font-weight: 600; 
 }
 
 .pagination button:disabled {
-  background-color: #e5e7eb; /* Fondo gris claro cuando está deshabilitado */
-  color: #9ca3af; /* Color de texto gris claro */
-  border: 2px solid #e5e7eb; /* Borde gris claro */
-  cursor: not-allowed; /* Cursor deshabilitado */
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  border: 2px solid #e5e7eb; 
+  cursor: not-allowed; 
 }
 
 .pagination button:hover {
-  background-color: #ffffff; /* Azul más oscuro al pasar el ratón */
-  border-color: #000000; /* Cambiar borde a color oscuro */
+  background-color: #ffffff; 
+  border-color: #000000;
 }
 
 .pagination span {
-  font-size: 1.1rem; /* Tamaño de fuente más grande para el número de la página */
-  font-weight: 500; /* Peso de fuente ligeramente más pesado */
-  color: #1f2937; /* Color gris oscuro para el número de página */
+  font-size: 1.1rem;
+  font-weight: 500; 
+  color: #1f2937; 
 }
-
-/* -------------------Estilos para hacer responsive--------- */
 
 .botones {
   width: 100%;
@@ -252,23 +245,23 @@
   backdrop-filter: blur(16px);
 }
 
-.section2 .barrabusqueda {
+.section_3 {
+  margin-bottom: 40px;
+}
+
+.section_3 .barrabusqueda {
   width: 100%;
   height: 100%;
   padding: 30px 0;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(16px);
-  /* z-index: -1; */
   cursor: pointer;
 }
 
-.section2 .barrabusqueda .contenedorbarrabusqueda {
+.section_3 .barrabusqueda .contenedorbarrabusqueda {
   width: 300px;
   position: relative;
   display: flex;
@@ -277,17 +270,26 @@
   justify-content: center;
 }
 
-.section2 .barrabusqueda .contenedorbarrabusqueda input {
+.section_3 .barrabusqueda .contenedorbarrabusqueda input {
   width: 300px;
-  padding: 5px 0;
+  padding: 12px 16px; 
   padding-left: 30px;
-  border-radius: 15px;
-  border: 2px solid #c8ad8d;
+  border-radius: 10px;
+  border: 2px solid #f0a500; 
+  background-color: #fff0e1; 
+  color: #8b774b; 
+  cursor: pointer; 
   outline: none;
   font-size: 1rem;
+  color:#8b774b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.section2 .barrabusqueda .contenedorbarrabusqueda svg {
+.section_3 .barrabusqueda .contenedorbarrabusqueda ::placeholder{
+  color:#8b774b;
+}
+
+.section_3 .barrabusqueda .contenedorbarrabusqueda svg {
   width: 20px;
   height: auto;
   position: absolute;
@@ -296,39 +298,12 @@
   transform: translate(-50%, -50%);
 }
 
-.section2 .selectores {
+.section_3 .selectores {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 20px 0;
   padding-bottom: 70px;
-  margin-bottom: 20px;
-
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(16px);
-  border-radius: 10px;
-}
-
-.section2 .selectores select {
-  min-width: 50px;
-  max-width: 300px;
-  width: 100%;
-  margin: 0 10px;
-  font-size: 1rem;
-  border: 2px solid #c8ad8d;
-  border-radius: 10px;
-  padding: 5px 0;
-  cursor: pointer;
-}
-
-.section2 .selectores option {
-  font-size: 1rem;
-  padding: 10px 0;
-  cursor: pointer;
-}
-
-.section_3 {
-  margin-bottom: 40px;
 }
 
 .section_3 .tarjetas_animales {
@@ -344,20 +319,10 @@
 
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
-  z-index: -1;
+
 }
 
-.section_3 .btn_ver {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  border-radius: 0 0 20px 20px;
 
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(16px);
-  /* z-index: -1; */
-}
 
 @media (min-width: 768px) {
   .section1,
@@ -434,9 +399,6 @@
     font-size: 1rem;
   }
 
-  .section2 h3 {
-    font-size: 1.75rem;
-  }
   .container .cards Link {
     font-size: 1rem;
   }

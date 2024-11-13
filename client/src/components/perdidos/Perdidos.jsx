@@ -123,7 +123,7 @@ export default function Perdidos() {
       <section className={styles.section_2}>
         <h3>
           Acá encontrarás todas las mascotas que se han agregado como
-          encontradas, recuerda que: puedes filtrar de acuerdo a ciertas
+          perdidos, recuerda que: puedes filtrar de acuerdo a ciertas
           características.
         </h3>
       </section>

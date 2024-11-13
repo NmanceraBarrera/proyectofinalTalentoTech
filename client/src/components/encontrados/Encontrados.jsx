@@ -126,15 +126,19 @@ export default function Encontrados() {
 
       {/* Sección 2: Buscador */}
       <section className={styles.section2}>
-        <div className={styles.title2}>
-          <h2>
+        
+          <h2 className={styles.title2}>
             Acá encontrarás todas las mascotas que se han agregado como
             encontradas, recuerda que puedes filtrar de acuerdo a ciertas
             características:
           </h2>
-        </div>
+        
+      </section>
 
-        <div className={styles.barrabusqueda}>
+      {/* Sección 3: Tarjetas de los encontrados */}
+      <section className={styles.section_3}>
+      <div className={styles.tarjetas_animales}>
+      <div className={styles.barrabusqueda}>
           <div className={styles.contenedorbarrabusqueda}>
             <input
               type="text"
@@ -174,7 +178,7 @@ export default function Encontrados() {
         </div>
 
         {/* Selectores de filtros */}
-        <div className={styles.selectores}>
+        <div className={styles.desplegables}>
           <select onChange={(e) => setBreed(e.target.value)} value={breed}>
             <option value="">Filtrar por raza</option>
             {availableBreeds.map((breed) => (
@@ -193,11 +197,9 @@ export default function Encontrados() {
             ))}
           </select>
         </div>
-      </section>
 
-      {/* Sección 3: Tarjetas de los encontrados */}
-      <section className={styles.section_3}>
-      <div className={styles.tarjetas_animales}>
+
+      
         <Cards data={currentItems} />
 
         {/* Paginado */}

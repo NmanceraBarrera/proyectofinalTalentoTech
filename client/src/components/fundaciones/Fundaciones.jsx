@@ -100,8 +100,13 @@ export default function Fundaciones() {
         </section>
 
         <section className={styles.section_2}>
-          <div className={styles.barra_busqueda}>
-            <div className={styles.container_busqueda}>
+         <h2 className={styles.title}>Acá encontrarás todas las fundaciones que se han agregado, puedes filtrar por ciudades y nombre:</h2>
+        </section>
+
+        <section className={styles.section_3}>
+        <div className={styles.tarjetas_animales}>
+        <div className={styles.barrabusqueda}>
+            <div className={styles.contenedorbarrabusqueda}>
               <input
                 type="text"
                 name="busqueda"
@@ -136,10 +141,7 @@ export default function Fundaciones() {
               </svg>
             </div>
           </div>
-        </section>
-
-        <section className={styles.section_3}>
-          <div className={styles.tarjetas_animales}>
+          
             <div className={styles.desplegables}>
               <div className={styles.tipo}>
                 <select onChange={(e) => setCity(e.target.value)} value={city}>
@@ -152,19 +154,6 @@ export default function Fundaciones() {
                 </select>
               </div>
 
-              <div className={styles.tipo}>
-                <select
-                  onChange={(e) => setBreed(e.target.value)}
-                  value={breed}
-                >
-                  <option value="">Raza</option>
-                  {availableBreeds.map((breed) => (
-                    <option key={breed} value={breed}>
-                      {breed}
-                    </option>
-                  ))}
-                </select>
-              </div>
             </div>
             {/* Mostrar las tarjetas filtradas y paginadas */}
             <Cards data={currentItems} />
