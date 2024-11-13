@@ -7,6 +7,7 @@ import { useAuth } from "../../context/authContext";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 import Cards from "../utils/Cards";
+import Swal from "sweetalert2";
 
 export default function Encontrados() {
   const { isAuthenticated } = useAuth();
@@ -60,6 +61,15 @@ export default function Encontrados() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const openModal = () => {
+    Swal.fire({
+      title: "Alerta",
+      text: "Debes registrarte e iniciar sesión para poder publicar",
+      icon: "info",
+    });
+  };
+
+
   return (
     <div>
       <Navbar />
@@ -100,7 +110,13 @@ export default function Encontrados() {
             <p>
               Si has encontrado a una mascota, registra el caso ingresando información al formulario de "encontrados"
             </p>
-            <Link to='/formencontrados'><button className={styles.botones}>Publicar</button></Link>
+            {!isAuthenticated ? (
+              <button className={styles.botones} onClick={openModal}>Publicar</button>
+            ) : (
+              <Link to="/formencontrados">
+                <button className={styles.botones}>Publicar</button>
+              </Link>
+            )}
           </div>
           <div className={styles.cards}>
             <p>

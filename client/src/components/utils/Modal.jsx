@@ -5,16 +5,14 @@ import headerImage from "../../assets/icono1.png";
 import { Link } from "react-router-dom";
 
 export default function ModalScreen() {
-  const [open, setOpen] = useState(false); //Hook
+  const [open, setOpen] = useState(false);
   const [prueba, setPrueba] = useState();
   const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    //width: 800,
     bgcolor: "background.paper",
-    // border: '1px solid #D5DBDB',
     boxShadow: 24,
     borderRadius: 5,
     p: 2,
@@ -35,7 +33,6 @@ export default function ModalScreen() {
 
   return (
     <div className={styles.Modal}>
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
         onClose={handleClose}

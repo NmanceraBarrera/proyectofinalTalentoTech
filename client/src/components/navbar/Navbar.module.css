@@ -62,7 +62,6 @@
   height: auto;
   width: 2rem;
   cursor: pointer;
-  /* margin: 2vw; */
 }
 
 .containerNavbar .listLeft,
@@ -83,7 +82,6 @@
 .containerNavbar .account {
   height: auto;
   width: 2rem;
-  /* margin-right: 2vw; */
 }
 
 .containerNavbar .account1 {

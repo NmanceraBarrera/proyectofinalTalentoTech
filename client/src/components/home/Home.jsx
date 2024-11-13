@@ -9,20 +9,17 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const { isAuthenticated, user } = useAuth();
 
-  // Esta parte se asegura de que `user` no sea null antes de acceder a sus propiedades.
   useEffect(() => {
     if (user && user.email && user.id) {
-      // Solo hacer algo si `user` no es null y tiene las propiedades necesarias
       const usuarioRegistrado = user.email + user.id;
-      console.log("Usuario registrado:", usuarioRegistrado); // Esto es solo un ejemplo de uso.
+      console.log("Usuario registrado:", usuarioRegistrado); 
     }
-  }, [user]); // Este efecto se ejecutará solo cuando `user` cambie
+  }, [user]); 
 
   return (
     <div className={styles.containerPrincipal}>
       <Navbar />
 
-      {/* Mostrar el modal si no está autenticado */}
       {!isAuthenticated && <ModalScreen />}
 
       <section className={styles.section_1}>
