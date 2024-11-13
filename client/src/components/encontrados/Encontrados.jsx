@@ -10,28 +10,25 @@ import Cards from "../utils/Cards";
 
 export default function Encontrados() {
   const { isAuthenticated } = useAuth();
-  const [encontrados, setEncontrados] = useState([]); // Datos de las mascotas encontradas
-  const [breed, setBreed] = useState(""); // Estado para la raza
-  const [city, setCity] = useState(""); // Estado para la ciudad
-  const [search, setSearch] = useState(""); // Estado para el texto de búsqueda
-  const [currentPage, setCurrentPage] = useState(1); // Estado para la página actual
-  const [itemsPerPage] = useState(4); // Número de items por página
+  const [encontrados, setEncontrados] = useState([]); 
+  const [breed, setBreed] = useState("");
+  const [city, setCity] = useState("");
+  const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(4);
 
-  // Filtros disponibles (esto se puede mejorar extrayéndolos de los datos si quieres)
   const [availableBreeds, setAvailableBreeds] = useState([]);
   const [availableCities, setAvailableCities] = useState([]);
 
-  // Realizar la consulta a la API al montar el componente
   useEffect(() => {
     const fetchEncontrados = async () => {
       try {
         const response = await axios.get(
           "http://localhost:4000/api/encontrados"
-        ); // URL de tu API
+        ); 
         const data = response.data.body;
         setEncontrados(data);
 
-        // Extraer las razas y ciudades disponibles
         const breeds = [...new Set(data.map((item) => item.breed))];
         const cities = [...new Set(data.map((item) => item.city))];
         setAvailableBreeds(breeds);
@@ -44,7 +41,6 @@ export default function Encontrados() {
     fetchEncontrados();
   }, []);
 
-  // Filtrar los datos según los filtros seleccionados
   const filteredEncontrados = encontrados.filter((item) => {
     const matchesBreed = breed ? item.breed === breed : true;
     const matchesCity = city ? item.city === city : true;
@@ -55,7 +51,6 @@ export default function Encontrados() {
     return matchesBreed && matchesCity && matchesSearch;
   });
 
-  // Paginar los datos filtrados
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredEncontrados.slice(
@@ -63,7 +58,6 @@ export default function Encontrados() {
     indexOfLastItem
   );
 
-  // Cambiar la página actual
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -71,7 +65,6 @@ export default function Encontrados() {
       <Navbar />
       {!isAuthenticated && <ModalScreen />}
 
-      {/* Sección 1 */}
       <section className={styles.section1}>
         <div className={styles.banner}>
           <div className={styles.info}>
@@ -94,9 +87,7 @@ export default function Encontrados() {
             />
           </div>
         </div>
-                {/* Tarjetas*/}
                 <div className={styles.container}>
-          {/* Card1 */}
           <div className={styles.cards}>
             <p>
             Mantener la calma y tomar medidas inmediatas, si deseas saber más
@@ -105,14 +96,12 @@ export default function Encontrados() {
             </p>
             <Link to='/informacion'><button className={styles.botones}>¿Qué hacer?</button></Link>
           </div>
-          {/* Card2 */}
           <div className={styles.cards}>
             <p>
               Si has encontrado a una mascota, registra el caso ingresando información al formulario de "encontrados"
             </p>
             <Link to='/formencontrados'><button className={styles.botones}>Publicar</button></Link>
           </div>
-          {/* Card3 */}
           <div className={styles.cards}>
             <p>
               Si no puedes cuidar de tu peludo, puedes comunicarte con alguna de
@@ -123,8 +112,6 @@ export default function Encontrados() {
         </div>
 
       </section>
-
-      {/* Sección 2: Buscador */}
       <section className={styles.section2}>
         
           <h2 className={styles.title2}>
@@ -134,8 +121,6 @@ export default function Encontrados() {
           </h2>
         
       </section>
-
-      {/* Sección 3: Tarjetas de los encontrados */}
       <section className={styles.section_3}>
       <div className={styles.tarjetas_animales}>
       <div className={styles.barrabusqueda}>
@@ -146,7 +131,7 @@ export default function Encontrados() {
               id="busqueda"
               placeholder="Buscar por nombre"
               value={search}
-              onChange={(e) => setSearch(e.target.value)} // Agregar filtro de búsqueda
+              onChange={(e) => setSearch(e.target.value)} 
             />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
               <defs>
@@ -176,8 +161,6 @@ export default function Encontrados() {
             </svg>
           </div>
         </div>
-
-        {/* Selectores de filtros */}
         <div className={styles.desplegables}>
           <select onChange={(e) => setBreed(e.target.value)} value={breed}>
             <option value="">Filtrar por raza</option>
@@ -201,8 +184,6 @@ export default function Encontrados() {
 
       
         <Cards data={currentItems} />
-
-        {/* Paginado */}
         <div className={styles.pagination}>
           <button
             onClick={() => paginate(currentPage - 1)}
