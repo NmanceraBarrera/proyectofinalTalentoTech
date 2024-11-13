@@ -122,9 +122,6 @@ export default function Login() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
 
-    // Llamar a la función de logout desde el contexto para limpiar el estado global
-    logout();
-
     // Redirigir al usuario a la página de inicio (puedes cambiar '/home' por cualquier ruta)
     navigate("/home");
   };
@@ -195,8 +192,8 @@ export default function Login() {
           </form>
         )}
 
-        <p className={styles.terms}>
-          <button onClick={handleOmitir}>Omitir por ahora</button>
+        <p className={styles.terms} onClick={handleOmitir}>
+          Omitir por ahora
         </p>
       </div>
     </div>
