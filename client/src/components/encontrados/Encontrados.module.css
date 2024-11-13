@@ -156,7 +156,6 @@
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
-  /* z-index: -1; */
 }
 
 .section1 .info h1 {
@@ -221,7 +220,6 @@
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
   border-radius: 20px;
-  /* z-index: -1; */
 }
 
 .container .cards p {
@@ -233,7 +231,6 @@
   cursor: pointer;
 }
 
-/* Busqueda */
 
 .section2 .title2 {
   text-align: center;
