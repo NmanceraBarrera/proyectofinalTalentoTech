@@ -3,20 +3,20 @@ import axios from "axios";
 import styles from "./Login.module.css";
 import logo from "../../assets/icono1.png";
 import vector from "../../assets/vector.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Importamos useNavigate
 import Swal from "sweetalert2";
-import { useAuth } from "../../context/authContext"; // Importamos el hook
+import { useAuth } from "../../context/authContext";
 
 export default function Login() {
-  const { login, logout } = useAuth(); // Usamos el contexto de autenticación
-  const [isLogin, setIsLogin] = useState(true);
+  const { login } = useAuth();
+  const [isLogin, setIsLogin] = useState(true); // Determina si es login o registro
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [error, setError] = useState(""); // Para manejar el error de login
+  const navigate = useNavigate(); // Usamos useNavigate para la redirección
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +33,7 @@ export default function Login() {
       // Lógica para login
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/users/login",
+          "http://localhost:4000/api/users/login", // Llamada a la ruta de login
           {
             email: formData.email,
             password: formData.password,
@@ -46,21 +46,13 @@ export default function Login() {
         );
 
         if (response.status === 200) {
-          const { token, user } = response.data.body; // Desestructuramos la respuesta
-          console.log("Datos recibidos desde la API:", response.data.body); // Verifica que aquí recibes el objeto correcto
-
-          // Almacenamos el token en localStorage
-          localStorage.setItem("token", token);
-
-          // Llamamos a la función login del contexto para guardar los datos del usuario
-          login({ ...user, token }); // Aquí pasamos tanto el usuario como el token
-
           Swal.fire({
             title: "Bienvenido!",
             text: "Inicio de sesión exitoso",
             icon: "success",
           });
 
+          login(); // Establece el estado de autenticación global en true
           navigate("/home");
         }
       } catch (error) {
@@ -77,11 +69,7 @@ export default function Login() {
       try {
         const response = await axios.post(
           "http://localhost:4000/api/users",
-          {
-            name: formData.name,
-            email: formData.email,
-            password: formData.password,
-          },
+          formData,
           {
             headers: {
               "Content-Type": "application/json",
@@ -143,7 +131,8 @@ export default function Login() {
 
         {isLogin ? (
           <form className={styles.signupForm} onSubmit={handleSubmit}>
-            {error && <p className={styles.error}>{error}</p>}
+            {error && <p className={styles.error}>{error}</p>}{" "}
+            {/* Mostrar el error */}
             <input
               type="email"
               placeholder="Correo"
@@ -192,8 +181,9 @@ export default function Login() {
           </form>
         )}
 
-        <p className={styles.terms} onClick={handleOmitir}>
+<p className={styles.terms} onClick={handleOmitir}>
           Omitir por ahora
+        </p>
         </p>
       </div>
     </div>

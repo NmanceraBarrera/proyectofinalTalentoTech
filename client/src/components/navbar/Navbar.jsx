@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/icono1.png";
 import burger from "../../assets/burger.png";
@@ -12,14 +12,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 
 export default function Navbar() {
-  const { isAuthenticated, logout, user } = useAuth(); // Obtén isAuthenticated y logout
-
-  const [profileOpen, setProfileOpen] = useState(false); // Estado para manejar el colapsable
-
-  // Función para manejar el clic en el icono de perfil
-  const toggleProfile = () => {
-    setProfileOpen((prevState) => !prevState);
-  };
+  const { isAuthenticated, logout } = useAuth(); // Obtén isAuthenticated y logout
 
   return (
     <div className={styles.containerNavbar}>
@@ -60,22 +53,13 @@ export default function Navbar() {
                 <a href="#">Información</a>
               </Link>
             </li>
-            <li>{/* <button onClick={logout}>Cerrar Sesión</button> */}</li>
             <li>
-              <button onClick={toggleProfile}>
+              <button onClick={logout}>Cerrar Sesión</button>
+            </li>
+            <li>
+              <Link to="/perfil">
                 <img src={account1} alt="Perfil" className={styles.account1} />
-              </button>
-              {profileOpen && (
-                <div className={styles.profileDropdown}>
-                  <p>
-                    <strong>Nombre:</strong> {user.name}
-                  </p>
-                  <p>
-                    <strong>Email:</strong> {user.email}
-                  </p>
-                  <button onClick={logout}>Cerrar Sesión</button>
-                </div>
-              )}
+              </Link>
             </li>
           </ul>
         ) : (
