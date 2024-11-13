@@ -1,4 +1,4 @@
-// routes.js
+//routes
 const express = require("express");
 const responses = require("../../red/responses");
 const controlador = require("./controlador");
@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", getAll);
 router.get("/:id", getOnlyOne);
 router.delete("/:id", deleteOnlyOne);
-router.post("/", postFoundations);
+router.post("/", postLost);
 
 async function getAll(req, res) {
   const items = await controlador.todos();
@@ -23,7 +23,6 @@ async function getOnlyOne(req, res) {
     responses.error(req, res, error, 500);
   }
 }
-
 async function deleteOnlyOne(req, res) {
   try {
     const id = req.params.id;
@@ -34,7 +33,7 @@ async function deleteOnlyOne(req, res) {
   }
 }
 
-async function postFoundations(req, res) {
+async function postLost(req, res) {
   try {
     const item = await controlador.insertar(req.body);
     responses.success(req, res, item, 200);

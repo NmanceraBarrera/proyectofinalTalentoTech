@@ -9,7 +9,6 @@
   background-color: #c8ad8d81;
   border-radius: 25px;
   box-shadow: 0px 0px 5px 2px #c8ad8d;
-  position: relative; /* Agregado para que los elementos absolutos se ubiquen dentro de la tarjeta */
 }
 
 .imagen {
@@ -42,17 +41,4 @@
   border-radius: 15px;
   padding-left: 20px;
   color: rgb(255, 255, 255);
-}
-
-/* Estilos para la etiqueta de la ciudad */
-.cityTag {
-  position: absolute; /* Posiciona el elemento en la parte superior derecha */
-  top: 10px; /* Distancia desde el borde superior */
-  right: 10px; /* Distancia desde el borde derecho */
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-  color: white; /* Color del texto */
-  padding: 5px 10px;
-  border-radius: 5px; /* Bordes redondeados */
-  font-size: 14px;
-  font-weight: bold;
 }
