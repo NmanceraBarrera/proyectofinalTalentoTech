@@ -246,7 +246,7 @@ export default function EncontradosForm() {
 
             <label htmlFor="contact_phone">Teléfono de Contacto: </label>
             <input
-              type="tel"
+              type="number"
               id="contact_phone"
               name="contact_phone"
               value={formData.contact_phone}
@@ -303,6 +303,9 @@ export default function EncontradosForm() {
             </p>
             <p>
               <strong>Género:</strong> {formData.gender}
+            </p>
+            <p>
+              <strong>Teléfono de contacto:</strong> {formData.contact_phone}
             </p>
             <p>
               <strong>Descripción:</strong> {formData.description}

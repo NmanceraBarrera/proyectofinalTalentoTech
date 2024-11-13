@@ -175,7 +175,7 @@ export default function FoundationsForm() {
 
             <label htmlFor="phone">Teléfono</label>
             <input
-              type="tel"
+              type="number"
               id="phone"
               name="phone"
               value={formData.phone}
