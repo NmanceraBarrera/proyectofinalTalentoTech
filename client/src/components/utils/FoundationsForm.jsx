@@ -6,7 +6,7 @@ import axios from "axios";
 import { useAuth } from "../../context/authContext";
 
 export default function FoundationsForm() {
-  const CLOUD_NAME = "huellitas1246"; // Cloudinary name
+  const CLOUD_NAME = "huellitas1246"; 
   const cities = [
     { nombre: "" },
     { nombre: "Barranquilla" },
@@ -46,7 +46,6 @@ export default function FoundationsForm() {
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validación del tipo de archivo
       if (!file.type.startsWith("image/")) {
         alert("Por favor, selecciona un archivo de imagen");
         return;
@@ -91,7 +90,6 @@ export default function FoundationsForm() {
       userId: user.id,
     };
 
-    // Validación de datos del payload
     console.log("Datos que se están enviando:", payload);
 
     try {
@@ -107,7 +105,6 @@ export default function FoundationsForm() {
       console.log("Datos guardados:", response.data);
       alert("Formulario enviado correctamente.");
 
-      // Limpiar el formulario
       setFormData({
         name: "",
         city: "",

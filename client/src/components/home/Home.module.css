@@ -88,7 +88,6 @@
 
 .section_1 .informacion_1 .titulo h1{
   font-size: 2rem;
-  /* white-space: nowrap; */
 }
 
 .section_1 .parrafo_1 {
@@ -143,7 +142,6 @@
   object-fit: cover;
 }
 
-/* -----------------------section 2------------- */
 .section_2,
 .section_3{
   width: 100%;
@@ -189,7 +187,6 @@
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
-  /* z-index: -1; */
 }
 
 .section_2 .container_2 .imagen_2{
@@ -204,7 +201,6 @@
   
 }
 
-/* ------------------section 3----------- */
 
 .section_3 .btn_ver{
   width: 100%;
@@ -220,8 +216,6 @@
 
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
-  /* z-index: -1; */
-
 
 }
 
@@ -363,7 +357,6 @@
 
   .section_1 .informacion_1 .titulo h1{
     font-size: 4rem;
-    /* white-space: nowrap; */
   }  
 
   

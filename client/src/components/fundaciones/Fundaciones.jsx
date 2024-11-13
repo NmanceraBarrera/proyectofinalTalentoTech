@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"; // Importar axios para hacer la consulta HTTP
+import axios from "axios";
 import styles from "./Fundaciones.module.css";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import ModalScreen from "../utils/Modal";
 import { useAuth } from "../../context/authContext";
 import { Link } from "react-router-dom";
-import Cards from "../utils/Cards"; // Importamos el componente Cards que muestra las tarjetas
+import Cards from "../utils/Cards";
 import Swal from "sweetalert2";
 
 export default function Fundaciones() {
   const { isAuthenticated } = useAuth();
-  const [fundaciones, setFundaciones] = useState([]); // Datos de las fundaciones
-  const [breed, setBreed] = useState(""); // Estado para la raza
-  const [city, setCity] = useState(""); // Estado para la ciudad
-  const [currentPage, setCurrentPage] = useState(1); // Estado para la página actual
-  const [itemsPerPage] = useState(4); // Número de items por página
-  const [availableBreeds, setAvailableBreeds] = useState([]); // Razas disponibles
-  const [availableCities, setAvailableCities] = useState([]); // Ciudades disponibles
+  const [fundaciones, setFundaciones] = useState([]); 
+  const [breed, setBreed] = useState("");
+  const [city, setCity] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(4); 
+  const [availableBreeds, setAvailableBreeds] = useState([]);
+  const [availableCities, setAvailableCities] = useState([]); //
 
-  // Realizar la consulta a la API al montar el componente
   useEffect(() => {
     const fetchFundaciones = async () => {
       try {
         const response = await axios.get(
           "http://localhost:4000/api/fundaciones"
-        ); // URL de tu API de fundaciones
+        );
         const data = response.data.body;
         setFundaciones(data);
 
-        // Extraer las razas y ciudades disponibles
         const breeds = [...new Set(data.map((item) => item.breed))];
         const cities = [...new Set(data.map((item) => item.city))];
         setAvailableBreeds(breeds);
@@ -42,7 +40,6 @@ export default function Fundaciones() {
     fetchFundaciones();
   }, []);
 
-  // Filtrar los datos según los filtros seleccionados
   const filteredFundaciones = fundaciones.filter((item) => {
     return (
       (breed ? item.breed === breed : true) &&
@@ -57,10 +54,8 @@ export default function Fundaciones() {
     indexOfLastItem
   );
 
-  // Cambiar la página actual
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Función para abrir el modal de alerta cuando no hay sesión iniciada
   const openModal = () => {
     Swal.fire({
       title: "Alerta",
@@ -90,17 +85,17 @@ export default function Fundaciones() {
             </p>
             <p>También puedes agregar tu organización en esta sección.</p>
             {!isAuthenticated ? (
-              <button onClick={openModal}>Registrar</button>
+              <button className={styles.botones} onClick={openModal}>Registrar</button>
             ) : (
               <Link to="/foundationsForm">
-                <button>Registrar</button>
+                <button className={styles.botones}>Registrar</button>
               </Link>
             )}
           </div>
         </section>
 
         <section className={styles.section_2}>
-         <h2 className={styles.title}>Acá encontrarás todas las fundaciones que se han agregado, puedes filtrar por ciudades y nombre:</h2>
+          <h2 className={styles.title}>Acá encontrarás todas las fundaciones que se han agregado, puedes filtrar por ciudades y nombre:</h2>
         </section>
 
         <section className={styles.section_3}>
@@ -155,10 +150,8 @@ export default function Fundaciones() {
               </div>
 
             </div>
-            {/* Mostrar las tarjetas filtradas y paginadas */}
             <Cards data={currentItems} />
 
-            {/* Paginación */}
             <div className={styles.pagination}>
               <button
                 onClick={() => paginate(currentPage - 1)}

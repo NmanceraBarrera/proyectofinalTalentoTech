@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "../../context/authContext"; // Usamos el contexto de autenticación
+import { useAuth } from "../../context/authContext";
 import axios from "axios";
 import styles from "./EncontradosForm.module.css";
 import { Link } from "react-router-dom";
@@ -22,14 +22,14 @@ export default function EncontradosForm() {
     { nombre: "Santa Marta" },
   ];
 
-  const { user } = useAuth(); // Usamos el contexto para obtener el usuario autenticado
+  const { user } = useAuth();
 
   const [breedSelect, setBreedSelect] = useState("perro");
   const [genreSelect, setGenreSelect] = useState("macho");
 
   const [formData, setFormData] = useState({
     name: "",
-    found_date: "", // Cambio de 'date' a 'found_date'
+    found_date: "", 
     breed: breedSelect,
     city: "",
     place: "",
@@ -66,7 +66,6 @@ export default function EncontradosForm() {
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validación del tipo de archivo
       if (!file.type.startsWith("image/")) {
         Swal.fire({
           icon: "error",
@@ -112,7 +111,7 @@ export default function EncontradosForm() {
 
     const payload = {
       ...formData,
-      userId: user.id, // Incluimos el id_user del usuario autenticado
+      userId: user.id,
     };
 
     try {
@@ -130,7 +129,7 @@ export default function EncontradosForm() {
 
       setFormData({
         name: "",
-        found_date: "", // Reiniciar 'found_date'
+        found_date: "",
         breed: "perro",
         city: "",
         place: "",

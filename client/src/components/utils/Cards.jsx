@@ -1,9 +1,9 @@
 import React from "react";
-import Card from "./Card"; // Importa el componente Card
+import Card from "./Card";
 import styles from "./Cards.module.css";
 
 export default function Cards({ data }) {
-  console.log(data, "data"); // Verifica que los datos están llegando correctamente
+  console.log(data, "data"); 
 
   return (
     <div className={styles.cardsContainer}>
@@ -11,7 +11,7 @@ export default function Cards({ data }) {
         data.map((item, index) => (
           <Card
             key={index}
-            image={item.photo} // Asegúrate de que la propiedad correcta esté aquí
+            image={item.photo}
             name={item.name}
             city={item.city}
             breed={item.breed}
@@ -19,7 +19,7 @@ export default function Cards({ data }) {
           />
         ))
       ) : (
-        <p>No hay mascotas perdidas disponibles.</p> // Mensaje si no hay datos
+        <p>No hay datos para mostrar</p>
       )}
     </div>
   );

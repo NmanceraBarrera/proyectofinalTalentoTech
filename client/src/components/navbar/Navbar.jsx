@@ -12,11 +12,10 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 
 export default function Navbar() {
-  const { isAuthenticated, logout, user } = useAuth(); // Obtén isAuthenticated y logout
+  const { isAuthenticated, logout, user } = useAuth();
 
-  const [profileOpen, setProfileOpen] = useState(false); // Estado para manejar el colapsable
+  const [profileOpen, setProfileOpen] = useState(false);
 
-  // Función para manejar el clic en el icono de perfil
   const toggleProfile = () => {
     setProfileOpen((prevState) => !prevState);
   };
@@ -60,7 +59,7 @@ export default function Navbar() {
                 <a href="#">Información</a>
               </Link>
             </li>
-            <li>{/* <button onClick={logout}>Cerrar Sesión</button> */}</li>
+            <li></li>
             <li>
               <button onClick={toggleProfile}>
                 <img src={account1} alt="Perfil" className={styles.account1} />

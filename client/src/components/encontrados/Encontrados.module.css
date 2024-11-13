@@ -88,7 +88,7 @@
 }
 
 .botones {
-  width: 100%;
+  width: auto;
   padding: 2px 25px;
   border: unset;
   border-radius: 15px;

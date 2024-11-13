@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "../../context/authContext"; // Usamos el contexto de autenticación
+import { useAuth } from "../../context/authContext";
 import axios from "axios";
 import styles from "./FormPerdidos.module.css";
 import { Link } from "react-router-dom";
@@ -21,7 +21,7 @@ export default function FormPerdidos() {
     { nombre: "Santa Marta" },
   ];
 
-  const { user } = useAuth(); // Obtenemos el `user` del contexto de autenticación
+  const { user } = useAuth();
 
   const [breedSelect, setBreedSelect] = useState("perro");
   const [genreSelect, setGenreSelect] = useState("macho");
@@ -30,12 +30,12 @@ export default function FormPerdidos() {
     name: "",
     loss_date: "",
     breed: breedSelect,
-    city: "", // Usamos `city` directamente aquí, no necesitamos `citySelect`
+    city: "",
     place: "",
     color_1: "",
     color_2: "",
     gender: genreSelect,
-    photo: "", // Foto inicial vacía
+    photo: "",
     contact_phone: "",
     description: "",
   });
@@ -65,7 +65,6 @@ export default function FormPerdidos() {
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validación del tipo de archivo
       if (!file.type.startsWith("image/")) {
         alert("Por favor, selecciona un archivo de imagen");
         return;

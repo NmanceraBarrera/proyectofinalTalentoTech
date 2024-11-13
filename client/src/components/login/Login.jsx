@@ -196,7 +196,7 @@ export default function Login() {
         )}
 
         <p className={styles.terms}>
-          <button onClick={handleOmitir}>Omitir por ahora</button>
+          <Link to="/home">Omitir por ahora</Link>
         </p>
       </div>
     </div>

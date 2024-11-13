@@ -19,7 +19,7 @@
 }
 
 .modalBox h2{
-    font-size: 1.5rem; /*24px*/
+    font-size: 1.5rem;
     font-weight: 900;
     line-height: 1;
     margin-bottom: 5px;
@@ -48,7 +48,7 @@
     text-align: center;
 }
 .modalBox .Container .info{
-    font-size: 0.75rem; /*8px*/
+    font-size: 0.75rem; 
 }
 
 .modalBox .containerBtn{
@@ -59,7 +59,7 @@
 }
 
 .modalBox .containerBtn button{
-    font-size: 0.75rem; /* 12px */
+    font-size: 0.75rem; 
     border-radius: 50px;
     width: 140px;
     height: 40px;
@@ -78,7 +78,7 @@
 
 @media (min-width: 800px) {
     .modalBox{
-        font-size: 1.25rem; /* 20px */
+        font-size: 1.25rem;
         color: #273a2d;
         width: 800px;
         display: flex;
@@ -94,13 +94,13 @@
     }
     
     .modalBox h2{
-        font-size: 2.5rem; /*40px*/
+        font-size: 2.5rem;
         line-height: 1;
         margin-bottom: 5px;
     }
     
     .modalBox .description{
-        font-size: 1.125rem; /*18px*/
+        font-size: 1.125rem;
         margin-top: 10px;
     }
 
@@ -113,14 +113,14 @@
     }
 
     .modalBox .Container .subtitle{
-        font-size: 1.25rem; /*20px*/
+        font-size: 1.25rem; 
         font-weight: 600;
         margin: 10px;
         text-align: center;
     }
 
     .modalBox .Container .info{
-        font-size: 1rem; /*16px*/
+        font-size: 1rem;
     }
     
     .modalBox .containerBtn{
@@ -157,7 +157,7 @@
     }
 
     .modalBox .Container .subtitle{
-        font-size: 1.25rem; /*20px*/
+        font-size: 1.25rem;
         font-weight: 600;
         margin: 0px;
         text-align: center;

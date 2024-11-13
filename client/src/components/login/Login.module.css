@@ -94,6 +94,7 @@
 }
 
 .terms {
+  cursor: pointer;
   position: absolute;
   bottom: 2rem;
   right: 1rem;
@@ -131,6 +132,7 @@
   }
 
   .terms {
+    cursor: pointer;
     width: 80%;
     text-align: center;
     bottom: 1rem;
