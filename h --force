@@ -1,0 +1,128 @@
+[33m863b302[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/fixforms[m[33m)[m fix: contact-phone
+[33mb396367[m Merge pull request #66 from NmanceraBarrera/navbar
+[33m5a9a61a[m[33m ([m[1;31morigin/navbar[m[33m, [m[1;32mnavbar[m[33m)[m navbar profile
+[33me1984a9[m Merge pull request #65 from NmanceraBarrera/cardsstyles
+[33m2fdfd70[m[33m ([m[1;31morigin/cardsstyles[m[33m)[m add: cards styles
+[33m2a5c361[m Merge pull request #64 from NmanceraBarrera/renderfundaciones
+[33m1027355[m[33m ([m[1;31morigin/renderfundaciones[m[33m, [m[1;32mrenderfundaciones[m[33m)[m add render en fundaciones
+[33mc8a5ecb[m Merge pull request #63 from NmanceraBarrera/conexionFundaciones
+[33mf3df284[m[33m ([m[1;31morigin/conexionFundaciones[m[33m, [m[1;32mconexionFundaciones[m[33m)[m conexion fundaciones
+[33m7c7ca12[m Merge pull request #62 from NmanceraBarrera/cardsstyles
+[33mdad0bf0[m fix: conteiner cards
+[33m622798b[m Merge pull request #61 from NmanceraBarrera/conectarformencontrados
+[33m16b5e8a[m[33m ([m[1;31morigin/conectarformencontrados[m[33m, [m[1;32mconectarformencontrados[m[33m)[m Conexion encontrados
+[33m741871f[m Merge pull request #60 from NmanceraBarrera/arreglosFundacioens
+[33m6e3439e[m colocando los botones en los formularios y arreglando el apartado de fundaciones e informacion
+[33ma18913e[m Merge pull request #59 from NmanceraBarrera/cardspagintaion
+[33mefedd30[m[33m ([m[1;31morigin/cardspagintaion[m[33m, [m[1;32mcardspagintaion[m[33m)[m cards y pagination
+[33maf73396[m Merge pull request #58 from NmanceraBarrera/conexionencontrados
+[33m0b39e25[m[33m ([m[1;31morigin/conexionencontrados[m[33m, [m[1;32mconexionencontrados[m[33m)[m conexion encontrados y ajuste en Home
+[33md66a12d[m Merge pull request #57 from NmanceraBarrera/conexionForm
+[33mcb9eb22[m[33m ([m[1;31morigin/conexionForm[m[33m, [m[1;32mconexionForm[m[33m)[m conexion Form perdidos y encryptado de clave
+[33mf75a1c0[m Merge pull request #56 from NmanceraBarrera/palabra
+[33m6390166[m change word
+[33m4fa363b[m spelling change in Home and Perdidos
+[33mb027f5b[m Merge pull request #54 from NmanceraBarrera/encontradosform
+[33mf06774b[m[33m ([m[1;31morigin/encontradosform[m[33m)[m fix: navbar conflict
+[33md5593a5[m Merge pull request #53 from NmanceraBarrera/encontradosform
+[33m7bed1fa[m fix: encontrados page links and buttons
+[33m2436e5e[m Merge pull request #52 from NmanceraBarrera/encontradosform
+[33mfcb0c6d[m fix: form encontrados
+[33m4887f10[m Merge pull request #51 from NmanceraBarrera/formularioperdidos
+[33m845ad49[m Arreglo de una parte del navbar (aun no se porque no esta centrado :(), ajuste de las paginas de informacion y fundaciones, cambio de el estilo en todos los botones correspondientes a sidebar, fundaciones e informacion, añadido tambien el listado de ciudades en el formulario de registrar fundaciones y creo que no mas, alguno que otro detalle)
+[33m4cdc83d[m Merge pull request #50 from NmanceraBarrera/formperdidos
+[33m49ac940[m create form perdidos
+[33m732db82[m Merge pull request #49 from NmanceraBarrera/completeperdidos
+[33m5b8c718[m[33m ([m[1;31morigin/completeperdidos[m[33m)[m complete changes perdidos 1.0
+[33me011576[m Merge pull request #48 from NmanceraBarrera/completehome
+[33mdf98a4f[m[33m ([m[1;31morigin/completehome[m[33m)[m complete changes home 2.0
+[33m208d525[m Merge pull request #47 from NmanceraBarrera/completehome
+[33meaf353a[m complete changes home
+[33m99feeae[m Merge pull request #46 from NmanceraBarrera/cambios1
+[33m099fdca[m responsive home img
+[33m5a96077[m Merge pull request #44 from NmanceraBarrera/cambiosgenerales
+[33m777a37f[m[33m ([m[1;31morigin/cambiosgenerales[m[33m)[m changes type font and responsive home
+[33mba45fa3[m Merge pull request #43 from NmanceraBarrera/encontradosform
+[33maaa7f5b[m add: new styles to encontrados form
+[33m1874e75[m Merge pull request #42 from NmanceraBarrera/cambiosancho
+[33m6167ea7[m[33m ([m[1;31morigin/cambiosancho[m[33m)[m take off z-index of home and perdidos
+[33mae98a82[m Merge pull request #41 from NmanceraBarrera/cambiosancho
+[33mca66eaf[m add changes in navbar, perdidos, encontrados and footer
+[33m7088a22[m Merge pull request #40 from NmanceraBarrera/ajusteconflictos
+[33mb08e899[m[33m ([m[1;31morigin/ajusteconflictos[m[33m, [m[1;32majusteconflictos[m[33m)[m ajusteconflictos
+[33me053e2d[m Merge pull request #39 from NmanceraBarrera/imagen
+[33mcf6eb94[m[33m ([m[1;32mimagen[m[33m)[m add: context and valdiation login
+[33mf131e55[m Merge pull request #38 from NmanceraBarrera/formulariofundaciones
+[33mab49763[m Agregando el formulario de fundaciones, arreglando la seccion de fundaciones y de informacion, ultimos detalles del navbar y añadiendo la ruta del formulario
+[33m880f121[m Merge pull request #37 from NmanceraBarrera/ucambios
+[33m1b58687[m add footer in perdidos and home
+[33m4f54cf1[m Merge pull request #36 from NmanceraBarrera/imagen
+[33mef5b5b8[m imagenes
+[33m666dc2a[m Merge pull request #35 from NmanceraBarrera/background
+[33md155a3e[m[33m ([m[1;31morigin/background[m[33m)[m add: background
+[33mc9f397b[m Merge pull request #34 from NmanceraBarrera/cambioshome
+[33m43762e3[m cambios en los tamaño de letras
+[33mdf5abd8[m Merge pull request #33 from NmanceraBarrera/temporal
+[33md841d7c[m changes perdidos section select
+[33m0a81ea1[m Merge pull request #31 from NmanceraBarrera/ramaTemporalNicolas
+[33m63b5ae3[m[33m ([m[1;31morigin/ramaTemporalNicolas[m[33m, [m[1;32mramaTemporalNicolas[m[33m)[m cambios iniciales loadImage
+[33m2c498ce[m[33m ([m[1;32mloadImage[m[33m)[m Merge pull request #29 from NmanceraBarrera/newhome
+[33m3869e97[m changes home and perdidos letter type
+[33m08aa95c[m Merge pull request #28 from NmanceraBarrera/ramatemporal
+[33m7cd2015[m aplicando stash y resuelto conflicto
+[33m3ac33aa[m Merge pull request #27 from NmanceraBarrera/pageencontrados
+[33m6808aaa[m[33m ([m[1;31morigin/pageencontrados[m[33m)[m add: new appearance on the page found
+[33m3e77548[m Merge pull request #26 from NmanceraBarrera/conexiondb
+[33m5af877d[m[33m ([m[1;31morigin/conexiondb[m[33m, [m[1;32mconexiondb[m[33m)[m Conexion db
+[33m2283bc7[m Merge pull request #25 from NmanceraBarrera/newhome
+[33ma054e63[m new home
+[33m775e3c3[m Merge pull request #24 from NmanceraBarrera/newperdidos
+[33m000d411[m[33m ([m[1;31morigin/newperdidos[m[33m)[m add target section
+[33mc41d1a9[m Merge pull request #23 from NmanceraBarrera/newperdidos
+[33m2533688[m change perdidos
+[33m33de3ff[m Merge pull request #22 from NmanceraBarrera/pageencontrados
+[33m13b0e98[m add: new apparence for encontrados
+[33mb2d7299[m Merge pull request #21 from NmanceraBarrera/footerLinks
+[33m23ed346[m añadiendo ultimos detalles del navbar yhaciendo los botones
+[33mb5a2914[m Merge pull request #20 from NmanceraBarrera/pageencontrados
+[33md90ffdb[m fix: routes
+[33mcd35420[m Merge pull request #19 from NmanceraBarrera/reestructura
+[33m6d05e8a[m[33m ([m[1;31morigin/reestructura[m[33m, [m[1;32mreestructura[m[33m)[m reestructura
+[33m1a39754[m Merge pull request #18 from NmanceraBarrera/detalles
+[33m494d383[m[33m ([m[1;31morigin/detalles[m[33m)[m caambios login
+[33m30e64f2[m Merge pull request #17 from NmanceraBarrera/pagePerdidos
+[33mc58f524[m[33m ([m[1;31morigin/pagePerdidos[m[33m)[m cambios en pagina perdidos
+[33m90352ab[m Merge pull request #16 from NmanceraBarrera/encontrados
+[33m9b38245[m[33m ([m[1;31morigin/encontrados[m[33m)[m fix: conflict with footer styles p-color
+[33m7c556ad[m Merge pull request #15 from NmanceraBarrera/loginResposive
+[33ma43aced[m[33m ([m[1;31morigin/loginResposive[m[33m)[m cambios ogin responsive
+[33m7c80dbd[m Merge pull request #14 from NmanceraBarrera/footer2
+[33m8775594[m modificando el footer
+[33m377804a[m Merge pull request #13 from NmanceraBarrera/Footer
+[33m464e6e8[m segundo commit subiendo cosas que se me olvidaron añadir en el anterior
+[33m39071c2[m estoy subiendo el footer, adicional la seccion de informacion y de fundaciones
+[33maea38df[m Merge pull request #12 from NmanceraBarrera/card
+[33m813dd0c[m[33m ([m[1;31morigin/card[m[33m, [m[1;32mcard[m[33m)[m cards y card basicas
+[33m041d94d[m Merge pull request #11 from NmanceraBarrera/modalresponsive
+[33m8a31265[m[33m ([m[1;31morigin/modalresponsive[m[33m)[m add modal media query
+[33mf405843[m[33m ([m[1;32mlogin[m[33m)[m Merge pull request #10 from NmanceraBarrera/perdidos
+[33md28f772[m[33m ([m[1;31morigin/perdidos[m[33m)[m page perdidos
+[33mdec539a[m Merge pull request #9 from NmanceraBarrera/home
+[33mf629756[m[33m ([m[1;31morigin/home[m[33m)[m  union de cambios en page Home
+[33me78c288[m pag Home
+[33m09d493c[m Merge pull request #8 from NmanceraBarrera/modal
+[33mc71c899[m[33m ([m[1;31morigin/modal[m[33m)[m add: modal component
+[33m2d41a16[m Merge pull request #7 from NmanceraBarrera/login
+[33m4a1fbc9[m[33m ([m[1;31morigin/login[m[33m)[m login sin autenticacion o validacion
+[33mae9a577[m Merge pull request #6 from NmanceraBarrera/navbar
+[33m7e0743b[m subiendo el navbar
+[33m5a1ddf2[m Merge pull request #5 from NmanceraBarrera/login
+[33m2de70b1[m formatted code
+[33m2070f3c[m Merge pull request #4 from NmanceraBarrera/home
+[33m780b409[m cambios en home
+[33m4f33a52[m Merge pull request #3 from NmanceraBarrera/navbar
+[33m9547065[m Añadiendo el navbar en un h1 y cambiando el s del modules
+[33m584d08d[m Merge pull request #2 from NmanceraBarrera/modal
+[33m4bac64b[m add: logo
+[33m91ccee5[m project
+[33m93587e9[m first commit
