@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-import styles from './FormPerdidos.module.css';
+import React, { useState } from "react";
+import { useAuth } from "../../context/authContext"; // Usamos el contexto de autenticación
+import axios from "axios";
+import styles from "./FormPerdidos.module.css";
+import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 
+import Swal from "sweetalert2";
 
 export default function FormPerdidos() {
-    const cities =[
+  const CLOUD_NAME = "huellitas1246";
+  const cities = [
     { nombre: "" },
     { nombre: "Barranquilla" },
     { nombre: "Bogotá" },
@@ -14,198 +20,325 @@ export default function FormPerdidos() {
     { nombre: "Manizales" },
     { nombre: "Medellín" },
     { nombre: "Pereira" },
-    { nombre: "Santa Marta" }
-    ]
+    { nombre: "Santa Marta" },
+  ];
 
-    const [breedSelect, setBreedSelect] = useState('perro');
-    const [genreSelect, setGenreSelect] = useState('macho');
-    const [citySelect, setCitySelect] = useState('') 
+  const { user } = useAuth(); // Obtenemos el `user` del contexto de autenticación
 
-    const [formData, setFormData] = useState({
-        name: '',
-        date:'',
-        city: citySelect,
-        address: '',
-        color1: '',
-        color2: '',
-        photo: null, 
-        phone: '',
-        description: '',
+  const [breedSelect, setBreedSelect] = useState("perro");
+  const [genreSelect, setGenreSelect] = useState("macho");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    loss_date: "",
+    breed: breedSelect,
+    city: "", // Usamos `city` directamente aquí, no necesitamos `citySelect`
+    place: "",
+    color_1: "",
+    color_2: "",
+    gender: genreSelect,
+    photo: "", // Foto inicial vacía
+    contact_phone: "",
+    description: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
+  };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
+  const handleBreedSelect = (event) => {
+    setBreedSelect(event.target.value);
+    setFormData({ ...formData, breed: event.target.value });
+  };
+
+  const handleGenreSelect = (event) => {
+    setGenreSelect(event.target.value);
+    setFormData({ ...formData, gender: event.target.value });
+  };
+
+  const handleCitySelect = (event) => {
+    setFormData({ ...formData, city: event.target.value });
+  };
+
+  const handleImageChange = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Validación del tipo de archivo
+      if (!file.type.startsWith("image/")) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "El archivo seleccionado no es una imagen.",
         });
+        return;
+      }
+
+      const formDataImage = new FormData();
+      formDataImage.append("file", file);
+      formDataImage.append("upload_preset", "huellitas_a_casa");
+      formDataImage.append("cloud_name", CLOUD_NAME);
+
+      try {
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+          formDataImage
+        );
+        console.log("Imagen subida correctamente:", response.data);
+        const imageUrl = response.data.secure_url;
+        setFormData({
+          ...formData,
+          photo: imageUrl,
+        });
+      } catch (error) {
+        console.error(
+          "Error al subir la imagen a Cloudinary:",
+          error.response?.data || error.message
+        );
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Ocurrio un error al subir la imagen.",
+        });
+      }
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Debes iniciar sesión para enviar el formulario.",
+      });
+      return;
+    }
+
+    const payload = {
+      ...formData,
+      userId: user.id,
     };
 
-    const handleBreedSelect = (event) => {
-      setBreedSelect(event.target.value);
-    };
-  
-    const handleGenreSelect = (event) => {
-      setGenreSelect(event.target.value);
-    };
-
-    const handleCitySelect = (event) => {
-      setCitySelect(event.target.value);
-      console.log(citySelect)
-    };
-
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData({
-                    ...formData,
-                    photo: reader.result,
-                });
-            };
-            reader.readAsDataURL(file); 
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/perdidos",
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-    };
+      );
+      console.log("Datos guardados:", response.data);
+      Swal.fire({
+        icon: "success",
+        title: "Formulario enviado correctamente",
+        showConfirmButton: false,
+      });
+
+      setFormData({
+        name: "",
+        loss_date: "",
+        breed: breedSelect,
+        city: "",
+        place: "",
+        color_1: "",
+        color_2: "",
+        gender: genreSelect,
+        photo: "",
+        contact_phone: "",
+        description: "",
+      });
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Ocurrio un error al enviar el formulario.",
+      });
+    }
+  };
+
   return (
     <div className={styles.containerEcontradosForm}>
-        <main className={styles.containerMain}>
+      <main className={styles.containerMain}>
         <section className={styles.containerForm}>
-            <form>
-                <h2>Registra el peludo que perdiste:</h2>
-  
-                <label htmlFor="name">Nombre: </label>
-                <input 
-                    type="text" 
-                    id='name' 
-                    name='name' 
-                    value={formData.name} 
-                    onChange={handleInputChange}
-                    required/>
+          <form onSubmit={handleSubmit}>
+            <h2>Registra el peludo que perdiste:</h2>
 
-                <label htmlFor="date">Fecha: </label>
-                <input 
-                    type="date" 
-                    id='date' 
-                    name='date'
-                    value={formData.date} 
-                    onChange={handleInputChange} 
-                    required/>
-                
-                <label htmlFor="name">Ciudad: </label>
-                <select id="city" name="city" onChange={handleCitySelect} value={citySelect}>
-                    {cities.map(city => (<option key={city.nombre } value={city.nombre}>
-                        {
-                            city.nombre
-                        }</option>))}
-                    {/* <option value="" disabled selected>
-                        Elige la ciudad
-                    </option>
-                    <option value="opcion2">Bogotá</option>
-                    <option value="opcion3">Medellín</option> */}
-                </select>
+            <label htmlFor="name">Nombre: </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
 
-                <label htmlFor="address">Ubicación: </label>
-                <input 
-                    type="text" 
-                    id='address' 
-                    name='address'
-                    value={formData.address} 
-                    onChange={handleInputChange}
-                    required/>
+            <label htmlFor="loss_date">Fecha de Pérdida: </label>
+            <input
+              type="date"
+              id="loss_date"
+              name="loss_date"
+              value={formData.loss_date}
+              onChange={handleInputChange}
+              required
+            />
 
-                <label htmlFor="color1">Color 1: </label>
-                    <input 
-                    type="text" 
-                    id='color1' 
-                    name='color1' 
-                    value={formData.color1} 
-                    onChange={handleInputChange}
-                    required/>
+            <label htmlFor="city">Ciudad: </label>
+            <select
+              id="city"
+              name="city"
+              onChange={handleCitySelect}
+              value={formData.city}
+            >
+              {cities.map((city) => (
+                <option key={city.nombre} value={city.nombre}>
+                  {city.nombre}
+                </option>
+              ))}
+            </select>
 
-                <label htmlFor="color2">Color 2: </label>
-                <input 
-                type="text" 
-                id='color2' 
-                name='color2' 
-                value={formData.color2} 
-                onChange={handleInputChange}
-                required/>
+            <label htmlFor="place">Ubicación: </label>
+            <input
+              type="text"
+              id="place"
+              name="place"
+              value={formData.place}
+              onChange={handleInputChange}
+              required
+            />
 
-                <label htmlFor="breed">Raza: </label>
-                <select 
-                    id="breed" 
-                    name="breed"                 
-                    value={breedSelect} 
-                    onChange={handleBreedSelect}>
-                    <option value="perro">Perro</option>
-                    <option value="gato">Gato</option>
-                </select>
+            <label htmlFor="color_1">Color 1: </label>
+            <input
+              type="text"
+              id="color_1"
+              name="color_1"
+              value={formData.color_1}
+              onChange={handleInputChange}
+              required
+            />
 
-                <label htmlFor="genre">Género: </label>
-                <select 
-                    id="genre"
-                    name="genre" 
-                    value={genreSelect} 
-                    onChange={handleGenreSelect}>
-                    <option value="macho">Macho</option>
-                    <option value="hembra">Hembra</option>
-                </select>
+            <label htmlFor="color_2">Color 2: </label>
+            <input
+              type="text"
+              id="color_2"
+              name="color_2"
+              value={formData.color_2}
+              onChange={handleInputChange}
+              required
+            />
 
-                <label htmlFor="photo">Foto: </label>
-                    <input
-                        type="file"
-                        id="photo"
-                        name="photo"
-                        onChange={handleImageChange} imágenes
-                        accept="image/*" />
+            <label htmlFor="breed">Raza: </label>
+            <select
+              id="breed"
+              name="breed"
+              value={formData.breed}
+              onChange={handleBreedSelect}
+            >
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+            </select>
 
-                <label htmlFor="phone">Teléfono de contacto: </label>
-                <input 
-                    type="tel" 
-                    id='phone' 
-                    name='phone'
-                    value={formData.phone} 
-                    onChange={handleInputChange}
-                    required/>
+            <label htmlFor="gender">Género: </label>
+            <select
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleGenreSelect}
+            >
+              <option value="macho">Macho</option>
+              <option value="hembra">Hembra</option>
+            </select>
 
-                <label htmlFor="description">Descripción: </label>
-                <textarea 
-                    name="description" 
-                    id="description" 
-                    rows={4} 
-                    cols={50}
-                    value={formData.description}
-                    onChange={handleInputChange}
-                    required>
-                </textarea>
+            <label htmlFor="photo">Foto: </label>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              onChange={handleImageChange}
+              accept="image/*"
+            />
 
-                <button type="submit" className={styles.submitButton}>Enviar</button>
-            </form>
+            <label htmlFor="contact_phone">Teléfono de Contacto: </label>
+            <input
+              type="number"
+              id="contact_phone"
+              name="contact_phone"
+              value={formData.contact_phone}
+              onChange={handleInputChange}
+              required
+            />
+
+            <label htmlFor="description">Descripción: </label>
+            <textarea
+              name="description"
+              id="description"
+              rows={4}
+              cols={50}
+              value={formData.description}
+              onChange={handleInputChange}
+              required
+            ></textarea>
+            <button className={styles.boton} type="submit">
+              Enviar
+            </button>
+            <Link to="/perdidos">
+              <button className={styles.boton}>Ir a perdidos</button>
+            </Link>
+          </form>
         </section>
 
         <section className={styles.containerPreview}>
-            <div className={styles.containerPhoto}>
-                <h2>Visualización:</h2>
-                {formData.photo && (
-                    <div className={styles.photoPreview}>
-                        <img src={formData.photo} alt="Foto: " />
-                    </div>
-                )}
-            </div>
-            <div>
-                <p><strong>Nombre:</strong> {formData.name}</p>
-                <p><strong>Fecha:</strong> {formData.date}</p>
-                <p><strong>Ciudad:</strong> {citySelect}</p>
-                <p><strong>Dirección:</strong> {formData.address}</p>
-                <p><strong>Color1:</strong> {formData.color1}</p>
-                <p><strong>Color2:</strong> {formData.color2}</p>
-                <p><strong>Raza:</strong> {breedSelect}</p>
-                <p><strong>Genero:</strong> {genreSelect}</p>
-                <p><strong>Descripción:</strong> {formData.description}</p>
-            </div>
+          <div className={styles.containerPhoto}>
+            <h2>Visualización:</h2>
+            {formData.photo && (
+              <div className={styles.photoPreview}>
+                <img src={formData.photo} alt="Foto: " />
+              </div>
+            )}
+          </div>
+          <div>
+            <p>
+              <strong>Nombre:</strong> {formData.name}
+            </p>
+            <p>
+              <strong>Fecha:</strong> {formData.loss_date}
+            </p>
+            <p>
+              <strong>Ciudad:</strong> {formData.city}
+            </p>
+            <p>
+              <strong>Dirección:</strong> {formData.place}
+            </p>
+            <p>
+              <strong>Color 1:</strong> {formData.color_1}
+            </p>
+            <p>
+              <strong>Color 2:</strong> {formData.color_2}
+            </p>
+            <p>
+              <strong>Raza:</strong> {formData.breed}
+            </p>
+            <p>
+              <strong>Género:</strong> {formData.gender}
+            </p>
+            <p>
+              <strong>Teléfono de contacto:</strong> {formData.contact_phone}
+            </p>
+            <p>
+              <strong>Descripción:</strong> {formData.description}
+            </p>
+          </div>
         </section>
-        </main>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
